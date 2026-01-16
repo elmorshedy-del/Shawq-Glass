@@ -15,7 +15,7 @@ Inputs:
 {%- for block in section.blocks -%}
   {%- liquid
     assign is_url_link = block.type == 'shawq_header_link'
-    assign is_collection_link = block.type == 'shawq_header_collection_link'
+    assign is_collection_link = block.type == 'shawq_hdr_coll_link'
   -%}
 
   {%- if is_url_link or is_collection_link -%}
