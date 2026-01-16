@@ -222,7 +222,7 @@
         "settings": {
           "text_color": "#e00000",
           "background": "#fa3fb5",
-          "background_gradient": "linear-gradient(180deg,\n  #000000 0%,\n  #000000 20%,\n  #FFFFFF 50%,\n  #007A3D 80%,\n  #007A3D 100%\n)",
+          "background_gradient": "linear-gradient(28deg, rgba(229, 33, 33, 1), rgba(0, 0, 0, 1) 20%, rgba(255, 255, 255, 1) 50%, rgba(0, 122, 61, 1) 80%, rgba(0, 122, 61, 1) 100%)",
           "secondary_background": "#ffffff",
           "primary_button_background": "#ffffff",
           "primary_button_text_color": "#52572e",
