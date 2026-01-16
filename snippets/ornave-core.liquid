@@ -1,0 +1,215 @@
+<script id='ornave-script' type='text/javascript'>
+	(function () {
+		try {
+			if (window.ornaveCoreInitialized) return;
+			window.ornaveCoreInitialized = true;
+			const BUILD = 0.4;
+			const SHOW_ALL_LOGS = false;
+
+			const params = new URLSearchParams(window.location.search);
+
+			const ornaveTest = params.get('ornave_test');
+			const disabled = params.get('ornave_disabled') === '1';
+			const occDisabled = params.get('ornave_occ_disabled') === '1';
+
+			if (disabled) {
+				console.log('Ornave.Disabled!');
+				return;
+			}
+
+			const log = (...args) => {
+				if (!SHOW_ALL_LOGS && !ornaveTest) return;
+				console.log(...args);
+			};
+
+			async function fetchApi(endpoint, method = 'GET', body, isFullUrl) {
+				log(`⏲ Fetching: ${endpoint}`);
+				let url = `https://api.ornave.com/api${endpoint}`;
+				if (isFullUrl) {
+					url = endpoint;
+				}
+				const [res, err] = await fetch(url, {
+					method,
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(body),
+				})
+					.then((res) => res.json())
+					.then((data) => {
+						if (isFullUrl) {
+							return [data, false];
+						}
+						return [data.data, false];
+					})
+					.catch((error) => {
+						return [null, error];
+					});
+
+				log(`✅ Response: ${endpoint}`, res, err);
+
+				return [res, err];
+			}
+
+			function loadGoogleFont(name, weight) {
+				log('⏲ Loading.Google.Font:', name);
+				if (!name || name === 'Default') {
+					return;
+				}
+
+				const encodedName = name.replace(/ /g, '+');
+				const id = `font-${encodedName}-${weight}`;
+				const exists = document.querySelector(`#${id}`);
+				if (exists) {
+					return true;
+				}
+				const link = document.createElement('link');
+				link.rel = 'stylesheet';
+				link.id = id;
+
+				const fontParams = {
+					family: weight ? `${encodedName}:wght@${weight}` : encodedName,
+					display: 'swap',
+				};
+
+				const qs = new URLSearchParams(fontParams).toString();
+
+				link.href = `https://fonts.googleapis.com/css2?${qs}`;
+
+				document.head.appendChild(link);
+				log('✅ Loaded.Google.Font:', name);
+				return true;
+			}
+
+			const API = {
+				fetch: (url, method, data) => fetchApi(url, method, data, true),
+				sendSMSOTP: (data) => fetchApi('/a/send/otp/phone', 'POST', data),
+				sendEmailOTP: (data) => fetchApi('/a/send/otp/email', 'POST', data),
+				verifyOTP: (data) => fetchApi('/a/verify/otp', 'POST', data),
+				getAddresses: (email) => fetchApi(`/a/address?email=${email}`, 'GET'),
+				createAddress: (data) => fetchApi('/a/address', 'POST', data),
+				deleteAddress: (addressId) => fetchApi(`/a/address/${addressId}`, 'DELETE'),
+				trackImageCropper: (shop) => fetchApi(`/r/track/crop?shop=${shop}`, 'GET')
+			};
+
+			const localStore = {
+				get: (name, isJson) => {
+					const raw = localStorage.getItem(name);
+					let finalData = raw;
+					if (isJson) {
+						finalData = JSON.parse(raw);
+					}
+					return finalData;
+				},
+				set: (name, data, isJson) => {
+					let finalData = data;
+					if (isJson) {
+						finalData = JSON.stringify(data);
+					}
+					localStorage.setItem(name, finalData);
+				},
+			};
+
+			// Only logs if ?ornave_test=NB is passed in the URL query, and the BUILD used was "NB_0.3" for example.
+			const initLogger = (build) => {
+				const app = build.split('_')[0];
+				if (!SHOW_ALL_LOGS && ornaveTest !== app) return () => { };
+
+				return (...args) => log(build, ...args);
+			};
+
+			const loadScript = (id, src) =>
+				new Promise((resolve) => {
+					const exists = document.querySelector(`#${id}`);
+					if (exists) {
+						return resolve(true);
+					}
+					const script = document.createElement('script');
+					script.src = src;
+					script.id = id;
+					script.async = true;
+					script.addEventListener('load', () => {
+						return resolve(true);
+					});
+
+					document.head.appendChild(script);
+				});
+
+			const loadStyle = (id, src) =>
+				new Promise((resolve) => {
+					const exists = document.querySelector(`#${id}`);
+					if (exists) {
+						return resolve(true);
+					}
+					const link = document.createElement('link');
+					link.rel = 'stylesheet';
+					link.id = id;
+					link.href = src;
+
+					link.addEventListener('load', () => {
+						return resolve(true);
+					});
+
+					document.head.appendChild(link);
+				});
+
+			// Note: page_type variable is declared outside for usage in this scope.
+			const page_type = `{{ request.page_type }}`;
+
+			const allCollections = []
+			{% for collection in collections limit: 600 %}
+			allCollections.push({ handle: '{{ collection.handle }}', title: `{{ collection.title }}` })
+			{% endfor %}
+
+			const finalObject = {
+				build: BUILD,
+				request: {
+					page_type,
+					designMode: `{{ request.design_mode }}` === 'true',
+				},
+				templateName: `{{ template.name }}`,
+				config: JSON.parse(`{% render "ornave-config" %}`),
+				occDisabled,
+				API,
+				localStore,
+				log,
+				initLogger,
+				loadScript,
+				loadStyle,
+				loadGoogleFont,
+				handle: `{{ product.handle }}`,
+				page: {
+					title: `{{ page.title }}`,
+					url: `{{ page.url }}`,
+				},
+				allCollections
+			};
+
+			if (page_type === 'product') {
+				finalObject.currentProduct = {
+					id: parseInt(`{{ product.id }}`, 10),
+					title: `{{ product.title }}`,
+					handle: `{{ product.handle }}`,
+					tags: JSON.parse(`{{ product.tags | json }}`),
+					image: `{{ product.featured_image | img_url: 'large' }}`,
+					price: `{{ product.price | money }}`,
+					url: `{{ product.url }}`,
+					collections: JSON.parse(`{{ product.collections | map: 'handle' | json }}`),
+				};
+			} else if (page_type === 'collection') {
+				finalObject.currentCollection = {
+					id: parseInt(`{{ collection.id }}`, 10),
+					title: `{{ collection.title }}`,
+					handle: `{{ collection.handle }}`,
+					url: `{{ collection.url }}`,
+				};
+			}
+
+			window.ornave = finalObject;
+
+			log(`Ornave@${BUILD}`, window.ornave);
+		} catch (e) {
+			console.log('Ornave.Core.Caught:', e);
+		}
+	})();
+</script>

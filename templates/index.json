@@ -1,0 +1,918 @@
+{
+  "sections": {
+    "rich_text_kxekkr": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_L66Ywm": {
+          "type": "heading",
+          "settings": {
+            "text": "The Masterpiece has returned",
+            "heading_tag": "h3",
+            "indent": "none",
+            "highlight_effect": "default",
+            "highlight_accent_color": "",
+            "highlight_text_color": ""
+          }
+        },
+        "richtext_cJ4hir": {
+          "type": "richtext",
+          "settings": {
+            "text": "<p>Our most requested design — back in a new form. Same story. Same longing. Limited release.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_L66Ywm",
+        "richtext_cJ4hir"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich_text.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_width": "md",
+        "text_alignment": "center"
+      }
+    },
+    "rich_text_WgmUfP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_RqHQQg": {
+          "type": "heading",
+          "settings": {
+            "text": "The \"Return of the Third Star\" Drop",
+            "heading_tag": "h3",
+            "indent": "none",
+            "highlight_effect": "default",
+            "highlight_accent_color": "",
+            "highlight_text_color": ""
+          }
+        },
+        "richtext_Fb6CGM": {
+          "type": "richtext",
+          "settings": {
+            "text": "<p>History was stitched into this collection — for those who know that freedom isn't given. It's reclaimed.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_RqHQQg",
+        "richtext_Fb6CGM"
+      ],
+      "disabled": true,
+      "name": "t:sections.rich_text.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "content_width": "md",
+        "text_alignment": "center"
+      }
+    },
+    "featured_product_KygFGm": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_Edc4gb": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_tjEYYR": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "badges_WmAWTe": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_t6KarN": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_aU9dHF": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms_zeUnyq": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_xNyBzP": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_bCKTpg": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
+        "variant_picker_cP9ndL": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "separate_options": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "swatch_selector_size": "lg",
+            "block_selector_style": "outline",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons_mfgAXR": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "show_quantity_selector": true,
+            "add_quantity_selector_spacing": true,
+            "atc_button_style": "solid",
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_4g4U7B": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_Edc4gb",
+        "title_tjEYYR",
+        "badges_WmAWTe",
+        "price_t6KarN",
+        "rating_aU9dHF",
+        "payment_terms_zeUnyq",
+        "separator_xNyBzP",
+        "description_bCKTpg",
+        "variant_picker_cP9ndL",
+        "buy_buttons_mfgAXR",
+        "pickup_availability_4g4U7B"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "title": "",
+        "title_tag": "h3",
+        "title_icon": "none",
+        "show_scrolling_title": false,
+        "show_product_link": false,
+        "text_alignment": "center",
+        "product": "ghalabany-al-shawq-غَلبَني-الشَوق-crewneck-unisex",
+        "product_media_size": 50,
+        "content_alignment": "center",
+        "desktop_media_layout": "carousel",
+        "desktop_carousel_controls": "thumbnails_under",
+        "mobile_controls": "lines",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "before_after_6QLwJQ": {
+      "type": "before-after",
+      "blocks": {
+        "before_erNEdz": {
+          "type": "before",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/49_0a3333a8-cff7-4d94-9922-c414bb052dbf.jpg",
+            "text": "Black",
+            "text_size": "h7",
+            "text_position": "start"
+          }
+        },
+        "after_XQARY4": {
+          "type": "after",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/43_629a2ff0-8eca-459b-80cc-cd4e0be1d96c.jpg",
+            "text": "White",
+            "text_size": "h7",
+            "text_position": "start"
+          }
+        }
+      },
+      "block_order": [
+        "before_erNEdz",
+        "after_XQARY4"
+      ],
+      "disabled": true,
+      "name": "t:sections.before_after.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "layout": "stacked",
+        "add_comparison_spacing": true,
+        "subheading": "",
+        "title": "One Story. Two tones.",
+        "title_tag": "h3",
+        "content": "<p>The fight for freedom, the third star reclaimed — stitched in both black and white.<br/><br/>Two ways to carry the memory — stitched for those who never forgot.<br/><br/>Limited to 128 pieces each. No restocks planned.</p>",
+        "button_text": "Buy Now",
+        "button_url": "",
+        "button_style": "solid",
+        "cursor_direction": "horizontal",
+        "cursor_initial_position": 50,
+        "cursor_background": "#ffffff",
+        "cursor_arrows_color": "#000000"
+      }
+    },
+    "slideshow_xa9ain": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow_image_slide_HqNtVP": {
+          "type": "_slideshow-image-slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/ShawQ-Winter-Sale-Banner.png",
+            "mobile_image": "shopify://shop_images/ShawQ-Winter-Sale-Banner.png",
+            "slide_link": "https://shawq.co/collections/palestine-culture-inspired",
+            "content_max_width": 1360,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow-controls": {
+          "type": "_slideshow-controls",
+          "static": true,
+          "settings": {
+            "controls_style": "line",
+            "controls_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "slideshow_image_slide_HqNtVP"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "allow_transparent_header": false,
+        "image_size": "auto",
+        "transition_type": "curtain",
+        "autoplay": true,
+        "pause_auto_rotate_on_hover": false,
+        "cycle_speed": 6,
+        "background": "#000000"
+      }
+    },
+    "image_with_text_overlay_DTaMy3": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_Vcyg6T": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "Subheading"
+          },
+          "blocks": {}
+        },
+        "heading_fPLcCc": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Image with text overlay",
+            "heading_size": "h3",
+            "html_tag": "p",
+            "indent": "none",
+            "highlight_effect": "default",
+            "highlight_accent_color": "",
+            "highlight_text_color": ""
+          },
+          "blocks": {}
+        },
+        "rich_text_eKbmi6": {
+          "type": "rich-text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Write some text about your products or your brand.</p>",
+            "content_width": "sm"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "subheading_Vcyg6T",
+        "heading_fPLcCc",
+        "rich_text_eKbmi6"
+      ],
+      "disabled": true,
+      "name": "t:sections.image_with_text_overlay.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "allow_transparent_header": false,
+        "image_size": "auto",
+        "image": "shopify://shop_images/1_5ade6b60-cdf0-478d-bb56-ceb953060e69.png",
+        "mobile_image": "shopify://shop_images/2_1.png",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20,
+        "enable_sticky_content": false,
+        "content_width": "md",
+        "desktop_text_position": "sm:place-self-center",
+        "mobile_text_position": "place-self-center"
+      }
+    },
+    "scrolling_content_ynHGiT": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_9mazBM": {
+          "type": "text",
+          "settings": {
+            "text": "Very Few Are Left",
+            "icon_position": "before_text",
+            "highlight_effect": "default",
+            "highlight_accent_color": "",
+            "highlight_text_color": ""
+          }
+        },
+        "text_BJKtQF": {
+          "type": "text",
+          "settings": {
+            "text": "<em>Secure yours now!</em>",
+            "icon_position": "before_text",
+            "highlight_effect": "default",
+            "highlight_accent_color": "#c2186a",
+            "highlight_text_color": "#c2186a"
+          }
+        }
+      },
+      "block_order": [
+        "text_9mazBM",
+        "text_BJKtQF"
+      ],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "scrolling_speed": 0.3,
+        "scroll_direction": "start-to-end",
+        "section_rotation": 0,
+        "pause_on_hover": false,
+        "text_font": "body",
+        "text_font_size_mobile": 2.5,
+        "text_font_size_desktop": 1.5,
+        "section_vertical_spacing_mobile": 10,
+        "section_vertical_spacing_desktop": 10,
+        "item_horizontal_spacing_mobile": 10,
+        "item_horizontal_spacing_desktop": 15
+      }
+    },
+    "featured_collections_6bUQmh": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_iHKVLh": {
+          "type": "collection",
+          "settings": {
+            "collection": "tops",
+            "products_count": 8,
+            "title": "{{ block.settings.collection.title }}",
+            "content": "{{ block.settings.collection.description }}",
+            "link": "{{ block.settings.collection.url }}"
+          }
+        }
+      },
+      "block_order": [
+        "collection_iHKVLh"
+      ],
+      "name": "t:sections.featured_collections.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "stack_products_mobile": true,
+        "stack_products_desktop": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 3,
+        "tabs_alignment": "start",
+        "tabs_icon": "arrow",
+        "show_view_all_button": false,
+        "show_scrolling_bar": true
+      }
+    },
+    "featured_collections_nbzfLm": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_KKwmaF": {
+          "type": "collection",
+          "settings": {
+            "collection": "bottoms",
+            "products_count": 8,
+            "title": "{{ block.settings.collection.title }}",
+            "content": "{{ block.settings.collection.description }}",
+            "link": "{{ block.settings.collection.url }}"
+          }
+        }
+      },
+      "block_order": [
+        "collection_KKwmaF"
+      ],
+      "name": "t:sections.featured_collections.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "stack_products_mobile": true,
+        "stack_products_desktop": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "tabs_alignment": "start",
+        "tabs_icon": "arrow",
+        "show_view_all_button": false,
+        "show_scrolling_bar": true
+      }
+    },
+    "featured_product_j9PJPz": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_AfJ63H": {
+          "type": "vendor",
+          "settings": {}
+        },
+        "title_PXGDTa": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "badges_GMLwn8": {
+          "type": "badges",
+          "settings": {}
+        },
+        "price_tPctGi": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "offers_Xkcbnt": {
+          "type": "offers",
+          "settings": {
+            "layout": "stacked",
+            "icon_position": "inline",
+            "text_alignment": "center",
+            "offer_1_icon": "shopify://shop_images/lower-the-heart-a-little-bit.png",
+            "offer_1_icon_width": 48,
+            "offer_1_subheading": "<span style=\"text-decoration:underline\"><strong>50% Of Profit is Donated Towards Gaza</strong></span>",
+            "offer_1_content": "",
+            "offer_1_background": "#ffffff",
+            "offer_1_text_color": "#dc1684",
+            "offer_2_icon_width": 26,
+            "offer_2_subheading": "",
+            "offer_2_content": "",
+            "offer_2_background": "#f9f9f9",
+            "offer_2_text_color": "#000000",
+            "offer_3_icon_width": 16,
+            "offer_3_subheading": "",
+            "offer_3_content": "",
+            "offer_3_background": "#f9f9f9",
+            "offer_3_text_color": "#000000"
+          }
+        },
+        "rating_FLg3Mp": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms_Un3CaE": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_VNrDPx": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_hWDfVf": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
+        "accordion_mgzagU": {
+          "type": "accordion",
+          "settings": {
+            "title": "Wall-Art Measurements",
+            "content": "",
+            "uppercase_title": false,
+            "icon": "picto-measure",
+            "page": "wallart-sizechart"
+          }
+        },
+        "accordion_kHKBVL": {
+          "type": "accordion",
+          "settings": {
+            "title": "Print Or Embroidery ?",
+            "content": "<p>Fully Embroidered Wall Art <br/>-98,000 stitches<br/>-3D Puff Embroidery ⁠<br/>-Patch Embroidery⁠<br/>-Cross Stitch Embroidery</p>",
+            "uppercase_title": false,
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/EMBROIDERY-01.png",
+            "page": ""
+          }
+        },
+        "variant_picker_JVFhFa": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "hide_sold_out_variants": false,
+            "separate_options": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "swatch_selector_size": "lg",
+            "block_selector_style": "outline",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons_p8MGWb": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "show_quantity_selector": true,
+            "add_quantity_selector_spacing": true,
+            "atc_button_style": "solid",
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_rn7j49": {
+          "type": "pickup_availability",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_AfJ63H",
+        "title_PXGDTa",
+        "badges_GMLwn8",
+        "price_tPctGi",
+        "offers_Xkcbnt",
+        "rating_FLg3Mp",
+        "payment_terms_Un3CaE",
+        "separator_VNrDPx",
+        "description_hWDfVf",
+        "accordion_mgzagU",
+        "accordion_kHKBVL",
+        "variant_picker_JVFhFa",
+        "buy_buttons_p8MGWb",
+        "pickup_availability_rn7j49"
+      ],
+      "name": "t:sections.featured_product.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "title": "",
+        "title_tag": "h3",
+        "title_icon": "none",
+        "show_scrolling_title": false,
+        "show_product_link": false,
+        "text_alignment": "left",
+        "product": "palestine-frame",
+        "product_media_size": 50,
+        "content_alignment": "left",
+        "desktop_media_layout": "carousel",
+        "desktop_carousel_controls": "thumbnails_under",
+        "mobile_controls": "lines",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "featured_product_Vxmz8z": {
+      "type": "featured-product",
+      "blocks": {
+        "title_V8PhGP": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price_BQG3XC": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_J3nWar": {
+          "type": "rating",
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms_tD6gVX": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_jz7e9f": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description_T84Rwe": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
+        "variant_picker_X4WRXe": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "separate_options": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "swatch_selector_size": "lg",
+            "block_selector_style": "outline",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons_JJGgPz": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "show_quantity_selector": true,
+            "add_quantity_selector_spacing": true,
+            "atc_button_style": "solid",
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_3aDnCn": {
+          "type": "pickup_availability",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_V8PhGP",
+        "price_BQG3XC",
+        "rating_J3nWar",
+        "payment_terms_tD6gVX",
+        "separator_jz7e9f",
+        "description_T84Rwe",
+        "variant_picker_X4WRXe",
+        "buy_buttons_JJGgPz",
+        "pickup_availability_3aDnCn"
+      ],
+      "name": "t:sections.featured_product.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "title": "Featured product",
+        "title_tag": "h3",
+        "title_icon": "none",
+        "show_scrolling_title": false,
+        "show_product_link": false,
+        "text_alignment": "left",
+        "product": "kuffiyah-1",
+        "product_media_size": 50,
+        "content_alignment": "left",
+        "desktop_media_layout": "carousel",
+        "desktop_carousel_controls": "thumbnails_under",
+        "mobile_controls": "lines",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "featured_product_XWFdCx": {
+      "type": "featured-product",
+      "blocks": {
+        "vendor_j3rVk3": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "title_RCXxqy": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "badges_ndkPjD": {
+          "type": "badges",
+          "disabled": true,
+          "settings": {}
+        },
+        "price_enMwLA": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "rating_jdLc7t": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "payment_terms_t4fY9y": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator_GhWj34": {
+          "type": "separator",
+          "disabled": true,
+          "settings": {}
+        },
+        "description_94zpaW": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
+        "variant_picker_iTNkkr": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "hide_sold_out_variants": false,
+            "separate_options": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "swatch_selector_size": "lg",
+            "block_selector_style": "outline",
+            "variant_image_options": "",
+            "size_chart_page": ""
+          }
+        },
+        "buy_buttons_UCf7CX": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "show_quantity_selector": true,
+            "add_quantity_selector_spacing": true,
+            "atc_button_style": "solid",
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "pickup_availability_bUJB7j": {
+          "type": "pickup_availability",
+          "disabled": true,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "vendor_j3rVk3",
+        "title_RCXxqy",
+        "badges_ndkPjD",
+        "price_enMwLA",
+        "rating_jdLc7t",
+        "payment_terms_t4fY9y",
+        "separator_GhWj34",
+        "description_94zpaW",
+        "variant_picker_iTNkkr",
+        "buy_buttons_UCf7CX",
+        "pickup_availability_bUJB7j"
+      ],
+      "name": "t:sections.featured_product.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "subheading": "",
+        "title": "Featured product",
+        "title_tag": "h3",
+        "title_icon": "none",
+        "show_scrolling_title": false,
+        "show_product_link": false,
+        "text_alignment": "left",
+        "product": "palestine-keychain",
+        "product_media_size": 50,
+        "content_alignment": "left",
+        "desktop_media_layout": "carousel",
+        "desktop_carousel_controls": "thumbnails_under",
+        "mobile_controls": "lines",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "slideshow_XTjN9W": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow_image_slide_pULHcA": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/img_0035_a3fc9191-67ee-4e82-b38f-abd2f8b883ce.png",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_8qLHY6": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/img_9649_cfd27b8f-4aa9-45e7-8d47-2ad220d4b982.png",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_Px3yV9": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/img_9665_0884f6b2-96c9-42a9-8c38-3a6489b2f7a0.png",
+            "slide_link": "https://urlgeni.us/instagram/ShawQ1",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_mMfkx8": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_9662_638d4587-1031-4fb5-b43f-31ea85326b69.jpg",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow-controls": {
+          "type": "_slideshow-controls",
+          "static": true,
+          "settings": {
+            "controls_style": "line",
+            "controls_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "slideshow_image_slide_pULHcA",
+        "slideshow_image_slide_8qLHY6",
+        "slideshow_image_slide_Px3yV9",
+        "slideshow_image_slide_mMfkx8"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "transition_type": "curtain",
+        "autoplay": true,
+        "pause_auto_rotate_on_hover": false,
+        "cycle_speed": 6,
+        "background": "#000000"
+      }
+    }
+  },
+  "order": [
+    "rich_text_kxekkr",
+    "rich_text_WgmUfP",
+    "featured_product_KygFGm",
+    "before_after_6QLwJQ",
+    "slideshow_xa9ain",
+    "image_with_text_overlay_DTaMy3",
+    "scrolling_content_ynHGiT",
+    "featured_collections_6bUQmh",
+    "featured_collections_nbzfLm",
+    "featured_product_j9PJPz",
+    "featured_product_Vxmz8z",
+    "featured_product_XWFdCx",
+    "slideshow_XTjN9W"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message_Py6mEe": {
+          "type": "message",
+          "settings": {
+            "text": "Exceed 299$ Cart Value For A Very Exclusive Gift"
+          }
+        },
+        "message_AQYUJ8": {
+          "type": "message",
+          "disabled": true,
+          "settings": {
+            "text": "ALL ITEMS ARE READY TO SHIP"
+          }
+        },
+        "message_KfCkqd": {
+          "type": "message",
+          "settings": {
+            "text": "Free shipping over 150$ WorldWide"
+          }
+        },
+        "message_VVnDmp": {
+          "type": "message",
+          "settings": {
+            "text": "Each Order donates 1 meal for g*za"
+          }
+        }
+      },
+      "block_order": [
+        "message_Py6mEe",
+        "message_AQYUJ8",
+        "message_KfCkqd",
+        "message_VVnDmp"
+      ],
+      "settings": {
+        "color_scheme": "scheme-6",
+        "enable_sticky": true,
+        "autoplay": true,
+        "cycle_speed": 4
+      }
+    },
+    "176427098145a3ae1c": {
+      "type": "apps",
+      "blocks": {
+        "profy_banner_countdown_timer_app_block_qzrLgE": {
+          "type": "shopify://apps/profy-banner-countdown-timer/blocks/app_block/243a639f-ca73-4afe-b6aa-3a23277fb424",
+          "settings": {
+            "banner_id": "72e3c36d-cbc5-11f0-b848-da56541e1029"
+          }
+        },
+        "section-header": {
+          "type": "_section-header",
+          "static": true,
+          "settings": {
+            "subheading": "",
+            "title": "",
+            "content": "",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "outline",
+            "text_alignment": "left",
+            "heading_size": "h3",
+            "title_icon": "none",
+            "show_scrolling_title": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "profy_banner_countdown_timer_app_block_qzrLgE"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "add_vertical_spacing": false,
+        "add_horizontal_spacing": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "color_scheme": "scheme-6",
+        "enable_sticky": true,
+        "hide_on_scroll": false,
+        "mobile_layout": "logo_center_navigation_split",
+        "desktop_layout": "logo_left_navigation_inline",
+        "logo": "shopify://shop_images/Untitled_design-7.png",
+        "logo_max_width": 140,
+        "logo_mobile_max_width": 100,
+        "menu": "main-menu",
+        "drawer_menu": "",
+        "secondary_menu": "",
+        "desktop_dropdown_menu_style": "below",
+        "menu_open_trigger": "hover",
+        "desktop_icon_size": 16,
+        "drawer_show_nested_menu_indicator": false,
+        "show_country_selector": true,
+        "show_country_name": true,
+        "show_country_flag": true,
+        "show_locale_selector": true,
+        "transparent_header_text_color": "#ffffff",
+        "transparent_logo": "shopify://shop_images/Untitled_design-7.png"
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "176427098145a3ae1c",
+    "header"
+  ]
+}

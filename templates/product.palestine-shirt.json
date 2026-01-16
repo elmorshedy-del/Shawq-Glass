@@ -1,0 +1,417 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h3"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "image_xiEddD": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/your-order-3.png",
+            "alignment": "center",
+            "width_mode": "full_width",
+            "max_width": 300,
+            "mobile_max_width": 200
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "inventory_dYxxDb": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "show_in_stock_quantity": true,
+            "low_inventory_threshold": 0,
+            "show_progress_bar": true,
+            "progress_bar_max_value": 50
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "separate_options": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "swatch_selector_size": "lg",
+            "block_selector_style": "fill",
+            "variant_image_options": "",
+            "size_chart_page": "long-sleeve-t-shirt-sizechart"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "show_quantity_selector": true,
+            "add_quantity_selector_spacing": true,
+            "atc_button_style": "solid",
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "offers_URKkWc": {
+          "type": "offers",
+          "settings": {
+            "layout": "stacked",
+            "icon_position": "inline",
+            "text_alignment": "left",
+            "offer_1_icon": "shopify://shop_images/i-want-a-circular-discount-icon-outlined-only-with-pink-outlines-pink-shade-is-dc1684-no-background-png-128-128-px-i-want-heavy-bold-lines-not-thin.png",
+            "offer_1_icon_width": 48,
+            "offer_1_subheading": "<span style=\"text-decoration:underline\"><strong>use OFF5 FOR 5% Off Your First Order</strong></span>",
+            "offer_1_content": "",
+            "offer_1_background": "#000000",
+            "offer_1_text_color": "#e02e92",
+            "offer_2_icon_width": 16,
+            "offer_2_subheading": "",
+            "offer_2_content": "",
+            "offer_2_background": "#f9f9f9",
+            "offer_2_text_color": "#000000",
+            "offer_3_icon_width": 16,
+            "offer_3_subheading": "",
+            "offer_3_content": "",
+            "offer_3_background": "#f9f9f9",
+            "offer_3_text_color": "#000000"
+          }
+        },
+        "volume_pricing_AktEmK": {
+          "type": "volume_pricing",
+          "settings": {}
+        },
+        "accordion_WaQJRe": {
+          "type": "accordion",
+          "settings": {
+            "title": "<strong>Size Chart</strong>",
+            "content": "",
+            "uppercase_title": false,
+            "icon": "picto-measure",
+            "page": "long-sleeve-t-shirt-sizechart"
+          }
+        },
+        "accordion_fwptnm": {
+          "type": "accordion",
+          "settings": {
+            "title": "Material",
+            "content": "<p>Premium 280GSM 100%  Cotton Jersey</p>",
+            "uppercase_title": false,
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/MATERIAL-01.png",
+            "page": ""
+          }
+        },
+        "accordion_mTNfka": {
+          "type": "accordion",
+          "settings": {
+            "title": "Design Techniques",
+            "content": "<p>-Back Design : 78,000 stitches<br/>-3D Puff Embroidery ⁠<br/>-Patch Embroidery⁠<br/>-Cross Stitch Embroidery</p>",
+            "uppercase_title": false,
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/EMBROIDERY-01.png",
+            "page": ""
+          }
+        },
+        "accordion_r8JbBK": {
+          "type": "accordion",
+          "settings": {
+            "title": "Donation",
+            "content": "<p>Each Order Donates 1 Meal To G*za</p>",
+            "uppercase_title": false,
+            "icon": "picto-heart",
+            "page": ""
+          }
+        },
+        "accordion_ycAAQE": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping / Policy",
+            "content": "<p> We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
+            "uppercase_title": false,
+            "icon": "picto-truck",
+            "page": ""
+          }
+        },
+        "shawq_value_line": {
+          "type": "shawq_value_line",
+          "settings": {
+            "title": "Complete the look — naturally",
+            "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
+          }
+        },
+        "shawq_bundle": {
+          "type": "shawq_bundle",
+          "settings": {
+            "title": "Complete the look",
+            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "bundle_product": ""
+          }
+        },
+        "shawq_reassurance": {
+          "type": "shawq_reassurance",
+          "settings": {
+            "item_1": "Fast shipping — typically 3–4 days",
+            "item_2": "Easy returns & exchanges",
+            "item_3": "Premium embroidery — built to last"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "description",
+        "title",
+        "price",
+        "shawq_value_line",
+        "shawq_bundle",
+        "image_xiEddD",
+        "payment_terms",
+        "inventory_dYxxDb",
+        "badges",
+        "rating",
+        "separator",
+        "variant_picker",
+        "shawq_reassurance",
+        "buy_buttons",
+        "offers_URKkWc",
+        "volume_pricing_AktEmK",
+        "accordion_WaQJRe",
+        "accordion_fwptnm",
+        "accordion_mTNfka",
+        "accordion_r8JbBK",
+        "accordion_ycAAQE"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "allow_transparent_header": false,
+        "transparent_header_use_primary_colors": false,
+        "add_top_spacing": true,
+        "show_sticky_add_to_cart": true,
+        "product_media_size": 50,
+        "content_alignment": "left",
+        "desktop_media_layout": "carousel",
+        "desktop_carousel_controls": "lines",
+        "mobile_controls": "lines",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3
+      }
+    },
+    "video_XRXrd8": {
+      "type": "video",
+      "blocks": {
+        "play_button_WikRWC": {
+          "type": "play_button",
+          "disabled": true,
+          "settings": {
+            "position": "middle_center",
+            "show_play_cursor": false
+          }
+        },
+        "heading_zthtcV": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "text": "Video",
+            "mobile_heading_tag": "h1",
+            "desktop_heading_tag": "sm:h3",
+            "position": "middle_center",
+            "highlight_effect": "default",
+            "highlight_accent_color": "",
+            "highlight_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "play_button_WikRWC",
+        "heading_zthtcV"
+      ],
+      "name": "t:sections.video.name",
+      "settings": {
+        "color_scheme": "",
+        "allow_transparent_header": false,
+        "autoplay": true,
+        "show_controls": false,
+        "video_size": "md",
+        "mobile_video_size": "auto",
+        "video": "shopify://files/videos/No Keychain.mp4",
+        "mobile_video": "shopify://files/videos/No Keychain.mp4",
+        "external_video_url": ""
+      }
+    },
+    "featured_product_list_YnwHEV": {
+      "type": "featured-product-list",
+      "name": "t:sections.featured_product_list.name",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "product_list": [
+          "never-forgotten-never-forgiven-stone-washed-denim-jeans",
+          "kuffiyah-1",
+          "palestine-keychain"
+        ],
+        "stack_products_mobile": false,
+        "stack_products_desktop": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 4,
+        "intro_color_scheme": "",
+        "intro_title": "Frequently bought together ->",
+        "intro_title_tag": "h5",
+        "intro_content": "<p>Complete your full Palestinian outfit</p>",
+        "intro_button_text": "",
+        "intro_button_link": "",
+        "intro_button_style": "outline"
+      }
+    },
+    "slideshow_UtVxJ8": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow_image_slide_B47qtG": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/first-swipe-upper_564b3543-3b45-4fe5-9db1-d5f4c4bfc121.png",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_CzhFzJ": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/img_0035_a3fc9191-67ee-4e82-b38f-abd2f8b883ce.png",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_JmUmjg": {
+          "type": "_slideshow-image-slide",
+          "name": "t:sections.slideshow.blocks.image.name",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/img_9649_cfd27b8f-4aa9-45e7-8d47-2ad220d4b982.png",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_UkMCrt": {
+          "type": "_slideshow-image-slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/img_9665_0884f6b2-96c9-42a9-8c38-3a6489b2f7a0.png",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow_image_slide_Tceb9F": {
+          "type": "_slideshow-image-slide",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_9662_638d4587-1031-4fb5-b43f-31ea85326b69.jpg",
+            "slide_link": "",
+            "content_max_width": 1000,
+            "mobile_content_position": "place-self-center",
+            "desktop_content_position": "sm:place-self-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 20
+          },
+          "blocks": {}
+        },
+        "slideshow-controls": {
+          "type": "_slideshow-controls",
+          "static": true,
+          "settings": {
+            "controls_style": "line",
+            "controls_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "slideshow_image_slide_B47qtG",
+        "slideshow_image_slide_CzhFzJ",
+        "slideshow_image_slide_JmUmjg",
+        "slideshow_image_slide_UkMCrt",
+        "slideshow_image_slide_Tceb9F"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "allow_transparent_header": true,
+        "image_size": "auto",
+        "transition_type": "curtain",
+        "autoplay": true,
+        "pause_auto_rotate_on_hover": false,
+        "cycle_speed": 6,
+        "background": "#000000"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_XRXrd8",
+    "featured_product_list_YnwHEV",
+    "slideshow_UtVxJ8"
+  ]
+}

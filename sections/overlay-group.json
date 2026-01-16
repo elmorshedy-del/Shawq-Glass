@@ -1,0 +1,89 @@
+{
+  "type": "custom.overlay",
+  "name": "Overlay group",
+  "sections": {
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "blocks": {
+        "offer_banner_jXtUjm": {
+          "type": "offer_banner",
+          "settings": {
+            "layout": "half_width",
+            "icon_width": 24,
+            "subheading": "Subheading",
+            "content": "<p>Share a discount code, promote a sale or free shipping offer...</p>",
+            "button_text": "Button text",
+            "button_link": "",
+            "button_copy_on_click": false,
+            "background": "#eef3fd",
+            "text_color": "#0033dd"
+          }
+        },
+        "trust_badges_MitqwF": {
+          "type": "trust_badges",
+          "settings": {
+            "background": "#000000",
+            "text_color": "#dc1684",
+            "trust_1_icon": "shopify://shop_images/lower-the-heart-a-little-bit.png",
+            "trust_1_icon_width": 48,
+            "trust_1_subheading": "<span style=\"text-decoration:underline\"><strong>Your Order Donates To Palestine</strong></span>",
+            "trust_1_content": "",
+            "trust_2_icon_width": 16,
+            "trust_2_subheading": "",
+            "trust_2_content": "",
+            "trust_3_icon_width": 16,
+            "trust_3_subheading": "",
+            "trust_3_content": ""
+          }
+        },
+        "offer_image_8Ty7yd": {
+          "type": "offer_image",
+          "settings": {
+            "layout": "half_width",
+            "heading": "when",
+            "button_text": "Button text",
+            "button_link": "shopify://products/kuffiyah-1",
+            "button_style": "solid",
+            "text_color": "#ffffff",
+            "button_background": "#ffffff",
+            "button_text_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "offer_banner_jXtUjm",
+        "trust_badges_MitqwF",
+        "offer_image_8Ty7yd"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "show_cart_note": true,
+        "show_shipping_estimator": true,
+        "show_shipping_text": true,
+        "show_terms_of_service_checkbox": false,
+        "show_view_cart_button": false,
+        "show_checkout_button": true,
+        "style_addon_product": "kuffiyah-1",
+        "style_addon_title": "Complete the look",
+        "style_addon_subtitle": "Add a keffiyeh — completes the outfit in one tap.",
+        "enable_cross_sell": true,
+        "cross_sell_title": "You may also like"
+      }
+    },
+    "search-drawer": {
+      "type": "search-drawer",
+      "settings": {
+        "color_scheme": "",
+        "popular_searches_title": "Popular searches",
+        "popular_searches_menu": "",
+        "featured_products_title": "Featured products",
+        "featured_products": []
+      }
+    }
+  },
+  "order": [
+    "cart-drawer",
+    "search-drawer"
+  ]
+}
