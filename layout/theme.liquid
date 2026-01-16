@@ -92,7 +92,15 @@
     </span>
     
     {%- if request.page_type != 'password' -%}
-      {%- sections 'header-group' -%}
+      {%- capture header_group_content -%}
+        {%- sections 'header-group' -%}
+      {%- endcapture -%}
+      {{ header_group_content }}
+      {%- if header_group_content == blank -%}
+        {%- section 'announcement-bar' -%}
+        {%- section 'apps' -%}
+        {%- section 'header' -%}
+      {%- endif -%}
       {%- sections 'overlay-group' -%}
     {%- endif -%}
 
