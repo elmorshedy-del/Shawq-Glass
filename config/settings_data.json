@@ -204,7 +204,7 @@
       "scheme-5": {
         "settings": {
           "text_color": "#321e1e",
-          "background": "#f1e4d3",
+          "background": "#faf4f0",
           "background_gradient": "",
           "secondary_background": "#ffffff",
           "primary_button_background": "#321e1e",
@@ -221,8 +221,8 @@
       "scheme-6": {
         "settings": {
           "text_color": "#ffffff",
-          "background": "#52572e",
-          "background_gradient": "",
+          "background": "#fa3f3f",
+          "background_gradient": "linear-gradient(180deg, rgba(255, 145, 129, 1), rgba(254, 91, 124, 1) 49%, rgba(255, 140, 162, 1) 100%)",
           "secondary_background": "#ffffff",
           "primary_button_background": "#ffffff",
           "primary_button_text_color": "#52572e",
