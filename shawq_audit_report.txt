@@ -1,4 +1,0 @@
-Initial JSON errors fixed: 0
-Schema blocks fixed: 97
-Post JSON errors remaining: 0
-Post schema errors remaining: 0
