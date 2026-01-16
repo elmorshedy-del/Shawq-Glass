@@ -226,7 +226,27 @@
           "secondary_button": "background",
           "secondary_button_border": "primary_button_background",
           "on_secondary_button": "primary_button_background"
-        }
+        },
+        "presets": [
+          {
+            "name": "Scheme 1",
+            "settings": {
+              "text_color": "#1c1c1c",
+              "background": "#ffffff",
+              "background_gradient": "",
+              "secondary_background": "#f5f5f5",
+              "primary_button_background": "#1c1c1c",
+              "primary_button_text_color": "#ffffff",
+              "subheading_background": "rgba(0,0,0,0)",
+              "subheading_border_color": "rgba(0,0,0,0)",
+              "subheading_text_color": "#1c1c1c",
+              "heading_highlight_accent_color": "#1c1c1c",
+              "heading_highlight_text_color": "#ffffff",
+              "input_background": "#ffffff",
+              "input_text_color": "#1c1c1c"
+            }
+          }
+        ]
       },
       {
         "type": "color_scheme",
