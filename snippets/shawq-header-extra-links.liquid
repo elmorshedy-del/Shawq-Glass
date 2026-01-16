@@ -14,8 +14,13 @@ Inputs:
 
 {%- for block in section.blocks -%}
   {%- liquid
-    assign is_url_link = block.type == 'shawq_header_link'
-    assign is_collection_link = block.type == 'shawq_hdr_coll_link'
+    assign is_url_link = false
+    assign is_collection_link = false
+    if block.type == 'shawq_header_link'
+      assign is_url_link = true
+    elsif block.type == 'shawq_hdr_coll_link'
+      assign is_collection_link = true
+    endif
   -%}
 
   {%- if is_url_link or is_collection_link -%}
