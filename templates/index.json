@@ -387,7 +387,7 @@
             "products_count": 8,
             "title": "{{ block.settings.collection.title }}",
             "content": "{{ block.settings.collection.description }}",
-            "link": "{{ block.settings.collection.url }}"
+            "link": ""
           }
         }
       },

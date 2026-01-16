@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
@@ -19,14 +28,14 @@
       "type": "main-collection",
       "settings": {
         "color_scheme": "scheme-2",
-        "show_value_props": false,
+        "show_value_props": true,
         "value_prop_1": "Ships fast (2–4 days)",
         "value_prop_2": "<strong>Premium embroidery, built to last</strong>",
         "value_prop_3": "<strong>Premium embroidery, built to last</strong>",
         "products_per_page": 36,
         "products_per_row_mobile": 2,
         "products_per_row_desktop": 4,
-        "show_product_card_size_selector": true,
+        "show_product_card_size_selector": false,
         "quick_links_menu": "",
         "filter_layout": "drawer",
         "show_sort_by": true,
