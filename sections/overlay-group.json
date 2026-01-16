@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "custom.overlay",
   "name": "Overlay group",
@@ -5,20 +14,6 @@
     "cart-drawer": {
       "type": "cart-drawer",
       "blocks": {
-        "offer_banner_jXtUjm": {
-          "type": "offer_banner",
-          "settings": {
-            "layout": "half_width",
-            "icon_width": 24,
-            "subheading": "Subheading",
-            "content": "<p>Share a discount code, promote a sale or free shipping offer...</p>",
-            "button_text": "Button text",
-            "button_link": "",
-            "button_copy_on_click": false,
-            "background": "#eef3fd",
-            "text_color": "#0033dd"
-          }
-        },
         "trust_badges_MitqwF": {
           "type": "trust_badges",
           "settings": {
@@ -51,7 +46,6 @@
         }
       },
       "block_order": [
-        "offer_banner_jXtUjm",
         "trust_badges_MitqwF",
         "offer_image_8Ty7yd"
       ],
@@ -64,7 +58,7 @@
         "show_terms_of_service_checkbox": false,
         "show_view_cart_button": false,
         "show_checkout_button": true,
-        "style_addon_product": "kuffiyah-1",
+        "style_addon_product": "third-najm-black-hoodie-unisex-copy",
         "style_addon_title": "Complete the look",
         "style_addon_subtitle": "Add a keffiyeh — completes the outfit in one tap.",
         "enable_cross_sell": true,

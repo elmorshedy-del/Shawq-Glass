@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -67,7 +76,7 @@
           "type": "description",
           "settings": {
             "collapse_content": false,
-            "uppercase_title": false
+            "uppercase_title": true
           }
         },
         "variant_picker": {
@@ -76,7 +85,7 @@
             "hide_sold_out_variants": false,
             "separate_options": false,
             "selector_style": "block",
-            "swatch_selector_style": "swatch",
+            "swatch_selector_style": "block_swatch",
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
@@ -191,7 +200,7 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
-        "content_alignment": "left",
+        "content_alignment": "center",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
         "mobile_controls": "lines",
@@ -220,11 +229,11 @@
         "products_per_row_desktop": 4,
         "intro_color_scheme": "",
         "intro_title": "Few Items left in stock ->",
-        "intro_title_tag": "h5",
+        "intro_title_tag": "h4",
         "intro_content": "<p>Secure Yours now before they are gone</p>",
         "intro_button_text": "",
         "intro_button_link": "",
-        "intro_button_style": "outline"
+        "intro_button_style": "link"
       }
     }
   },
