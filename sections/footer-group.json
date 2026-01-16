@@ -1,0 +1,132 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "trust-icons": {
+      "type": "trust-icons",
+      "blocks": {
+        "item-1": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 36,
+            "mobile_icon_width": 20,
+            "title": "Worldwide delivery",
+            "content": "Receive your order anywhere in the world."
+          }
+        },
+        "item-2": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "mobile_icon_width": 20,
+            "title": "Fast shipping",
+            "content": "Super fast shipping in 48 hours."
+          }
+        },
+        "item-3": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "mobile_icon_width": 20,
+            "title": "Customer service",
+            "content": "We are available from monday to friday to answer your questions."
+          }
+        },
+        "item-4": {
+          "type": "item",
+          "settings": {
+            "icon": "none",
+            "icon_width": 24,
+            "mobile_icon_width": 20,
+            "title": "Secure payment",
+            "content": "Your payment information is processed securely."
+          }
+        }
+      },
+      "block_order": [
+        "item-1",
+        "item-2",
+        "item-3",
+        "item-4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "item_heading_style": "h7"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "links_zFkjhC": {
+          "type": "links",
+          "settings": {
+            "menu": "policies",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links_JUC4dc": {
+          "type": "links",
+          "settings": {
+            "menu": "contact",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "disabled": true,
+          "settings": {
+            "title": "Newsletter",
+            "content": "<p>Sign up to our newsletter to receive exclusive offers.</p>",
+            "disclaimer_text": "<p>By signing up to our newsletter, you agree with our privacy policy.</p>"
+          }
+        },
+        "links": {
+          "type": "links",
+          "disabled": true,
+          "settings": {
+            "menu": "footer",
+            "collapse_on_mobile": true,
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "About",
+            "content": "<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.</p>",
+            "enable_follow_on_shop": true
+          }
+        }
+      },
+      "block_order": [
+        "links_zFkjhC",
+        "links_JUC4dc",
+        "newsletter",
+        "links",
+        "text"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_country_selector": false,
+        "show_country_name": false,
+        "show_country_flag": false,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "trust-icons",
+    "footer"
+  ]
+}

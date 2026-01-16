@@ -1,0 +1,62 @@
+{%- comment -%}
+Renders extra header/menu links inserted via Header section blocks.
+
+Inputs:
+- section: header section object
+- pos: position string (before, after_1..after_12, end)
+- ctx: 'desktop' or 'mobile'
+{%- endcomment -%}
+
+{%- liquid
+  assign _pos = pos | default: 'end'
+  assign _ctx = ctx | default: 'desktop'
+-%}
+
+{%- for block in section.blocks -%}
+  {%- liquid
+    assign is_url_link = block.type == 'shawq_header_link'
+    assign is_collection_link = block.type == 'shawq_header_collection_link'
+  -%}
+
+  {%- if is_url_link or is_collection_link -%}
+    {%- liquid
+      assign block_pos = block.settings.position | default: 'end'
+      if block_pos != _pos
+        continue
+      endif
+
+      assign show_ok = true
+      if _ctx == 'desktop' and block.settings.show_on_desktop == false
+        assign show_ok = false
+      endif
+      if _ctx == 'mobile' and block.settings.show_on_mobile == false
+        assign show_ok = false
+      endif
+
+      assign label = block.settings.label | default: ''
+      assign href = ''
+
+      if is_url_link
+        assign href = block.settings.url
+      else
+        assign c = block.settings.collection
+        if c != blank
+          assign href = c.url
+          if label == blank
+            assign label = c.title
+          endif
+        endif
+      endif
+    -%}
+
+    {%- if show_ok and href != blank and label != blank -%}
+      <li {{ block.shopify_attributes }}>
+        {%- if _ctx == 'mobile' -%}
+          <a href="{{ href }}" class="h4 w-full" {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ label }}</a>
+        {%- else -%}
+          <a href="{{ href }}" class="block subheading link-reversed" {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ label }}</a>
+        {%- endif -%}
+      </li>
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}

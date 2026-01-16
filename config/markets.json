@@ -1,0 +1,7 @@
+{
+  "markets": {
+    "turkey": {
+      "parent": "@default"
+    }
+  }
+}
