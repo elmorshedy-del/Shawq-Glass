@@ -382,6 +382,7 @@
           "settings": {
             "text_color": "#ffffff",
             "background": "#000000",
+            "background_gradient": "",
             "secondary_background": "#000000",
             "subheading_background": "",
             "subheading_border_color": "",
