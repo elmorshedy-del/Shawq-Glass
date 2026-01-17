@@ -17,11 +17,11 @@
         "trust_badges_MitqwF": {
           "type": "trust_badges",
           "settings": {
-            "background": "#000000",
+            "background": "#ffffff",
             "text_color": "#dc1684",
             "trust_1_icon": "shopify://shop_images/lower-the-heart-a-little-bit.png",
-            "trust_1_icon_width": 48,
-            "trust_1_subheading": "<span style=\"text-decoration:underline\"><strong>Your Order Donates To Palestine</strong></span>",
+            "trust_1_icon_width": 34,
+            "trust_1_subheading": "Your Orders Donates To Palestine",
             "trust_1_content": "",
             "trust_2_icon_width": 16,
             "trust_2_subheading": "",
