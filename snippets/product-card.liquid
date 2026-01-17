@@ -225,20 +225,24 @@ Supported variables
     {%- endif -%}
 
     {%- if show_product_size_selector -%}
-      <div class="product-card__floating-size-selector touch:hidden">
+      <div class="product-card__floating-size-selector card-size-picker touch:hidden">
         {%- for variant in product.variants -%}
           <product-form>
             {%- form 'product', product -%}
               <input type="hidden" name="quantity" value="1">
               <input type="hidden" name="id" value="{{ variant.id }}">
 
-              {%- assign class_list = 'floating-size-selector__button' -%}
+              {%- assign class_list = 'floating-size-selector__button card-size-option' -%}
               {%- assign disabled = false -%}
 
               {%- unless variant.available -%}
-                {%- assign class_list = class_list | append: ' is-disabled' -%}
+                {%- assign class_list = class_list | append: ' is-disabled is-unavailable' -%}
                 {%- assign disabled = true -%}
               {%- endunless -%}
+
+              {%- if variant.id == product.selected_or_first_available_variant.id -%}
+                {%- assign class_list = class_list | append: ' is-selected' -%}
+              {%- endif -%}
 
               {%- render 'button', type: 'submit', content: variant.title, size: 'sm', background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, stretch: true, disabled: disabled, class: class_list -%}
             {%- endform -%}
