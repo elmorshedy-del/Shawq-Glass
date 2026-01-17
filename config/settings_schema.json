@@ -1454,6 +1454,546 @@
       },
       {
         "type": "header",
+        "content": "Shawq Glass — Advanced (Background / Cards / Buttons)"
+      },
+      {
+        "type": "range",
+        "id": "shawq_bg_frost_opacity",
+        "label": "Background frost opacity",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "shawq_bg_frost_blur_desktop",
+        "label": "Background frost blur (desktop)",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_bg_frost_blur_mobile",
+        "label": "Background frost blur (mobile)",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_bg_frost_saturate",
+        "label": "Background frost saturate",
+        "min": 100,
+        "max": 220,
+        "step": 5,
+        "default": 160,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_bg_frost_contrast",
+        "label": "Background frost contrast",
+        "min": 100,
+        "max": 140,
+        "step": 1,
+        "default": 105,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_surface_alpha_desktop",
+        "label": "Card surface alpha (desktop)",
+        "min": 5,
+        "max": 60,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_surface_alpha_mobile",
+        "label": "Card surface alpha (mobile)",
+        "min": 5,
+        "max": 60,
+        "step": 1,
+        "default": 26
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_blur_desktop",
+        "label": "Card blur (desktop)",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_blur_mobile",
+        "label": "Card blur (mobile)",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_saturate_desktop",
+        "label": "Card saturate (desktop)",
+        "min": 100,
+        "max": 220,
+        "step": 5,
+        "default": 165,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_saturate_mobile",
+        "label": "Card saturate (mobile)",
+        "min": 100,
+        "max": 220,
+        "step": 5,
+        "default": 160,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_contrast_desktop",
+        "label": "Card contrast (desktop)",
+        "min": 100,
+        "max": 140,
+        "step": 1,
+        "default": 105,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_contrast_mobile",
+        "label": "Card contrast (mobile)",
+        "min": 100,
+        "max": 140,
+        "step": 1,
+        "default": 103,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_radius_desktop",
+        "label": "Card radius (desktop)",
+        "min": 8,
+        "max": 30,
+        "step": 1,
+        "default": 18,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_radius_mobile",
+        "label": "Card radius (mobile)",
+        "min": 8,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_border_alpha",
+        "label": "Card border alpha",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_shadow_alpha",
+        "label": "Card shadow alpha",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_specular_opacity_desktop",
+        "label": "Card specular opacity (desktop)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 75
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_specular_opacity_mobile",
+        "label": "Card specular opacity (mobile)",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 65
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_specular_angle",
+        "label": "Card specular angle",
+        "min": 0,
+        "max": 180,
+        "step": 1,
+        "default": 135,
+        "unit": "deg"
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_spec_stop0_alpha",
+        "label": "Card specular stop 0 alpha",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 42
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_spec_stop22_alpha",
+        "label": "Card specular stop 22 alpha",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_spec_stop55_alpha",
+        "label": "Card specular stop 55 alpha",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_spec_stop100_alpha",
+        "label": "Card specular stop 100 alpha",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_rim_alpha_desktop",
+        "label": "Card rim alpha (desktop)",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_rim_alpha_mobile",
+        "label": "Card rim alpha (mobile)",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 25
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_rim_inner_alpha",
+        "label": "Card rim inner alpha",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "shawq_card_rim_top_alpha",
+        "label": "Card rim top alpha",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_surface_alpha",
+        "label": "Button surface alpha",
+        "min": 5,
+        "max": 60,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_blur",
+        "label": "Button blur",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 14,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_saturate",
+        "label": "Button saturate",
+        "min": 100,
+        "max": 220,
+        "step": 5,
+        "default": 165,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_contrast",
+        "label": "Button contrast",
+        "min": 100,
+        "max": 140,
+        "step": 1,
+        "default": 105,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_border_alpha",
+        "label": "Button border alpha",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_shadow_alpha",
+        "label": "Button shadow alpha",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_text_black_alpha",
+        "label": "Button text black alpha",
+        "min": 50,
+        "max": 100,
+        "step": 1,
+        "default": 88
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_specular_opacity",
+        "label": "Button specular opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_spec_stop0_alpha",
+        "label": "Button specular stop 0 alpha",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 38
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_spec_stop28_alpha",
+        "label": "Button specular stop 28 alpha",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_spec_stop60_alpha",
+        "label": "Button specular stop 60 alpha",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "default": 0
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_hover_alpha",
+        "label": "Button hover alpha",
+        "min": 5,
+        "max": 80,
+        "step": 1,
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "shawq_btn_hover_border_alpha",
+        "label": "Button hover border alpha",
+        "min": 0,
+        "max": 80,
+        "step": 1,
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_alpha",
+        "label": "Size panel alpha",
+        "min": 5,
+        "max": 70,
+        "step": 1,
+        "default": 26
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_blur",
+        "label": "Size panel blur",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_saturate",
+        "label": "Size panel saturate",
+        "min": 100,
+        "max": 220,
+        "step": 5,
+        "default": 165,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_contrast",
+        "label": "Size panel contrast",
+        "min": 100,
+        "max": 140,
+        "step": 1,
+        "default": 105,
+        "unit": "%"
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_border_alpha",
+        "label": "Size panel border alpha",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 24
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_radius",
+        "label": "Size panel radius",
+        "min": 8,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_shadow_alpha",
+        "label": "Size panel shadow alpha",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_panel_spec_opacity",
+        "label": "Size panel specular opacity",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_pill_alpha",
+        "label": "Size pill alpha",
+        "min": 5,
+        "max": 70,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_pill_blur",
+        "label": "Size pill blur",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 12,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_pill_border_alpha",
+        "label": "Size pill border alpha",
+        "min": 0,
+        "max": 60,
+        "step": 1,
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_pill_selected_alpha",
+        "label": "Size pill selected alpha",
+        "min": 5,
+        "max": 90,
+        "step": 1,
+        "default": 34
+      },
+      {
+        "type": "range",
+        "id": "shawq_size_pill_disabled_opacity",
+        "label": "Size pill disabled opacity",
+        "min": 10,
+        "max": 100,
+        "step": 1,
+        "default": 45
+      },
+      {
+        "type": "range",
+        "id": "shawq_drawer_overlay_bg_alpha",
+        "label": "Drawer overlay background alpha",
+        "min": 0,
+        "max": 70,
+        "step": 1,
+        "default": 28
+      },
+      {
+        "type": "range",
+        "id": "shawq_drawer_overlay_blur",
+        "label": "Drawer overlay blur",
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "default": 16,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "shawq_drawer_overlay_saturate",
+        "label": "Drawer overlay saturate",
+        "min": 100,
+        "max": 220,
+        "step": 5,
+        "default": 160,
+        "unit": "%"
+      },
+      {
+        "type": "header",
         "content": "Buttons"
       },
       {
