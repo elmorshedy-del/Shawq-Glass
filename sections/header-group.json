@@ -117,7 +117,12 @@
         "show_country_selector": true,
         "show_country_name": true,
         "show_country_flag": true,
+        "localization_country_order": "US, EU",
         "show_locale_selector": true,
+        "localization_language_order": "en, fr, es, it, nl, ar",
+        "localization_dropdown_background_color": "#ffffff",
+        "localization_dropdown_text_color": "#111111",
+        "localization_dropdown_typography": "subheading",
         "transparent_header_text_color": "#ffffff",
         "transparent_logo": "shopify://shop_images/Untitled_design-7.png"
       }
