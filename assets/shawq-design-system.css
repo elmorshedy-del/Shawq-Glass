@@ -20,21 +20,30 @@ body.shawq-spacing .page-width {
 /* Glossy background sheen */
 body.shawq-glass-bg {
   position: relative;
+  isolation: isolate;
 }
 body.shawq-glass-bg::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
-  opacity: var(--shawq-sheen);
+  z-index: -1;
   background:
-    radial-gradient(1000px 600px at 20% 10%, rgba(255,255,255,0.65), rgba(255,255,255,0) 55%),
-    radial-gradient(900px 520px at 85% 25%, rgba(255,255,255,0.45), rgba(255,255,255,0) 55%),
-    linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0));
+    radial-gradient(1000px 600px at 20% 10%, rgba(255,255,255,calc(var(--shawq-bg-frost-opacity) / 100)), rgba(255,255,255,0) 55%),
+    radial-gradient(900px 520px at 85% 25%, rgba(255,255,255,calc(var(--shawq-bg-frost-opacity) / 100)), rgba(255,255,255,0) 55%),
+    linear-gradient(180deg, rgba(255,255,255,calc(var(--shawq-bg-frost-opacity) / 100)), rgba(255,255,255,0));
+  -webkit-backdrop-filter: blur(var(--shawq-bg-frost-blur-desktop)px) saturate(var(--shawq-bg-frost-saturate)%) contrast(var(--shawq-bg-frost-contrast)%);
+  backdrop-filter: blur(var(--shawq-bg-frost-blur-desktop)px) saturate(var(--shawq-bg-frost-saturate)%) contrast(var(--shawq-bg-frost-contrast)%);
+}
+@media (max-width: 699px) {
+  body.shawq-glass-bg::before {
+    -webkit-backdrop-filter: blur(var(--shawq-bg-frost-blur-mobile)px) saturate(var(--shawq-bg-frost-saturate)%) contrast(var(--shawq-bg-frost-contrast)%);
+    backdrop-filter: blur(var(--shawq-bg-frost-blur-mobile)px) saturate(var(--shawq-bg-frost-saturate)%) contrast(var(--shawq-bg-frost-contrast)%);
+  }
 }
 
 /* Make sure main content sits above sheen */
+body.shawq-glass-bg #main,
 body.shawq-glass-bg #MainContent,
 body.shawq-glass-bg header,
 body.shawq-glass-bg footer {
@@ -61,17 +70,26 @@ body.shawq-glass .shawq-glass-surface {
 
 /* Buttons: Primary = warm-white glass with accent outline (your Option B) */
 body.shawq-glass-buttons .button,
+body.shawq-glass-buttons .button--outline,
 body.shawq-glass-buttons button.button {
   border-radius: calc(var(--shawq-radius-effective) - 2px);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,calc(var(--shawq-btn-border-alpha) / 100)) !important;
+  background: rgba(255,255,255,calc(var(--shawq-btn-surface-alpha) / 100)) !important;
+  color: rgba(0,0,0,calc(var(--shawq-btn-text-black-alpha) / 100)) !important;
+  -webkit-backdrop-filter: blur(var(--shawq-btn-blur)px) saturate(var(--shawq-btn-saturate)%) contrast(var(--shawq-btn-contrast)%);
+  backdrop-filter: blur(var(--shawq-btn-blur)px) saturate(var(--shawq-btn-saturate)%) contrast(var(--shawq-btn-contrast)%);
+  box-shadow: 0 10px 26px rgba(0,0,0,calc(var(--shawq-btn-shadow-alpha) / 100));
 }
 
 body.shawq-glass-buttons .button--primary {
-  border: var(--shawq-btn-outline) solid rgb(var(--color-accent));
-  color: rgb(var(--color-foreground));
-  background: rgba(255,255,255,var(--shawq-surface-opacity-desktop));
-  -webkit-backdrop-filter: blur(var(--shawq-blur-desktop));
-  backdrop-filter: blur(var(--shawq-blur-desktop));
-  box-shadow: 0 10px 26px rgba(0,0,0,var(--shawq-shadow-strength));
+  border: 1px solid rgba(255,255,255,calc(var(--shawq-btn-border-alpha) / 100)) !important;
+  color: rgba(0,0,0,calc(var(--shawq-btn-text-black-alpha) / 100)) !important;
+  background: rgba(255,255,255,calc(var(--shawq-btn-surface-alpha) / 100)) !important;
+  -webkit-backdrop-filter: blur(var(--shawq-btn-blur)px) saturate(var(--shawq-btn-saturate)%) contrast(var(--shawq-btn-contrast)%);
+  backdrop-filter: blur(var(--shawq-btn-blur)px) saturate(var(--shawq-btn-saturate)%) contrast(var(--shawq-btn-contrast)%);
+  box-shadow: 0 10px 26px rgba(0,0,0,calc(var(--shawq-btn-shadow-alpha) / 100));
 }
 body.shawq-glass-buttons .button--primary:hover {
   transform: translateY(calc(-1 * var(--shawq-btn-lift)));
@@ -81,8 +99,32 @@ body.shawq-glass-buttons .button--primary:active {
 }
 
 body.shawq-glass-buttons .button--secondary {
-  border: 1px solid rgba(0,0,0,var(--shawq-border-opacity));
-  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,calc(var(--shawq-btn-border-alpha) / 100)) !important;
+  background: rgba(255,255,255,calc(var(--shawq-btn-surface-alpha) / 100)) !important;
+  color: rgba(0,0,0,calc(var(--shawq-btn-text-black-alpha) / 100)) !important;
+}
+
+body.shawq-glass-buttons .button::before,
+body.shawq-glass-buttons .button--outline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: calc(var(--shawq-btn-specular-opacity) / 100);
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,calc(var(--shawq-btn-spec-stop0-alpha) / 100)) 0%,
+    rgba(255,255,255,calc(var(--shawq-btn-spec-stop28-alpha) / 100)) 28%,
+    rgba(255,255,255,calc(var(--shawq-btn-spec-stop60-alpha) / 100)) 60%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+body.shawq-glass-buttons .button:hover,
+body.shawq-glass-buttons .button--outline:hover {
+  background: rgba(255,255,255,calc(var(--shawq-btn-hover-alpha) / 100)) !important;
+  border-color: rgba(255,255,255,calc(var(--shawq-btn-hover-border-alpha) / 100)) !important;
 }
 
 /* Product cards: make info panel glassy */
@@ -100,21 +142,98 @@ body.shawq-glass-cards .card__information {
 body.shawq-glass-cards .card,
 body.shawq-glass-cards .product-card,
 body.shawq-glass-cards .grid__item .card {
-  border: 1px solid rgba(0,0,0,var(--shawq-border-opacity));
-  background: rgba(255,255,255,var(--shawq-surface-opacity-desktop));
-  -webkit-backdrop-filter: blur(var(--shawq-blur-desktop));
-  backdrop-filter: blur(var(--shawq-blur-desktop));
-  box-shadow: 0 10px 30px rgba(0,0,0,var(--shawq-shadow-strength));
+  position: relative;
+  border-radius: var(--shawq-card-radius-desktop)px;
+  border: 1px solid rgba(255,255,255,calc(var(--shawq-card-border-alpha) / 100));
+  background: rgba(255,255,255,calc(var(--shawq-card-surface-alpha-desktop) / 100));
+  -webkit-backdrop-filter: blur(var(--shawq-card-blur-desktop)px) saturate(var(--shawq-card-saturate-desktop)%) contrast(var(--shawq-card-contrast-desktop)%);
+  backdrop-filter: blur(var(--shawq-card-blur-desktop)px) saturate(var(--shawq-card-saturate-desktop)%) contrast(var(--shawq-card-contrast-desktop)%);
+  box-shadow: 0 10px 30px rgba(0,0,0,calc(var(--shawq-card-shadow-alpha) / 100));
   overflow: hidden;
+}
+body.shawq-glass-cards .product-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: calc(var(--shawq-card-specular-opacity-desktop) / 100);
+  background: linear-gradient(
+    var(--shawq-card-specular-angle)deg,
+    rgba(255,255,255,calc(var(--shawq-card-spec-stop0-alpha) / 100)) 0%,
+    rgba(255,255,255,calc(var(--shawq-card-spec-stop22-alpha) / 100)) 22%,
+    rgba(255,255,255,calc(var(--shawq-card-spec-stop55-alpha) / 100)) 55%,
+    rgba(255,255,255,calc(var(--shawq-card-spec-stop100-alpha) / 100)) 100%
+  );
+}
+body.shawq-glass-cards .product-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,calc(var(--shawq-card-rim-alpha-desktop) / 100)),
+    inset 0 0 0 2px rgba(255,255,255,calc(var(--shawq-card-rim-inner-alpha) / 100));
+  background: linear-gradient(180deg, rgba(255,255,255,calc(var(--shawq-card-rim-top-alpha) / 100)), rgba(255,255,255,0) 40%);
 }
 @media (max-width: 989px) {
   body.shawq-glass-cards .card,
   body.shawq-glass-cards .product-card,
   body.shawq-glass-cards .grid__item .card {
-    background: rgba(255,255,255,var(--shawq-surface-opacity-mobile));
-    -webkit-backdrop-filter: blur(var(--shawq-blur-mobile));
-    backdrop-filter: blur(var(--shawq-blur-mobile));
+    border-radius: var(--shawq-card-radius-mobile)px;
+    background: rgba(255,255,255,calc(var(--shawq-card-surface-alpha-mobile) / 100));
+    -webkit-backdrop-filter: blur(var(--shawq-card-blur-mobile)px) saturate(var(--shawq-card-saturate-mobile)%) contrast(var(--shawq-card-contrast-mobile)%);
+    backdrop-filter: blur(var(--shawq-card-blur-mobile)px) saturate(var(--shawq-card-saturate-mobile)%) contrast(var(--shawq-card-contrast-mobile)%);
   }
+  body.shawq-glass-cards .product-card::before {
+    opacity: calc(var(--shawq-card-specular-opacity-mobile) / 100);
+  }
+  body.shawq-glass-cards .product-card::after {
+    box-shadow:
+      inset 0 0 0 1px rgba(255,255,255,calc(var(--shawq-card-rim-alpha-mobile) / 100)),
+      inset 0 0 0 2px rgba(255,255,255,calc(var(--shawq-card-rim-inner-alpha) / 100));
+  }
+}
+
+body.shawq-glass-cards .card-size-picker,
+body.shawq-glass-cards .product-grid .card-size-picker,
+body.shawq-glass-cards .collection .card-size-picker {
+  position: relative;
+  border-radius: var(--shawq-size-panel-radius)px;
+  border: 1px solid rgba(255,255,255,calc(var(--shawq-size-panel-border-alpha) / 100));
+  background: rgba(255,255,255,calc(var(--shawq-size-panel-alpha) / 100));
+  -webkit-backdrop-filter: blur(var(--shawq-size-panel-blur)px) saturate(var(--shawq-size-panel-saturate)%) contrast(var(--shawq-size-panel-contrast)%);
+  backdrop-filter: blur(var(--shawq-size-panel-blur)px) saturate(var(--shawq-size-panel-saturate)%) contrast(var(--shawq-size-panel-contrast)%);
+  box-shadow: 0 10px 24px rgba(0,0,0,calc(var(--shawq-size-panel-shadow-alpha) / 100));
+}
+body.shawq-glass-cards .card-size-picker::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: calc(var(--shawq-size-panel-spec-opacity) / 100);
+  background: linear-gradient(160deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 60%);
+}
+
+body.shawq-glass-cards .card-size-option,
+body.shawq-glass-cards .product-grid .card-size-option,
+body.shawq-glass-cards .collection .card-size-option {
+  background: rgba(255,255,255,calc(var(--shawq-size-pill-alpha) / 100)) !important;
+  border: 1px solid rgba(255,255,255,calc(var(--shawq-size-pill-border-alpha) / 100)) !important;
+  -webkit-backdrop-filter: blur(var(--shawq-size-pill-blur)px);
+  backdrop-filter: blur(var(--shawq-size-pill-blur)px);
+}
+body.shawq-glass-cards .card-size-option.is-selected,
+body.shawq-glass-cards .product-grid .card-size-option.is-selected,
+body.shawq-glass-cards .collection .card-size-option.is-selected {
+  background: rgba(255,255,255,calc(var(--shawq-size-pill-selected-alpha) / 100)) !important;
+}
+body.shawq-glass-cards .card-size-option:disabled,
+body.shawq-glass-cards .product-grid .card-size-option:disabled,
+body.shawq-glass-cards .collection .card-size-option:disabled {
+  opacity: calc(var(--shawq-size-pill-disabled-opacity) / 100);
 }
 
 /* Drawer surfaces (cart, menus) */
@@ -122,4 +241,10 @@ body.shawq-glass .drawer__inner,
 body.shawq-glass .menu-drawer,
 body.shawq-glass .modal__content {
   border-radius: var(--shawq-radius-effective);
+}
+
+.drawer-popover::part(overlay) {
+  background: rgba(0,0,0,calc(var(--shawq-drawer-overlay-bg-alpha) / 100));
+  -webkit-backdrop-filter: blur(var(--shawq-drawer-overlay-blur)px) saturate(var(--shawq-drawer-overlay-saturate)%) !important;
+  backdrop-filter: blur(var(--shawq-drawer-overlay-blur)px) saturate(var(--shawq-drawer-overlay-saturate)%) !important;
 }
