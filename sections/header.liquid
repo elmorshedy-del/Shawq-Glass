@@ -33,8 +33,6 @@
 
     --header-transparent-header-text-color: {{ section.settings.transparent_header_text_color.rgb }};
     --header-non-transparent-text-color: {{ section.settings.color_scheme.settings.text_color.rgb }};
-    --localization-popover-background: {{ section.settings.localization_dropdown_background_color.rgb }};
-    --localization-popover-text-color: {{ section.settings.localization_dropdown_text_color.rgb }};
   }
 
   @media screen and (min-width: 1000px) {
@@ -581,13 +579,6 @@
       "default": true
     },
     {
-      "type": "text",
-      "id": "localization_country_order",
-      "label": "Localization country order",
-      "info": "Comma-separated country codes used to control the currency selector order (example: US, FR). Update this list to add more countries later.",
-      "default": "US, FR"
-    },
-    {
       "type": "header",
       "content": "t:global.localization.language_selector_category",
       "info": "t:global.localization.language_selector_category_info"
@@ -597,49 +588,6 @@
       "id": "show_locale_selector",
       "label": "t:global.localization.show_locale_selector",
       "default": false
-    },
-    {
-      "type": "text",
-      "id": "localization_language_order",
-      "label": "Localization language order",
-      "info": "Comma-separated language codes used to control the language selector order (example: en, fr, es). Update this list to add more languages later.",
-      "default": "en, fr, es, it, nl, ar"
-    },
-    {
-      "type": "header",
-      "content": "Localization dropdown style"
-    },
-    {
-      "type": "color",
-      "id": "localization_dropdown_background_color",
-      "label": "Dropdown background",
-      "default": "#ffffff"
-    },
-    {
-      "type": "color",
-      "id": "localization_dropdown_text_color",
-      "label": "Dropdown text",
-      "default": "#111111"
-    },
-    {
-      "type": "select",
-      "id": "localization_dropdown_typography",
-      "label": "Dropdown typography",
-      "options": [
-        {
-          "value": "subheading",
-          "label": "Subheading"
-        },
-        {
-          "value": "text-sm",
-          "label": "Text small"
-        },
-        {
-          "value": "text-base",
-          "label": "Text base"
-        }
-      ],
-      "default": "subheading"
     },
     {
       "type": "header",
