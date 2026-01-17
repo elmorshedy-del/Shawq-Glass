@@ -76,29 +76,45 @@ Supported variables
               {%- assign desired_currency_code = '' -%}
               {%- assign desired_currency_flag = '' -%}
 
-              {%- if trimmed_currency_token == 'EU' -%}
-                {%- assign desired_currency_code = 'EUR' -%}
-                {%- assign desired_currency_flag = '🇪🇺' -%}
-              {%- elsif trimmed_currency_token == 'USD' -%}
-                {%- assign desired_currency_code = 'USD' -%}
-                {%- assign desired_currency_flag = '🇺🇸' -%}
-              {%- elsif trimmed_currency_token == 'EUR' -%}
-                {%- assign desired_currency_code = 'EUR' -%}
-                {%- assign desired_currency_flag = '🇪🇺' -%}
-              {%- elsif trimmed_currency_token == 'GBP' -%}
-                {%- assign desired_currency_code = 'GBP' -%}
-                {%- assign desired_currency_flag = '🇬🇧' -%}
-              {%- endif -%}
+              {%- case trimmed_currency_token -%}
+                {%- when 'EU' -%}
+                  {%- assign desired_currency_code = 'EUR' -%}
+                  {%- assign desired_currency_flag = '🇪🇺' -%}
+                {%- when 'US' -%}
+                  {%- assign desired_currency_code = 'USD' -%}
+                  {%- assign desired_currency_flag = '🇺🇸' -%}
+                {%- when 'USD' -%}
+                  {%- assign desired_currency_code = 'USD' -%}
+                  {%- assign desired_currency_flag = '🇺🇸' -%}
+                {%- when 'EUR' -%}
+                  {%- assign desired_currency_code = 'EUR' -%}
+                  {%- assign desired_currency_flag = '🇪🇺' -%}
+                {%- when 'GB' -%}
+                  {%- assign desired_currency_code = 'GBP' -%}
+                  {%- assign desired_currency_flag = '🇬🇧' -%}
+                {%- when 'UK' -%}
+                  {%- assign desired_currency_code = 'GBP' -%}
+                  {%- assign desired_currency_flag = '🇬🇧' -%}
+                {%- when 'GBP' -%}
+                  {%- assign desired_currency_code = 'GBP' -%}
+                  {%- assign desired_currency_flag = '🇬🇧' -%}
+                {%- else -%}
+                  {%- if trimmed_currency_token.size == 3 -%}
+                    {%- assign desired_currency_code = trimmed_currency_token -%}
+                  {%- endif -%}
+              {%- endcase -%}
 
               {%- if desired_currency_code == '' -%}
                 {%- continue -%}
               {%- endif -%}
 
+              {%- assign list_currency_code = '' -%}
+              {%- assign list_currency_label = '' -%}
+              {%- assign list_currency_flag = desired_currency_flag -%}
+
               {%- for country in localization.available_countries -%}
                 {%- if country.currency.iso_code == desired_currency_code -%}
                   {%- assign list_currency_code = country.currency.iso_code -%}
-                  {%- assign list_currency_flag = desired_currency_flag -%}
-                  {%- assign list_currency_label = '' -%}
 
                   {%- case list_currency_code -%}
                     {%- when 'USD' -%}
@@ -114,7 +130,7 @@ Supported variables
                       {%- endif -%}
                   {%- endcase -%}
 
-                  <button type="submit" name="country_code" class="popover__value-option {{ localization_dropdown_typography }} link-faded-reverse" role="option" value="{{ country.iso_code }}" aria-selected="{% if country.iso_code == localization.country.iso_code %}true{% else %}false{% endif %}">
+                  <button type="submit" name="currency_code" class="popover__value-option {{ localization_dropdown_typography }} link-faded-reverse" role="option" value="{{ desired_currency_code }}" aria-selected="{% if desired_currency_code == localization.country.currency.iso_code %}true{% else %}false{% endif %}">
                     <span>
                       {%- if show_country_flag -%}
                         {{- list_currency_flag -}}
