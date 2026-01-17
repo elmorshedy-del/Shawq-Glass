@@ -58,7 +58,7 @@
     "product_card_badges_placement": "place-self-start",
     "product_card_show_badges_vertically": false,
     "product_card_show_sold_out_badge": true,
-    "product_card_show_discount": false,
+    "product_card_show_discount": true,
     "product_card_discount_mode": "percentage",
     "product_card_show_product_size_selector": true,
     "product_listing_spacing": "none",
