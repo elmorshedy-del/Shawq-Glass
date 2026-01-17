@@ -1,6 +1,108 @@
+{% doc %}
+  @prompt
+    Create customization settings for the announcement bar message block that allow the merchant to:
+    1. Adjust the font size with a range slider (e.g., 12px to 24px)
+    2. Select a different font family/type from available theme fonts
+    3. Ensure bold text formatting works properly in the message text
+    
+    These controls should only affect the announcement bar message text, not other parts of the theme. The settings should appear in the theme editor when the announcement bar message block is selected.
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-announcement-bar-message-{{ ai_gen_id }} {
+    display: block;
+    width: 100%;
+  }
+
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} {
+    font-family: {{ block.settings.message_font.family }}, {{ block.settings.message_font.fallback_families }};
+    font-weight: {{ block.settings.message_font.weight }};
+    font-style: {{ block.settings.message_font.style }};
+    font-size: {{ block.settings.message_font_size }}px;
+    line-height: 1.4;
+    margin: 0;
+    text-align: center;
+  }
+
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} strong,
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} b {
+    font-weight: 700;
+  }
+
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} em,
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} i {
+    font-style: italic;
+  }
+
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .ai-announcement-bar-message__text-{{ ai_gen_id }} a:hover {
+    opacity: 0.8;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-announcement-bar-message__text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.message_font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-announcement-bar-message-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.message != blank %}
+    <div class="ai-announcement-bar-message__text-{{ ai_gen_id }}">
+      {{ block.settings.message }}
+    </div>
+  {% else %}
+    <div class="ai-announcement-bar-message__text-{{ ai_gen_id }}">
+      Add your announcement message here
+    </div>
+  {% endif %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Announcement bar message",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Message"
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "Message text",
+      "default": "<p>Welcome to our store! <strong>Free shipping</strong> on orders over $50</p>"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "font_picker",
+      "id": "message_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "message_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar message"
+    }
+  ]
+}
 {% endschema %}
