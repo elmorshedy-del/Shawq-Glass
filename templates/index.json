@@ -334,13 +334,18 @@
         "mobile_text_position": "place-self-center"
       }
     },
+    "blocks_xnQRMT": {
+      "type": "_blocks",
+      "name": "Announcement bar message",
+      "settings": {}
+    },
     "scrolling_content_ynHGiT": {
       "type": "scrolling-content",
       "blocks": {
         "text_9mazBM": {
           "type": "text",
           "settings": {
-            "text": "Very Few Are Left",
+            "text": "<strong>Very Few Are Left</strong>",
             "icon_position": "before_text",
             "highlight_effect": "default",
             "highlight_accent_color": "",
@@ -350,10 +355,10 @@
         "text_BJKtQF": {
           "type": "text",
           "settings": {
-            "text": "<em>Secure yours now!</em>",
-            "icon_position": "before_text",
-            "highlight_effect": "default",
-            "highlight_accent_color": "#c2186a",
+            "text": "<em><strong>Secure yours now!</strong></em>",
+            "icon_position": "after_text",
+            "highlight_effect": "none",
+            "highlight_accent_color": "#030305",
             "highlight_text_color": "#c2186a"
           }
         }
@@ -367,7 +372,7 @@
         "scrolling_speed": 0.3,
         "scroll_direction": "start-to-end",
         "section_rotation": 0,
-        "pause_on_hover": false,
+        "pause_on_hover": true,
         "text_font": "body",
         "text_font_size_mobile": 2.5,
         "text_font_size_desktop": 1.5,
@@ -883,6 +888,97 @@
         "shawq_custom_height_mobile": 520,
         "shawq_custom_height_desktop": 640
       }
+    },
+    "1768612122f8a3d06a": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "1768612514449d15e2": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_4ac365a_r36BX4": {
+          "type": "ai_gen_block_4ac365a",
+          "settings": {
+            "message": "Welcome to our store • Free shipping on orders over $50 • Shop now",
+            "color_scheme": "scheme-6",
+            "background_color": "#000000",
+            "background_gradient": "",
+            "text_color": "#fa3f3f",
+            "font_family": "sans_serif_n4",
+            "font_size": 16,
+            "bold_text": false,
+            "vertical_padding": 12,
+            "scroll_speed": 30
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_4ac365a_r36BX4"
+      ],
+      "settings": {}
+    },
+    "1768615904767faf19": {
+      "type": "_blocks",
+      "settings": {}
+    },
+    "17686162301b8a5d1b": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_bf10375_GE7PGq": {
+          "type": "ai_gen_block_bf10375",
+          "settings": {
+            "text_1": "Free shipping on orders over $50",
+            "text_2": "Shop the latest collection",
+            "text_3": "New arrivals every week",
+            "text_4": "",
+            "text_5": "",
+            "font_family": "sans_serif_n4",
+            "font_size": 16,
+            "bold_text": false,
+            "font_weight": "700",
+            "text_color": "#000000",
+            "background_color": "#ffffff",
+            "show_separator": true,
+            "separator_size": 6,
+            "separator_color": "#000000",
+            "scroll_speed": 30,
+            "pause_on_hover": true,
+            "item_spacing": 30,
+            "vertical_padding": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_bf10375_GE7PGq"
+      ],
+      "settings": {}
+    },
+    "blocks_3dTFPx": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0d3f9a8_RU9kLw": {
+          "type": "ai_gen_block_0d3f9a8",
+          "settings": {
+            "message": "Welcome to our store • Free shipping on orders over $50 • Shop now",
+            "background_color": "#000000",
+            "background_gradient": "",
+            "text_color": "#ffffff",
+            "font_family": "sans_serif_n4",
+            "font_size": 16,
+            "bold_text": false,
+            "vertical_padding": 12,
+            "scroll_speed": 30
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0d3f9a8_RU9kLw"
+      ],
+      "name": "Announcement bar",
+      "settings": {}
     }
   },
   "order": [
@@ -892,11 +988,17 @@
     "before_after_6QLwJQ",
     "slideshow_xa9ain",
     "image_with_text_overlay_DTaMy3",
+    "blocks_xnQRMT",
     "scrolling_content_ynHGiT",
     "featured_collections_6bUQmh",
     "featured_product_j9PJPz",
     "featured_product_Vxmz8z",
     "featured_product_XWFdCx",
-    "slideshow_XTjN9W"
+    "slideshow_XTjN9W",
+    "1768612122f8a3d06a",
+    "1768612514449d15e2",
+    "1768615904767faf19",
+    "17686162301b8a5d1b",
+    "blocks_3dTFPx"
   ]
 }

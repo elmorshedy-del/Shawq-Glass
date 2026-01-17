@@ -14,33 +14,40 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
+        "message_mNPFrz": {
+          "type": "message",
+          "settings": {
+            "text": "Announce something here"
+          }
+        },
         "message_Py6mEe": {
           "type": "message",
           "settings": {
-            "text": "Exceed 299$ Cart Value For A Very Exclusive Gift"
+            "text": "<strong>Exceed 299$ Cart Value For A Very Exclusive Gift</strong>"
           }
         },
         "message_AQYUJ8": {
           "type": "message",
           "disabled": true,
           "settings": {
-            "text": "ALL ITEMS ARE READY TO SHIP"
+            "text": "<strong>ALL ITEMS ARE READY TO SHIP</strong>"
           }
         },
         "message_KfCkqd": {
           "type": "message",
           "settings": {
-            "text": "Free shipping over 150$ WorldWide"
+            "text": "<strong>Free shipping over 150$ WorldWide</strong>"
           }
         },
         "message_VVnDmp": {
           "type": "message",
           "settings": {
-            "text": "Each Order donates 1 meal for g*za"
+            "text": "<strong>Each Order donates 1 meal for G*za</strong>"
           }
         }
       },
       "block_order": [
+        "message_mNPFrz",
         "message_Py6mEe",
         "message_AQYUJ8",
         "message_KfCkqd",
@@ -48,7 +55,7 @@
       ],
       "settings": {
         "color_scheme": "scheme-6",
-        "enable_sticky": true,
+        "enable_sticky": false,
         "autoplay": true,
         "cycle_speed": 4
       }
@@ -114,11 +121,43 @@
         "transparent_header_text_color": "#ffffff",
         "transparent_logo": "shopify://shop_images/Untitled_design-7.png"
       }
+    },
+    "blocks_WVpYMi": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_08584f1_pXCRri": {
+          "type": "ai_gen_block_08584f1",
+          "settings": {
+            "message": "<p>Welcome to our store! <strong>Free shipping</strong> on orders over $50</p>",
+            "message_font": "sans_serif_n4",
+            "message_font_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_08584f1_pXCRri"
+      ],
+      "name": "Announcement bar message",
+      "settings": {}
+    },
+    "blocks_ynEr34": {
+      "type": "_blocks",
+      "name": "Announcement bar",
+      "settings": {}
+    },
+    "blocks_hEcRkW": {
+      "type": "_blocks",
+      "name": "Announcement bar",
+      "settings": {}
     }
   },
   "order": [
     "announcement-bar",
     "176427098145a3ae1c",
-    "header"
+    "header",
+    "blocks_WVpYMi",
+    "blocks_ynEr34",
+    "blocks_hEcRkW"
   ]
 }
