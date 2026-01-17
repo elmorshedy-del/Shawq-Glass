@@ -124,20 +124,6 @@
     },
     "blocks_WVpYMi": {
       "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_08584f1_pXCRri": {
-          "type": "ai_gen_block_08584f1",
-          "settings": {
-            "message": "<p>Welcome to our store! <strong>Free shipping</strong> on orders over $50</p>",
-            "message_font": "sans_serif_n4",
-            "message_font_size": 14
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_08584f1_pXCRri"
-      ],
       "name": "Announcement bar message",
       "settings": {}
     },
