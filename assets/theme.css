@@ -3494,6 +3494,118 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
   pointer-events: none;
 }
 
+/* ================================
+   Product card size selector — modern pills
+   Scope it so it only affects cards, not PDP.
+   ================================ */
+.product-card .card-size-picker,
+.product-grid .card-size-picker,
+.collection .card-size-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-size-option,
+.product-grid .card-size-option,
+.collection .card-size-option {
+  --button-background: 255 255 255 / 0.95;
+  --button-text-color: 0 0 0 / 0.88;
+  --button-border-color: 0 0 0 / 0.12;
+  --button-padding-block: 0.5rem;
+  --button-padding-inline: 0.75rem;
+  border-radius: 9999px;
+  min-width: 44px;
+  font-size: 12.5px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease, box-shadow 120ms ease, color 120ms ease;
+}
+
+@media (hover: hover) {
+  .product-card .card-size-option:hover,
+  .product-grid .card-size-option:hover,
+  .collection .card-size-option:hover {
+    transform: translateY(-1px);
+    --button-border-color: 0 0 0 / 0.22;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.product-card .card-size-option.is-selected,
+.product-grid .card-size-option.is-selected,
+.collection .card-size-option.is-selected {
+  --button-background: 0 0 0 / 0.9;
+  --button-text-color: 255 255 255 / 0.96;
+  --button-border-color: 0 0 0 / 0.9;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.product-card .card-size-option:disabled,
+.product-grid .card-size-option:disabled,
+.collection .card-size-option:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.product-card .card-size-option.is-unavailable,
+.product-grid .card-size-option.is-unavailable,
+.collection .card-size-option.is-unavailable {
+  position: relative;
+  opacity: 0.55;
+}
+
+.product-card .card-size-option.is-unavailable::after,
+.product-grid .card-size-option.is-unavailable::after,
+.collection .card-size-option.is-unavailable::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.35);
+  transform: translateY(-50%);
+}
+
+.product-card .card-size-option:focus-visible,
+.product-grid .card-size-option:focus-visible,
+.collection .card-size-option:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 699px) {
+  .product-card .card-size-picker,
+  .product-grid .card-size-picker,
+  .collection .card-size-picker {
+    gap: 7px;
+    padding: 9px 10px;
+    border-radius: 14px;
+  }
+
+  .product-card .card-size-option,
+  .product-grid .card-size-option,
+  .collection .card-size-option {
+    --button-padding-block: 0.5rem;
+    --button-padding-inline: 0.6875rem;
+    font-size: 12px;
+  }
+}
+
 .product-card--info-outside .product-card__info {
   padding-block-start: 1rem;
 }
