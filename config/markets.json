@@ -11,6 +11,15 @@
   "markets": {
     "turkey": {
       "parent": "@default"
+    },
+    "eu": {
+      "parent": "@default"
+    },
+    "uk": {
+      "parent": "@default"
+    },
+    "europe": {
+      "parent": "eu"
     }
   }
 }
