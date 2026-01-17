@@ -18,6 +18,13 @@ Supported variables
 
 {%- capture localization_form_id -%}localization-form-{{ id_prefix }}-{{ section.id }}-{{ type }}{%- endcapture -%}
 {%- capture localization_popover_id -%}popover-localization-{{ id_prefix }}-{{ section.id }}-{{ type }}{%- endcapture -%}
+{%- assign localization_dropdown_typography = section.settings.localization_dropdown_typography | default: 'subheading' -%}
+{%- assign localization_country_order = section.settings.localization_country_order | default: 'USD, EUR, GBP' | split: ',' -%}
+{%- assign localization_language_order = section.settings.localization_language_order | default: 'en, fr, es, it, nl, ar' | split: ',' -%}
+{%- assign localization_typography_class = localization_dropdown_typography -%}
+{%- if id_prefix == 'secondary-nav' and localization_dropdown_typography == 'subheading' -%}
+  {%- assign localization_typography_class = localization_typography_class | append: ' subheading-xs' -%}
+{%- endif -%}
 
 {%- case type -%}
   {%- when 'country' -%}
@@ -27,38 +34,97 @@ Supported variables
     ----------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
+    {%- assign current_currency_code = localization.country.currency.iso_code -%}
+    {%- assign current_currency_flag = '' -%}
+    {%- assign current_currency_label = '' -%}
+    {%- case current_currency_code -%}
+      {%- when 'USD' -%}
+        {%- assign current_currency_flag = '🇺🇸' -%}
+        {%- assign current_currency_label = 'USD ($)' -%}
+      {%- when 'EUR' -%}
+        {%- assign current_currency_flag = '🇪🇺' -%}
+        {%- assign current_currency_label = 'EUR (€)' -%}
+      {%- when 'GBP' -%}
+        {%- assign current_currency_flag = '🇬🇧' -%}
+        {%- assign current_currency_label = 'GBP (£)' -%}
+      {%- else -%}
+        {%- assign current_currency_label = current_currency_code -%}
+        {%- if localization.country.currency.symbol != blank -%}
+          {%- assign current_currency_label = current_currency_label | append: ' (' | append: localization.country.currency.symbol | append: ')' -%}
+        {%- endif -%}
+    {%- endcase -%}
+
     <div class="relative">
       <button type="button" class="h-stack gap-2" aria-controls="{{ localization_popover_id }}" aria-label="{{ 'general.localization.change_country_accessibility_text' | t | escape }}" aria-expanded="false">
-        {%- if show_country_flag -%}
-          {{- localization.country | image_url: width: 60, format: 'jpg' | image_tag: loading: 'lazy', class: 'country-flag' -}}
-        {%- endif -%}
-
-        {%- if show_country_name -%}
-          <span class="{% if id_prefix == 'secondary-nav' %}subheading subheading-xs{% else %}subheading{% endif %}">
-            {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {% if localization.country.currency.symbol %}{{ localization.country.currency.symbol }}){%- endif -%}
-          </span>
-        {%- else -%}
-          <span class="{% if id_prefix == 'secondary-nav' %}subheading subheading-xs{% else %}subheading{% endif %}">
-            {{ localization.country.currency.iso_code }} {% if localization.country.currency.symbol %}{{ localization.country.currency.symbol }}{%- endif -%}
-          </span>
-        {%- endif -%}
+        <span class="{{ localization_typography_class }}">
+          {%- if show_country_flag -%}
+            {{ current_currency_flag }}
+          {%- endif -%}
+          {{ current_currency_label }}
+        </span>
 
         {%- render 'icon' with 'chevron-down' -%}
       </button>
 
-      <x-popover id="{{ localization_popover_id }}" class="popover color-scheme color-scheme--{{ settings.default_color_scheme.id }}" {% if preferred_alignment %}preferred-alignment="{{ preferred_alignment }}"{% endif %} {% unless id_prefix == 'secondary-nav' %}preferred-position="above"{% endunless %}>
+      <x-popover id="{{ localization_popover_id }}" class="popover localization-popover color-scheme color-scheme--{{ settings.default_color_scheme.id }}" {% if preferred_alignment %}preferred-alignment="{{ preferred_alignment }}"{% endif %} {% unless id_prefix == 'secondary-nav' %}preferred-position="above"{% endunless %}>
         <p slot="header" class="subheading">{{ 'general.localization.country' | t }}</p>
 
         {%- form 'localization', id: localization_form_id -%}
           <div class="popover__value-list">
-            {%- for country in localization.available_countries -%}
-              <button type="submit" name="country_code" class="popover__value-option subheading link-faded-reverse" role="option" value="{{ country.iso_code }}" aria-selected="{% if country.iso_code == localization.country.iso_code %}true{% else %}false{% endif %}">
-                {%- if show_country_flag -%}
-                  {{- country | image_url: width: 60, format: 'jpg' | image_tag: loading: 'lazy', class: 'country-flag' -}}
-                {%- endif -%}
+            {%- for currency_token in localization_country_order -%}
+              {%- assign trimmed_currency_token = currency_token | strip | upcase -%}
+              {%- assign desired_currency_code = '' -%}
+              {%- assign desired_currency_flag = '' -%}
 
-                <span>{{- country.name }} ({{ country.currency.iso_code }} {% if country.currency.symbol %}{{ country.currency.symbol }}{%- endif -%})</span>
-              </button>
+              {%- if trimmed_currency_token == 'EU' -%}
+                {%- assign desired_currency_code = 'EUR' -%}
+                {%- assign desired_currency_flag = '🇪🇺' -%}
+              {%- elsif trimmed_currency_token == 'USD' -%}
+                {%- assign desired_currency_code = 'USD' -%}
+                {%- assign desired_currency_flag = '🇺🇸' -%}
+              {%- elsif trimmed_currency_token == 'EUR' -%}
+                {%- assign desired_currency_code = 'EUR' -%}
+                {%- assign desired_currency_flag = '🇪🇺' -%}
+              {%- elsif trimmed_currency_token == 'GBP' -%}
+                {%- assign desired_currency_code = 'GBP' -%}
+                {%- assign desired_currency_flag = '🇬🇧' -%}
+              {%- endif -%}
+
+              {%- if desired_currency_code == '' -%}
+                {%- continue -%}
+              {%- endif -%}
+
+              {%- for country in localization.available_countries -%}
+                {%- if country.currency.iso_code == desired_currency_code -%}
+                  {%- assign list_currency_code = country.currency.iso_code -%}
+                  {%- assign list_currency_flag = desired_currency_flag -%}
+                  {%- assign list_currency_label = '' -%}
+
+                  {%- case list_currency_code -%}
+                    {%- when 'USD' -%}
+                      {%- assign list_currency_label = 'USD ($)' -%}
+                    {%- when 'EUR' -%}
+                      {%- assign list_currency_label = 'EUR (€)' -%}
+                    {%- when 'GBP' -%}
+                      {%- assign list_currency_label = 'GBP (£)' -%}
+                    {%- else -%}
+                      {%- assign list_currency_label = list_currency_code -%}
+                      {%- if country.currency.symbol != blank -%}
+                        {%- assign list_currency_label = list_currency_label | append: ' (' | append: country.currency.symbol | append: ')' -%}
+                      {%- endif -%}
+                  {%- endcase -%}
+
+                  <button type="submit" name="country_code" class="popover__value-option {{ localization_dropdown_typography }} link-faded-reverse" role="option" value="{{ country.iso_code }}" aria-selected="{% if country.iso_code == localization.country.iso_code %}true{% else %}false{% endif %}">
+                    <span>
+                      {%- if show_country_flag -%}
+                        {{- list_currency_flag -}}
+                      {%- endif -%}
+                      {{ list_currency_label }}
+                    </span>
+                  </button>
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
             {%- endfor -%}
           </div>
         {%- endform -%}
@@ -72,25 +138,115 @@ Supported variables
     ----------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
+    {%- assign has_ordered_languages = false -%}
+
+    {%- assign current_language_code = localization.language.iso_code | split: '-' | first | downcase -%}
+    {%- assign current_language_flag = '' -%}
+    {%- assign current_language_label = localization.language.endonym_name | capitalize -%}
+    {%- case current_language_code -%}
+      {%- when 'en' -%}
+        {%- assign current_language_flag = '🇺🇸' -%}
+        {%- assign current_language_label = 'English' -%}
+      {%- when 'fr' -%}
+        {%- assign current_language_flag = '🇫🇷' -%}
+        {%- assign current_language_label = 'French' -%}
+      {%- when 'es' -%}
+        {%- assign current_language_flag = '🇪🇸' -%}
+        {%- assign current_language_label = 'Spanish' -%}
+      {%- when 'it' -%}
+        {%- assign current_language_flag = '🇮🇹' -%}
+        {%- assign current_language_label = 'Italian' -%}
+      {%- when 'nl' -%}
+        {%- assign current_language_flag = '🇳🇱' -%}
+        {%- assign current_language_label = 'Dutch' -%}
+      {%- when 'ar' -%}
+        {%- assign current_language_flag = '🇸🇦' -%}
+        {%- assign current_language_label = 'Arabic' -%}
+    {%- endcase -%}
+
     <div class="relative">
       <button type="button" class="h-stack gap-2" aria-controls="{{ localization_popover_id }}" aria-label="{{ 'general.localization.change_language_accessibility_text' | t | escape }}" aria-expanded="false">
-        <span class="{% if id_prefix == 'secondary-nav' %}subheading subheading-xs{% else %}subheading{% endif %}">
-          {{- localization.language.endonym_name | capitalize -}}
+        <span class="{{ localization_typography_class }}">
+          {{- current_language_flag }} {{ current_language_label -}}
         </span>
 
         {%- render 'icon' with 'chevron-down' -%}
       </button>
 
-      <x-popover id="{{ localization_popover_id }}" class="popover color-scheme color-scheme--{{ settings.default_color_scheme.id }}" {% if preferred_alignment %}preferred-alignment="{{ preferred_alignment }}"{% endif %} {% unless id_prefix == 'secondary-nav' %}preferred-position="above"{% endunless %}>
+      <x-popover id="{{ localization_popover_id }}" class="popover localization-popover color-scheme color-scheme--{{ settings.default_color_scheme.id }}" {% if preferred_alignment %}preferred-alignment="{{ preferred_alignment }}"{% endif %} {% unless id_prefix == 'secondary-nav' %}preferred-position="above"{% endunless %}>
         <p slot="header" class="subheading">{{ 'general.localization.language' | t }}</p>
 
         {%- form 'localization', id: localization_form_id -%}
           <div class="popover__value-list">
-            {%- for language in localization.available_languages -%}
-              <button type="submit" name="locale_code" class="popover__value-option subheading link-faded-reverse" role="option" value="{{ language.iso_code }}" aria-selected="{% if language.iso_code == localization.language.iso_code %}true{% else %}false{% endif %}">
-                <span>{{- language.endonym_name | capitalize -}}</span>
-              </button>
+            {%- for language_code in localization_language_order -%}
+              {%- assign trimmed_language_code = language_code | strip | downcase | split: '-' | first -%}
+              {%- for language in localization.available_languages -%}
+                {%- assign available_language_code = language.iso_code | split: '-' | first | downcase -%}
+                {%- if available_language_code == trimmed_language_code -%}
+                  {%- assign has_ordered_languages = true -%}
+                  {%- assign list_language_code = language.iso_code | split: '-' | first | downcase -%}
+                  {%- assign list_language_flag = '' -%}
+                  {%- assign list_language_label = language.endonym_name | capitalize -%}
+                  {%- case list_language_code -%}
+                    {%- when 'en' -%}
+                      {%- assign list_language_flag = '🇺🇸' -%}
+                      {%- assign list_language_label = 'English' -%}
+                    {%- when 'fr' -%}
+                      {%- assign list_language_flag = '🇫🇷' -%}
+                      {%- assign list_language_label = 'French' -%}
+                    {%- when 'es' -%}
+                      {%- assign list_language_flag = '🇪🇸' -%}
+                      {%- assign list_language_label = 'Spanish' -%}
+                    {%- when 'it' -%}
+                      {%- assign list_language_flag = '🇮🇹' -%}
+                      {%- assign list_language_label = 'Italian' -%}
+                    {%- when 'nl' -%}
+                      {%- assign list_language_flag = '🇳🇱' -%}
+                      {%- assign list_language_label = 'Dutch' -%}
+                    {%- when 'ar' -%}
+                      {%- assign list_language_flag = '🇸🇦' -%}
+                      {%- assign list_language_label = 'Arabic' -%}
+                  {%- endcase -%}
+
+                  <button type="submit" name="locale_code" class="popover__value-option {{ localization_dropdown_typography }} link-faded-reverse" role="option" value="{{ language.iso_code }}" aria-selected="{% if language.iso_code == localization.language.iso_code %}true{% else %}false{% endif %}">
+                    <span>{{- list_language_flag }} {{ list_language_label -}}</span>
+                  </button>
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
             {%- endfor -%}
+
+            {%- unless has_ordered_languages -%}
+              {%- for language in localization.available_languages -%}
+                {%- assign list_language_code = language.iso_code | split: '-' | first | downcase -%}
+                {%- assign list_language_flag = '' -%}
+                {%- assign list_language_label = language.endonym_name | capitalize -%}
+                {%- case list_language_code -%}
+                  {%- when 'en' -%}
+                    {%- assign list_language_flag = '🇺🇸' -%}
+                    {%- assign list_language_label = 'English' -%}
+                  {%- when 'fr' -%}
+                    {%- assign list_language_flag = '🇫🇷' -%}
+                    {%- assign list_language_label = 'French' -%}
+                  {%- when 'es' -%}
+                    {%- assign list_language_flag = '🇪🇸' -%}
+                    {%- assign list_language_label = 'Spanish' -%}
+                  {%- when 'it' -%}
+                    {%- assign list_language_flag = '🇮🇹' -%}
+                    {%- assign list_language_label = 'Italian' -%}
+                  {%- when 'nl' -%}
+                    {%- assign list_language_flag = '🇳🇱' -%}
+                    {%- assign list_language_label = 'Dutch' -%}
+                  {%- when 'ar' -%}
+                    {%- assign list_language_flag = '🇸🇦' -%}
+                    {%- assign list_language_label = 'Arabic' -%}
+                {%- endcase -%}
+
+                <button type="submit" name="locale_code" class="popover__value-option {{ localization_dropdown_typography }} link-faded-reverse" role="option" value="{{ language.iso_code }}" aria-selected="{% if language.iso_code == localization.language.iso_code %}true{% else %}false{% endif %}">
+                  <span>{{- list_language_flag }} {{ list_language_label -}}</span>
+                </button>
+              {%- endfor -%}
+            {%- endunless -%}
           </div>
         {%- endform -%}
       </x-popover>
