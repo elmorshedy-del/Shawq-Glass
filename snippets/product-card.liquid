@@ -190,11 +190,7 @@ Supported variables
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
 
               {%- assign button_label = 'product.general.add_to_cart_button' | t -%}
-              {%- if settings.shawq_glass_buttons -%}
-                {%- render 'button', content: button_label, type: 'submit', stretch: true, class: 'touch:hidden' -%}
-              {%- else -%}
-                {%- render 'button', content: button_label, type: 'submit', stretch: true, background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, class: 'touch:hidden' -%}
-              {%- endif -%}
+              {%- render 'button', content: button_label, type: 'submit', stretch: true, background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, class: 'touch:hidden' -%}
 
               <button type="submit" class="block tap-area no-touch:hidden">
                 <span class="sr-only">{{ button_label }}</span>
@@ -210,11 +206,7 @@ Supported variables
 
           {%- if show_product_size_selector == false -%}
             {%- assign button_label = 'product.general.choose_options' | t -%}
-            {%- if settings.shawq_glass_buttons -%}
-              {%- render 'button', content: button_label, aria_controls: quick_buy_id, stretch: true, class: 'touch:hidden' -%}
-            {%- else -%}
-              {%- render 'button', content: button_label, aria_controls: quick_buy_id, stretch: true, background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, class: 'touch:hidden' -%}
-            {%- endif -%}
+            {%- render 'button', content: button_label, aria_controls: quick_buy_id, stretch: true, background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, class: 'touch:hidden' -%}
           {%- endif -%}
 
           <button type="button" aria-controls="{{ quick_buy_id }}" class="block tap-area no-touch:hidden">
@@ -252,11 +244,7 @@ Supported variables
                 {%- assign class_list = class_list | append: ' is-selected' -%}
               {%- endif -%}
 
-              {%- if settings.shawq_glass_buttons -%}
-                {%- render 'button', type: 'submit', content: variant.title, size: 'sm', stretch: true, disabled: disabled, class: class_list -%}
-              {%- else -%}
-                {%- render 'button', type: 'submit', content: variant.title, size: 'sm', background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, stretch: true, disabled: disabled, class: class_list -%}
-              {%- endif -%}
+              {%- render 'button', type: 'submit', content: variant.title, size: 'sm', background: settings.default_color_scheme.settings.background, text_color: settings.default_color_scheme.settings.text_color, stretch: true, disabled: disabled, class: class_list -%}
             {%- endform -%}
           </product-form>
         {%- endfor -%}
