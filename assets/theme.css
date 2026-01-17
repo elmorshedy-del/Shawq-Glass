@@ -4652,25 +4652,6 @@ table caption {
   height: 15px;
 }
 
-.localization-popover::part(content),
-.localization-popover::part(header),
-.localization-popover::part(body) {
-  background: rgb(var(--localization-popover-background, 255 255 255));
-  color: rgb(var(--localization-popover-text-color, 17 17 17));
-}
-
-.localization-popover .popover__value-option,
-.localization-popover .popover__value-option span,
-.localization-popover .popover__value-option:visited,
-.localization-popover .popover__value-option:hover {
-  color: rgb(var(--localization-popover-text-color, 17 17 17));
-}
-
-.localization-popover .popover__value-option[aria-selected="true"]:after,
-.localization-popover .popover__value-option:has(:checked):after {
-  background-image: url("./checkmark.svg");
-}
-
 .payment-methods {
   flex-wrap: wrap;
   gap: 1rem;
