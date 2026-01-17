@@ -142,7 +142,7 @@
         "settings": {
           "text_color": "#321e1e",
           "background": "#ffffff",
-          "background_gradient": "",
+          "background_gradient": "linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0) 60%)",
           "secondary_background": "#ffffff",
           "primary_button_background": "#321e1e",
           "primary_button_text_color": "#ffffff",
