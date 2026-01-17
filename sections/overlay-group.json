@@ -30,24 +30,10 @@
             "trust_3_subheading": "",
             "trust_3_content": ""
           }
-        },
-        "offer_image_8Ty7yd": {
-          "type": "offer_image",
-          "settings": {
-            "layout": "half_width",
-            "heading": "when",
-            "button_text": "Button text",
-            "button_link": "shopify://products/kuffiyah-1",
-            "button_style": "solid",
-            "text_color": "#ffffff",
-            "button_background": "#ffffff",
-            "button_text_color": "#000000"
-          }
         }
       },
       "block_order": [
-        "trust_badges_MitqwF",
-        "offer_image_8Ty7yd"
+        "trust_badges_MitqwF"
       ],
       "custom_css": [],
       "settings": {
@@ -58,10 +44,10 @@
         "show_terms_of_service_checkbox": false,
         "show_view_cart_button": false,
         "show_checkout_button": true,
-        "style_addon_product": "third-najm-black-hoodie-unisex-copy",
+        "style_addon_product": "kuffiyah-1",
         "style_addon_title": "Complete the look",
         "style_addon_subtitle": "Add a keffiyeh — completes the outfit in one tap.",
-        "enable_cross_sell": true,
+        "enable_cross_sell": false,
         "cross_sell_title": "You may also like"
       }
     },
