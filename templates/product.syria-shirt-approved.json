@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -31,6 +40,21 @@
             "show_taxes_notice": false
           }
         },
+        "shawq_value_line": {
+          "type": "shawq_value_line",
+          "settings": {
+            "title": "Complete the look — naturally",
+            "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
+          }
+        },
+        "shawq_bundle": {
+          "type": "shawq_bundle",
+          "settings": {
+            "title": "Complete the look",
+            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "bundle_product": ""
+          }
+        },
         "offers_GyMgkN": {
           "type": "offers",
           "settings": {
@@ -41,7 +65,7 @@
             "offer_1_icon_width": 48,
             "offer_1_subheading": "<span style=\"text-decoration:underline\"><strong>use OFF5 FOR 5% Off Your First Order</strong></span>",
             "offer_1_content": "",
-            "offer_1_background": "#080912",
+            "offer_1_background": "#ffffff",
             "offer_1_text_color": "#dc1684",
             "offer_2_icon_width": 16,
             "offer_2_subheading": "",
@@ -81,6 +105,14 @@
             "block_selector_style": "fill",
             "variant_image_options": "",
             "size_chart_page": "long-sleeve-t-shirt-sizechart"
+          }
+        },
+        "shawq_reassurance": {
+          "type": "shawq_reassurance",
+          "settings": {
+            "item_1": "Fast shipping — typically 3–4 days",
+            "item_2": "Easy returns & exchanges",
+            "item_3": "Premium embroidery — built to last"
           }
         },
         "buy_buttons": {
@@ -151,29 +183,6 @@
             "uppercase_title": false,
             "icon": "picto-truck",
             "page": ""
-          }
-        },
-        "shawq_value_line": {
-          "type": "shawq_value_line",
-          "settings": {
-            "title": "Complete the look — naturally",
-            "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
-          }
-        },
-        "shawq_bundle": {
-          "type": "shawq_bundle",
-          "settings": {
-            "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
-            "bundle_product": ""
-          }
-        },
-        "shawq_reassurance": {
-          "type": "shawq_reassurance",
-          "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
-            "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
           }
         }
       },
@@ -280,7 +289,6 @@
           "name": "t:sections.slideshow.blocks.image.name",
           "settings": {
             "color_scheme": "",
-            "image": "shopify://shop_images/first-swipe-upper_564b3543-3b45-4fe5-9db1-d5f4c4bfc121.png",
             "slide_link": "",
             "content_max_width": 1000,
             "mobile_content_position": "place-self-center",
@@ -373,7 +381,10 @@
         "autoplay": true,
         "pause_auto_rotate_on_hover": false,
         "cycle_speed": 6,
-        "background": "#000000"
+        "background": "#000000",
+        "shawq_custom_height_enable": false,
+        "shawq_custom_height_mobile": 520,
+        "shawq_custom_height_desktop": 640
       }
     }
   },
