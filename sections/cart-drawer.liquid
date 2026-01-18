@@ -1,5 +1,5 @@
 {%- if request.page_type != 'cart' -%}
-  <cart-drawer id="cart-drawer" class="drawer drawer--cart color-scheme color-scheme--{{ section.settings.color_scheme.id }}" aria-label="{{ 'cart.general.title' | t | escape }}" handle-editor-events>
+  <cart-drawer id="cart-drawer" class="drawer drawer--cart shawq-glass-surface color-scheme color-scheme--{{ section.settings.color_scheme.id }}" aria-label="{{ 'cart.general.title' | t | escape }}" handle-editor-events>
     {%- comment -%}HEADER PART{%- endcomment -%}
     <div class="text-with-icon" slot="header">
       {%- render 'icon' with 'cart' -%}

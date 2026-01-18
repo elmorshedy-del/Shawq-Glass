@@ -63,12 +63,14 @@
             -%}
           {%- endif -%}
 
-          {%- render 'product-info',
-              product: section.settings.product,
-              product_form_id: product_form_id,
-              content_alignment: section.settings.content_alignment,
-              context: 'featured_product'
-          -%}
+          <div class="shawq-glass-surface">
+            {%- render 'product-info',
+                product: section.settings.product,
+                product_form_id: product_form_id,
+                content_alignment: section.settings.content_alignment,
+                context: 'featured_product'
+            -%}
+          </div>
         </div>
       </product-rerender>
     </div>
