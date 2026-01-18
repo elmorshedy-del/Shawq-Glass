@@ -115,5 +115,31 @@
     <x-toast class="toast">
       {% comment %}Container for notification messages; DO NOT DELETE{% endcomment %}
     </x-toast>
+    {%- if settings.snow_enabled and request.page_type != 'cart' and request.page_type != 'checkout' -%}
+      {%- assign snow_should_run = false -%}
+      {%- if settings.snow_pages == 'home_only' and request.page_type == 'index' -%}
+        {%- assign snow_should_run = true -%}
+      {%- elsif settings.snow_pages == 'home_and_collections' and request.page_type == 'index' -%}
+        {%- assign snow_should_run = true -%}
+      {%- elsif settings.snow_pages == 'home_and_collections' and request.page_type == 'collection' -%}
+        {%- assign snow_should_run = true -%}
+      {%- elsif settings.snow_pages == 'all_pages_except_cart_checkout' -%}
+        {%- assign snow_should_run = true -%}
+      {%- endif -%}
+      {%- if snow_should_run -%}
+        <script src="{{ 'snowfall.js' | asset_url }}" defer></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', () => {
+            if (window.Snowfall) {
+              window.Snowfall.start({
+                flakes: {{ settings.snow_flakes | default: 70 | json }},
+                seconds: {{ settings.snow_seconds | default: 9 | json }},
+                mode: {{ settings.snow_mode | default: 'once_per_session' | json }}
+              });
+            }
+          });
+        </script>
+      {%- endif -%}
+    {%- endif -%}
   {%- render "ecom_footer"-%}</body>
 </html>
