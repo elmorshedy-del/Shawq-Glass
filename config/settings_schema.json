@@ -747,7 +747,7 @@
         "type": "checkbox",
         "id": "snow_enabled",
         "label": "Enable snowfall",
-        "default": false
+        "default": true
       },
       {
         "type": "range",
