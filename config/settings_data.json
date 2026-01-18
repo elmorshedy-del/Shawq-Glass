@@ -42,6 +42,11 @@
     "currency_code_enabled": false,
     "button_animation": "rotation",
     "image_hover_animation": "zoom",
+    "snow_enabled": true,
+    "snow_flakes": 160,
+    "snow_seconds": 20,
+    "snow_mode": "every_page",
+    "snow_pages": "home_only",
     "color_swatch_shape": "square",
     "product_card_color_scheme": "scheme-1",
     "product_card_style": "body_text",
@@ -80,11 +85,6 @@
     "shawq_radius": 21,
     "shawq_btn_outline": 0.5,
     "shawq_btn_lift": 3,
-    "snow_enabled": true,
-    "snow_flakes": 70,
-    "snow_seconds": 9,
-    "snow_mode": "once_per_session",
-    "snow_pages": "home_and_collections",
     "content_for_index": [],
     "blocks": {
       "17450752420321394331": {
