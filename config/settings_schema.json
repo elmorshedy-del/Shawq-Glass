@@ -738,6 +738,70 @@
         "id": "stagger_blog_posts",
         "label": "t:theme_settings.animation.stagger_blog_posts",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "Seasonal effects"
+      },
+      {
+        "type": "checkbox",
+        "id": "snow_enabled",
+        "label": "Enable snowfall",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "snow_flakes",
+        "label": "Snow intensity",
+        "min": 20,
+        "max": 160,
+        "step": 10,
+        "default": 70
+      },
+      {
+        "type": "range",
+        "id": "snow_seconds",
+        "label": "Snow duration (seconds)",
+        "min": 2,
+        "max": 20,
+        "step": 1,
+        "default": 9
+      },
+      {
+        "type": "select",
+        "id": "snow_mode",
+        "label": "Snow frequency",
+        "default": "once_per_session",
+        "options": [
+          {
+            "value": "once_per_session",
+            "label": "Once per session"
+          },
+          {
+            "value": "every_page",
+            "label": "Every page"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "snow_pages",
+        "label": "Where to show",
+        "default": "home_and_collections",
+        "options": [
+          {
+            "value": "home_only",
+            "label": "Home only"
+          },
+          {
+            "value": "home_and_collections",
+            "label": "Home + collections"
+          },
+          {
+            "value": "all_pages_except_cart_checkout",
+            "label": "All pages except cart/checkout"
+          }
+        ]
       }
     ]
   },
@@ -1714,7 +1778,7 @@
         "label": "Card specular angle",
         "min": 0,
         "max": 180,
-        "step": 1,
+        "step": 2,
         "default": 135,
         "unit": "deg"
       },
