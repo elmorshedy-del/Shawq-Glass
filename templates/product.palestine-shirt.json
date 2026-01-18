@@ -48,7 +48,7 @@
           "settings": {
             "title": "Complete the look",
             "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
-            "bundle_product": ""
+            "bundle_product": "kuffiyah-1"
           }
         },
         "image_xiEddD": {
@@ -135,7 +135,7 @@
             "offer_1_icon_width": 48,
             "offer_1_subheading": "<span style=\"text-decoration:underline\"><strong>use OFF5 FOR 5% Off Your First Order</strong></span>",
             "offer_1_content": "",
-            "offer_1_background": "#000000",
+            "offer_1_background": "#ffffff",
             "offer_1_text_color": "#e02e92",
             "offer_2_icon_width": 16,
             "offer_2_subheading": "",
