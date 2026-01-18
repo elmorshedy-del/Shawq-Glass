@@ -45,7 +45,7 @@
     "snow_enabled": true,
     "snow_flakes": 160,
     "snow_seconds": 20,
-    "snow_mode": "every_page",
+    "snow_mode": "once_per_session",
     "snow_pages": "home_only",
     "color_swatch_shape": "square",
     "product_card_color_scheme": "scheme-1",
