@@ -94,19 +94,6 @@
           "type": "separator",
           "settings": {}
         },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "hide_sold_out_variants": false,
-            "separate_options": false,
-            "selector_style": "block",
-            "swatch_selector_style": "swatch",
-            "swatch_selector_size": "lg",
-            "block_selector_style": "fill",
-            "variant_image_options": "",
-            "size_chart_page": "long-sleeve-t-shirt-sizechart"
-          }
-        },
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
@@ -198,7 +185,6 @@
         "rating",
         "payment_terms",
         "separator",
-        "variant_picker",
         "shawq_reassurance",
         "buy_buttons",
         "volume_pricing_AktEmK",
