@@ -80,7 +80,7 @@
     "shawq_radius": 21,
     "shawq_btn_outline": 0.5,
     "shawq_btn_lift": 3,
-    "snow_enabled": false,
+    "snow_enabled": true,
     "snow_flakes": 70,
     "snow_seconds": 9,
     "snow_mode": "once_per_session",
