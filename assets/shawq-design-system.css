@@ -65,9 +65,7 @@ body.shawq-glass-buttons button.button {
   border-radius: calc(var(--shawq-radius-effective) - 2px);
 }
 
-body.shawq-glass-buttons .button:not(.button--outline):not(.link),
-body.shawq-glass-buttons button.button:not(.button--outline):not(.link),
-body.shawq-glass-buttons .shopify-payment-button__button {
+body.shawq-glass-buttons .button--primary {
   border: var(--shawq-btn-outline) solid rgb(var(--color-accent));
   color: rgb(var(--color-foreground));
   background: rgba(255,255,255,var(--shawq-surface-opacity-desktop));
@@ -75,24 +73,16 @@ body.shawq-glass-buttons .shopify-payment-button__button {
   backdrop-filter: blur(var(--shawq-blur-desktop));
   box-shadow: 0 10px 26px rgba(0,0,0,var(--shawq-shadow-strength));
 }
-body.shawq-glass-buttons .button:not(.button--outline):not(.link):hover,
-body.shawq-glass-buttons button.button:not(.button--outline):not(.link):hover,
-body.shawq-glass-buttons .shopify-payment-button__button:hover {
+body.shawq-glass-buttons .button--primary:hover {
   transform: translateY(calc(-1 * var(--shawq-btn-lift)));
 }
-body.shawq-glass-buttons .button:not(.button--outline):not(.link):active,
-body.shawq-glass-buttons button.button:not(.button--outline):not(.link):active,
-body.shawq-glass-buttons .shopify-payment-button__button:active {
+body.shawq-glass-buttons .button--primary:active {
   transform: translateY(0);
 }
 
 body.shawq-glass-buttons .button--secondary {
   border: 1px solid rgba(0,0,0,var(--shawq-border-opacity));
   background: rgba(255,255,255,0.55);
-}
-
-body.shawq-glass-buttons .shopify-payment-button__button {
-  border-radius: calc(var(--shawq-radius-effective) - 2px);
 }
 
 /* Product cards: make info panel glassy */
@@ -127,48 +117,9 @@ body.shawq-glass-cards .grid__item .card {
   }
 }
 
-/* Header + drawers: apply glass card surface */
-body.shawq-glass .header,
-body.shawq-glass .header__dropdown-menu,
-body.shawq-glass .drawer__inner,
-body.shawq-glass cart-drawer::part(body),
-body.shawq-glass cart-drawer::part(header),
-body.shawq-glass cart-drawer::part(footer) {
-  border: 1px solid rgba(0,0,0,var(--shawq-border-opacity));
-  background: rgba(255,255,255,var(--shawq-surface-opacity-desktop));
-  -webkit-backdrop-filter: blur(var(--shawq-blur-desktop));
-  backdrop-filter: blur(var(--shawq-blur-desktop));
-  box-shadow: 0 10px 30px rgba(0,0,0,var(--shawq-shadow-strength));
-}
-
-@media (max-width: 989px) {
-  body.shawq-glass .header,
-  body.shawq-glass .header__dropdown-menu,
-  body.shawq-glass .drawer__inner,
-  body.shawq-glass cart-drawer::part(body),
-  body.shawq-glass cart-drawer::part(header),
-  body.shawq-glass cart-drawer::part(footer) {
-    background: rgba(255,255,255,var(--shawq-surface-opacity-mobile));
-    -webkit-backdrop-filter: blur(var(--shawq-blur-mobile));
-    backdrop-filter: blur(var(--shawq-blur-mobile));
-  }
-}
-
 /* Drawer surfaces (cart, menus) */
 body.shawq-glass .drawer__inner,
 body.shawq-glass .menu-drawer,
 body.shawq-glass .modal__content {
   border-radius: var(--shawq-radius-effective);
-}
-
-body.shawq-glass .drawer-popover::part(overlay) {
-  -webkit-backdrop-filter: blur(var(--shawq-blur-desktop));
-  backdrop-filter: blur(var(--shawq-blur-desktop));
-}
-
-@media (max-width: 989px) {
-  body.shawq-glass .drawer-popover::part(overlay) {
-    -webkit-backdrop-filter: blur(var(--shawq-blur-mobile));
-    backdrop-filter: blur(var(--shawq-blur-mobile));
-  }
 }
