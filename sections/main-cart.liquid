@@ -176,11 +176,31 @@
                           <div class="additional-checkout-buttons additional-checkout-buttons--vertical" {{ block.shopify_attributes }}>
                             {{- content_for_additional_checkout_buttons -}}
                           </div>
+
+                          {%- if settings.shawq_style_payment_buttons -%}
+                            <style>
+                              .additional-checkout-buttons .shopify-payment-button__button {
+                                {%- if settings.shawq_checkout_button_style == 'outline' -%}
+                                  background: none;
+                                  color: rgb(var(--button-text-color, var(--button-text-primary)));
+                                  border: 1px solid rgb(var(--button-text-color, var(--button-text-primary)));
+                                  box-shadow: none;
+                                {%- else -%}
+                                  background: rgb(var(--button-background, var(--button-background-primary)));
+                                  color: rgb(var(--button-text-color, var(--button-text-primary)));
+                                  border: 1px solid rgb(var(--button-border-color, 0 0 0 / 0));
+                                {%- endif -%}
+
+                                border-radius: var(--button-border-radius);
+                              }
+                            </style>
+                          {%- endif -%}
                         {% endif %}
 
                       {%- when 'checkout_button' -%}
                         {%- assign checkout_button = 'cart.general.checkout' | t -%}
-                        {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout', stretch: true, form: 'cart-main-form', block: block -%}
+                        {%- assign checkout_button_style = settings.shawq_checkout_button_style | default: 'solid' -%}
+                        {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout', stretch: true, form: 'cart-main-form', style: checkout_button_style, block: block -%}
 
                       {%- when 'terms_of_service' -%}
                         <div class="checkbox-control">

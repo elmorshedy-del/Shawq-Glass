@@ -245,6 +245,124 @@
                 {%- endif -%}
               </product-recommendations>
             {%- endif -%}
+
+            <div class="cart-drawer__checkout">
+              {%- form 'cart', cart -%}
+                {%- if section.settings.show_cart_note or section.settings.show_shipping_estimator -%}
+                  <div class="cart-drawer__footer-actions divide-x">
+                    {%- if section.settings.show_cart_note -%}
+                      <x-drawer-popover class="drawer-popover" id="cart-drawer-order-note-popover">
+                        <p slot="header" class="subheading">{{ 'cart.general.order_note' | t }}</p>
+                        
+                        <div class="form">
+                          {%- assign field_label = 'cart.general.add_order_note' | t -%}
+
+                          <cart-note>
+                            {%- render 'input', name: 'note', value: cart.note, label: field_label, multiline: 5 -%}
+                          </cart-note>
+
+                          <dialog-close-button>
+                            {%- assign button_label = 'cart.general.save_note' | t -%}
+                            {%- render 'button', type: 'button', content: button_label, class: 'justify-self-start' -%}
+                          </dialog-close-button>
+                        </div>
+                      </x-drawer-popover>
+
+                      <button type="button" class="cart-drawer__footer-action-button subheading" aria-controls="cart-drawer-order-note-popover" aria-expanded="false">
+                        {%- render 'icon' with 'order-note' -%}
+                        {{- 'cart.general.order_note' | t -}}
+                      </button>
+                    {%- endif -%}
+
+                    {%- if section.settings.show_shipping_estimator -%}
+                      <x-drawer-popover class="drawer-popover" id="cart-drawer-shipping-estimator-popover">
+                        <p slot="header" class="subheading">{{ 'cart.shipping_estimator.estimate_shipping' | t }}</p>
+                        
+                        {%- render 'shipping-estimator' -%}
+                      </x-drawer-popover>
+
+                      <button type="button" class="cart-drawer__footer-action-button subheading" aria-controls="cart-drawer-shipping-estimator-popover" aria-expanded="false">
+                        {%- render 'icon' with 'shipping-estimator' -%}
+                        {{- 'cart.shipping_estimator.estimate_shipping' | t -}}
+                      </button>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+
+                <div class="cart-drawer__footer-inner">
+                  <div class="v-stack gap-4">
+                    {%- if section.settings.show_terms_of_service_checkbox -%}
+                      <!-- TERMS BOX -->
+                      <div class="checkbox-control text-xs">
+                        <input id="cart-drawer-terms-of-service" type="checkbox" class="checkbox" required value="1">
+
+                        {%- if shop.terms_of_service == blank -%}
+                          <label for="cart-drawer-terms-of-service">{{ 'cart.general.terms_of_services_checkbox' | t }}</label>
+                        {%- else -%}
+                          <label for="cart-drawer-terms-of-service">{{ 'cart.general.terms_of_services_checkbox_with_link_html' | t: link: shop.terms_of_service.url }}</label>
+                        {%- endif -%}
+                      </div>
+                    {%- endif -%}
+
+                    <!-- TOTALS -->
+                    <div class="v-stack gap-1.5">
+                      {% for discount_application in cart.cart_level_discount_applications %}
+                        <div class="h-stack justify-between gap-4">
+                          <span class="h-stack gap-2">{%- render 'icon' with 'discount', width: 12 -%} {{- discount_application.title -}}</span>
+                          <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
+                        </div>
+                      {% endfor %}
+
+                      <div class="h-stack justify-between gap-4">
+                        <span class="medium uppercase">{{ 'cart.general.total' | t }}</span>
+                        <span class="medium">{{ cart.total_price | money }}</span>
+                      </div>
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="v-stack gap-3">
+                      <div class="button-group button-group--same-width w-full">
+                        {%- liquid
+                          assign checkout_button_style = settings.shawq_checkout_button_style | default: 'solid'
+
+                          if section.settings.show_view_cart_button
+                            assign button_content = 'cart.general.view_cart' | t
+                            assign button_style = 'solid'
+
+                            if section.settings.show_checkout_button
+                              assign button_style = 'outline'
+                            endif
+
+                            render 'button', content: button_content, style: button_style, href: routes.cart_url, type: 'button'
+                          endif
+
+                          if section.settings.show_checkout_button
+                            assign button_content = 'cart.general.checkout' | t
+                            render 'button', content: button_content, type: 'submit', name: 'checkout', style: checkout_button_style
+                          endif
+                        -%}
+                      </div>
+
+                      {%- if section.settings.show_shipping_text -%}
+                        {%- liquid
+                          if cart.taxes_included and shop.shipping_policy.body != blank
+                            assign shipping_text = 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url
+                          elsif cart.taxes_included
+                            assign shipping_text = 'cart.general.taxes_included_but_shipping_at_checkout' | t
+                          elsif shop.shipping_policy.body != blank
+                            assign shipping_text = 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url
+                          else
+                            assign shipping_text = 'cart.general.taxes_and_shipping_at_checkout' | t
+                          endif
+                        -%}
+
+                        <p class="text-center text-subdued text-xs">{{ shipping_text }}</p>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                </div>
+              {%- endform -%}
+            </div>
           </div>
         </div>
       {%- endif -%}
@@ -270,124 +388,6 @@
       {{- cart_content -}}
     {%- endif -%}
 
-    {%- comment -%}FOOTER PART{%- endcomment -%}
-    {%- unless cart.empty? -%}
-      <div slot="footer">
-        {%- form 'cart', cart -%}
-          {%- if section.settings.show_cart_note or section.settings.show_shipping_estimator -%}
-            <div class="cart-drawer__footer-actions divide-x">
-              {%- if section.settings.show_cart_note -%}
-                <x-drawer-popover class="drawer-popover" id="cart-drawer-order-note-popover">
-                  <p slot="header" class="subheading">{{ 'cart.general.order_note' | t }}</p>
-                  
-                  <div class="form">
-                    {%- assign field_label = 'cart.general.add_order_note' | t -%}
-
-                    <cart-note>
-                      {%- render 'input', name: 'note', value: cart.note, label: field_label, multiline: 5 -%}
-                    </cart-note>
-
-                    <dialog-close-button>
-                      {%- assign button_label = 'cart.general.save_note' | t -%}
-                      {%- render 'button', type: 'button', content: button_label, class: 'justify-self-start' -%}
-                    </dialog-close-button>
-                  </div>
-                </x-drawer-popover>
-
-                <button type="button" class="cart-drawer__footer-action-button subheading" aria-controls="cart-drawer-order-note-popover" aria-expanded="false">
-                  {%- render 'icon' with 'order-note' -%}
-                  {{- 'cart.general.order_note' | t -}}
-                </button>
-              {%- endif -%}
-
-              {%- if section.settings.show_shipping_estimator -%}
-                <x-drawer-popover class="drawer-popover" id="cart-drawer-shipping-estimator-popover">
-                  <p slot="header" class="subheading">{{ 'cart.shipping_estimator.estimate_shipping' | t }}</p>
-                  
-                  {%- render 'shipping-estimator' -%}
-                </x-drawer-popover>
-
-                <button type="button" class="cart-drawer__footer-action-button subheading" aria-controls="cart-drawer-shipping-estimator-popover" aria-expanded="false">
-                  {%- render 'icon' with 'shipping-estimator' -%}
-                  {{- 'cart.shipping_estimator.estimate_shipping' | t -}}
-                </button>
-              {%- endif -%}
-            </div>
-          {%- endif -%}
-
-          <div class="cart-drawer__footer-inner">
-            <div class="v-stack gap-4">
-              {%- if section.settings.show_terms_of_service_checkbox -%}
-                <!-- TERMS BOX -->
-                <div class="checkbox-control text-xs">
-                  <input id="cart-drawer-terms-of-service" type="checkbox" class="checkbox" required value="1">
-
-                  {%- if shop.terms_of_service == blank -%}
-                    <label for="cart-drawer-terms-of-service">{{ 'cart.general.terms_of_services_checkbox' | t }}</label>
-                  {%- else -%}
-                    <label for="cart-drawer-terms-of-service">{{ 'cart.general.terms_of_services_checkbox_with_link_html' | t: link: shop.terms_of_service.url }}</label>
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
-
-              <!-- TOTALS -->
-              <div class="v-stack gap-1.5">
-                {% for discount_application in cart.cart_level_discount_applications %}
-                  <div class="h-stack justify-between gap-4">
-                    <span class="h-stack gap-2">{%- render 'icon' with 'discount', width: 12 -%} {{- discount_application.title -}}</span>
-                    <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
-                  </div>
-                {% endfor %}
-
-                <div class="h-stack justify-between gap-4">
-                  <span class="medium uppercase">{{ 'cart.general.total' | t }}</span>
-                  <span class="medium">{{ cart.total_price | money }}</span>
-                </div>
-              </div>
-
-              <!-- BUTTONS -->
-              <div class="v-stack gap-3">
-                <div class="button-group button-group--same-width w-full">
-                  {%- liquid
-                    if section.settings.show_view_cart_button
-                      assign button_content = 'cart.general.view_cart' | t
-                      assign button_style = 'solid'
-
-                      if section.settings.show_checkout_button
-                        assign button_style = 'outline'
-                      endif
-
-                      render 'button', content: button_content, style: button_style, href: routes.cart_url, type: 'button'
-                    endif
-
-                    if section.settings.show_checkout_button
-                      assign button_content = 'cart.general.checkout' | t
-                      render 'button', content: button_content, type: 'submit', name: 'checkout'
-                    endif
-                  -%}
-                </div>
-
-                {%- if section.settings.show_shipping_text -%}
-                  {%- liquid
-                    if cart.taxes_included and shop.shipping_policy.body != blank
-                      assign shipping_text = 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url
-                    elsif cart.taxes_included
-                      assign shipping_text = 'cart.general.taxes_included_but_shipping_at_checkout' | t
-                    elsif shop.shipping_policy.body != blank
-                      assign shipping_text = 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url
-                    else
-                      assign shipping_text = 'cart.general.taxes_and_shipping_at_checkout' | t
-                    endif
-                  -%}
-
-                  <p class="text-center text-subdued text-xs">{{ shipping_text }}</p>
-                {%- endif -%}
-              </div>
-            </div>
-          </div>
-        {%- endform -%}
-      </div>
-    {%- endunless -%}
   </cart-drawer>
 {%- endif -%}
 
