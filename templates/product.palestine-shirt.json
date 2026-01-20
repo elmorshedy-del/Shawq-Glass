@@ -17,18 +17,11 @@
           "disabled": true,
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
         "shawq_desc_ghalabany_ls": {
           "type": "shawq_desc_override",
           "settings": {
-            "product": "",
-            "description": "<p>A quieter frame for the same message. The back carries the keffiyeh grid and red map with stitching that stays sharp.</p><p>Long sleeves add weight and presence without losing ease.</p><p>This is the piece you reach for when you want meaning without noise.</p>"
+            "product": "ghalabany-al-shawq-ْغَلبَني-الشَوق-long-sleeve-shirt",
+            "description": "<p>A quieter frame for the same message. The back carries the keffiyeh grid and red map with stitching that stays sharp.Long sleeves add weight and presence without losing ease. This is the piece you reach for when you want meaning without noise.</p>"
           }
         },
         "title": {
@@ -43,8 +36,16 @@
             "show_taxes_notice": false
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
         "shawq_value_line": {
           "type": "shawq_value_line",
+          "disabled": true,
           "settings": {
             "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
@@ -88,7 +89,6 @@
         },
         "rating": {
           "type": "rating",
-          "disabled": true,
           "settings": {
             "show_empty": false
           }
@@ -107,7 +107,9 @@
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "long-sleeve-t-shirt-sizechart"
+            "size_chart_page": "long-sleeve-t-shirt-sizechart",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "shawq_reassurance": {
@@ -129,7 +131,9 @@
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": ""
+            "payment_button_text_color": "",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "offers_URKkWc": {
@@ -215,10 +219,10 @@
       },
       "block_order": [
         "vendor",
-        "description",
         "shawq_desc_ghalabany_ls",
         "title",
         "price",
+        "description",
         "shawq_value_line",
         "shawq_bundle",
         "image_xiEddD",
@@ -245,6 +249,10 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",

@@ -17,18 +17,11 @@
           "disabled": true,
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
         "shawq_desc_ghalabany_crewneck": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Longing becomes a banner here - the keffiyeh grid and the red map of Palestine sit embroidered across the back.</p><p>Heavyweight feel, tight stitching, and a structure that keeps its form all day.</p><p>Put it on and let the story speak.</p>"
+            "description": "<p>Longing becomes a banner here - the keffiyeh grid and the red map of Palestine sit embroidered across the back.Heavyweight feel, tight stitching, and a structure that keeps its form all day. Put it on and let the story speak.</p>"
           }
         },
         "title": {
@@ -47,18 +40,26 @@
             "progress_bar_max_value": 50
           }
         },
-        "badges": {
-          "type": "badges",
-          "settings": {}
-        },
         "price": {
           "type": "price",
           "settings": {
             "show_taxes_notice": false
           }
         },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
         "shawq_value_line": {
           "type": "shawq_value_line",
+          "disabled": true,
           "settings": {
             "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
@@ -68,7 +69,7 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "subtitle": "Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.",
             "bundle_product": "kuffiyah-1"
           }
         },
@@ -195,12 +196,12 @@
       },
       "block_order": [
         "vendor",
-        "description",
         "shawq_desc_ghalabany_crewneck",
         "title",
         "inventory_dYxxDb",
-        "badges",
         "price",
+        "badges",
+        "description",
         "shawq_value_line",
         "shawq_bundle",
         "image_QDVAzH",
@@ -225,6 +226,8 @@
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
         "show_vertical_divider": false,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
         "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
