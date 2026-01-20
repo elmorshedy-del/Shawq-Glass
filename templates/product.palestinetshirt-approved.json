@@ -249,7 +249,7 @@
         "desktop_carousel_controls": "lines",
         "mobile_controls": "lines",
         "enable_media_autoplay": false,
-        "enable_video_looping": true,
+        "enable_video_looping": false,
         "enable_image_zoom": true,
         "max_image_zoom_level": 3
       }
