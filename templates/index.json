@@ -480,7 +480,7 @@
             "show_gift_card_recipient": true,
             "show_quantity_selector": true,
             "add_quantity_selector_spacing": true,
-            "atc_button_style": "solid",
+            "atc_button_style": "outline",
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
