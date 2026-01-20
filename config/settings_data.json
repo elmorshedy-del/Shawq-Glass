@@ -232,7 +232,7 @@
         "settings": {
           "text_color": "#000000",
           "background": "#ffffff",
-          "background_gradient": "linear-gradient(90deg, rgba(206, 17, 38, 0.35), rgba(17, 17, 17, 0.4) 35%, rgba(255, 255, 255, 0.55) 55%, rgba(0, 122, 61, 0.35) 100%)",
+          "background_gradient": "linear-gradient(90deg,\n  rgba(206,17,38,0.30) 0%,\n  rgba(17,17,17,0.34) 35%,\n  rgba(255,255,255,0.86) 55%,\n  rgba(0,122,61,0.30) 100%\n)",
           "secondary_background": "#ffffff",
           "primary_button_background": "#ffffff",
           "primary_button_text_color": "#230f0f",
