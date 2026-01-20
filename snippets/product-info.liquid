@@ -18,25 +18,34 @@ Supported variables
 {%- endcomment -%}
 
 {%- assign alignment = content_alignment | replace: 'left', 'start' | replace: 'right', 'end' | default: 'start' -%}
+{%- assign description_override = '' -%}
+{%- for override_block in section.blocks -%}
+  {%- if override_block.type == 'shawq_description_override' and override_block.settings.description != blank -%}
+    {%- if override_block.settings.product == blank -%}
+      {%- assign description_override = override_block.settings.description -%}
+      {%- break -%}
+    {%- elsif product != blank and override_block.settings.product.id == product.id -%}
+      {%- assign description_override = override_block.settings.description -%}
+      {%- break -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
 
 <safe-sticky class="product-info text-{{ alignment }}">
   <div class="product-info__block-list">
     {%- liquid
       assign inside_block_group_context = false
       assign current_block_group_name = ''
+      assign filtered_blocks = '' | split: ''
 
-      if allow_blocks != blank
-        assign filtered_blocks = '' | split: ''
-
-        for block in section.blocks
-          if allow_blocks contains block.type
+      for block in section.blocks
+        if block.type != 'shawq_description_override'
+          if allow_blocks == blank or allow_blocks contains block.type
             assign block_as_arr = block | sort
             assign filtered_blocks = filtered_blocks | concat: block_as_arr
           endif
-        endfor
-      else
-        assign filtered_blocks = section.blocks
-      endif
+        endif
+      endfor
     -%}
 
     {%- for block in filtered_blocks -%}
@@ -177,7 +186,9 @@ Supported variables
 
           {%- when 'description' -%}
             {%- liquid
-              if product == blank
+              if description_override != blank
+                assign product_description = description_override
+              elsif product == blank
                 assign product_description = 'general.on_boarding.product_description' | t
               else
                 # Shopify RTE often adds a useless meta tag that mess with spacing, so we remove it

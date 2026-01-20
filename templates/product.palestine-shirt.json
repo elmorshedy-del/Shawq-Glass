@@ -24,6 +24,13 @@
             "uppercase_title": false
           }
         },
+        "shawq_desc_ghalabany_ls": {
+          "type": "shawq_description_override",
+          "settings": {
+            "product": "",
+            "description": "<p>A quieter frame for the same message. The back carries the keffiyeh grid and red map with stitching that stays sharp.</p><p>Long sleeves add weight and presence without losing ease.</p><p>This is the piece you reach for when you want meaning without noise.</p>"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -209,6 +216,7 @@
       "block_order": [
         "vendor",
         "description",
+        "shawq_desc_ghalabany_ls",
         "title",
         "price",
         "shawq_value_line",

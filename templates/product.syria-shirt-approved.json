@@ -24,6 +24,13 @@
             "uppercase_title": false
           }
         },
+        "shawq_desc_third_najm_ls": {
+          "type": "shawq_description_override",
+          "settings": {
+            "product": "",
+            "description": "<p>The Third Najm story in motion - doves and stars embroidered to keep the message permanent.</p><p>Long sleeves give it balance, the stitching gives it weight.</p><p>Wear it when you want quiet strength on your side.</p>"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -176,6 +183,7 @@
       "block_order": [
         "vendor",
         "description",
+        "shawq_desc_third_najm_ls",
         "title",
         "badges",
         "price",
