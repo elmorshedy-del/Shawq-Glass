@@ -84,7 +84,7 @@
     "shawq_sheen_strength": 0.5,
     "shawq_border_opacity": 0,
     "shawq_shadow_strength": 0.5,
-    "shawq_radius": 3,
+    "shawq_radius": 9,
     "shawq_btn_outline": 3,
     "shawq_btn_lift": 3,
     "shawq_quantity_selector_style": "outline",
