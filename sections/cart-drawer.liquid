@@ -144,6 +144,87 @@
               </div>
             {%- endif -%}
 
+            {%- liquid
+              assign reward_product = section.settings.reward_product
+
+              if reward_product == blank
+                assign reward_product = all_products['palestine-frame']
+              endif
+              assign reward_enabled = section.settings.reward_enable and reward_product != blank
+              assign reward_threshold_cents = section.settings.reward_threshold | times: 100
+              assign reward_line_item_key = ''
+              assign reward_line_item_total = 0
+              assign reward_in_cart = false
+
+              if reward_enabled
+                for line_item in cart.items
+                  if line_item.product_id == reward_product.id
+                    assign reward_in_cart = true
+
+                    if line_item.properties['_shawq_reward'] == 'true'
+                      assign reward_line_item_key = line_item.key
+                      assign reward_line_item_total = line_item.original_line_price
+                    endif
+                  endif
+                endfor
+              endif
+
+              assign reward_subtotal = cart.items_subtotal_price | minus: reward_line_item_total
+              assign reward_unlocked = reward_enabled and reward_subtotal >= reward_threshold_cents
+            -%}
+
+            {%- if reward_enabled -%}
+              {%- capture reward_style -%}
+                --shawq-reward-text-color: {{ section.settings.reward_message_color.rgb }};
+                --shawq-reward-text-anim-speed: {{ section.settings.reward_message_anim_speed }}s;
+                --shawq-reward-confetti-speed: {{ section.settings.reward_confetti_speed }}s;
+                --shawq-reward-confetti-1: {{ section.settings.reward_confetti_color_1.rgb }};
+                --shawq-reward-confetti-2: {{ section.settings.reward_confetti_color_2.rgb }};
+                --shawq-reward-confetti-3: {{ section.settings.reward_confetti_color_3.rgb }};
+                {%- if section.settings.reward_message_weight != blank -%}
+                  --shawq-reward-text-weight: {{ section.settings.reward_message_weight }};
+                {%- endif -%}
+              {%- endcapture -%}
+              {%- assign reward_style = reward_style | strip_newlines | strip -%}
+
+              <div class="cart-drawer__reward{% if reward_unlocked %} is-unlocked{% endif %}"
+                data-shawq-gwp="true"
+                data-gwp-enabled="{{ reward_enabled }}"
+                data-gwp-threshold="{{ reward_threshold_cents }}"
+                data-gwp-product-id="{{ reward_product.id }}"
+                data-gwp-variant-id="{{ reward_product.selected_or_first_available_variant.id }}"
+                data-gwp-remove="{{ section.settings.reward_remove_below_threshold }}"
+                data-gwp-in-cart="{{ reward_in_cart }}"
+                data-gwp-reward-key="{{ reward_line_item_key }}"
+                {% if reward_style != blank %}style="{{ reward_style }}"{% endif %}
+                {% unless reward_unlocked %}hidden{% endunless %}>
+                {%- if section.settings.reward_message != blank -%}
+                  <p class="cart-drawer__reward-message {{ section.settings.reward_message_size }}">
+                    <span class="shawq-animated-text" data-anim="{{ section.settings.reward_message_animation }}" style="--shawq-text-anim-speed: var(--shawq-reward-text-anim-speed, 6s);">
+                      {{- section.settings.reward_message -}}
+                    </span>
+                  </p>
+                {%- endif -%}
+
+                {%- if section.settings.reward_confetti_enable and reward_unlocked -%}
+                  {%- assign confetti_count = section.settings.reward_confetti_count | default: 18 -%}
+                  <div class="cart-drawer__reward-confetti" aria-hidden="true">
+                    {%- for i in (1..confetti_count) -%}
+                      {%- assign confetti_x = forloop.index0 | times: 7 | modulo: 100 -%}
+                      {%- assign confetti_delay = forloop.index0 | times: 0.12 -%}
+                      {%- assign confetti_size = 6 | plus: forloop.index0 | modulo: 4 -%}
+                      {%- assign confetti_rotate = forloop.index0 | times: 37 | modulo: 360 -%}
+                      {%- assign confetti_drift = forloop.index0 | times: 3 | modulo: 22 | minus: 11 -%}
+                      {%- assign confetti_color_index = forloop.index0 | modulo: 3 | plus: 1 -%}
+                      <span class="shawq-confetti"
+                        style="--shawq-confetti-x: {{ confetti_x }}%; --shawq-confetti-delay: {{ confetti_delay }}s; --shawq-confetti-size: {{ confetti_size }}px; --shawq-confetti-rotate: {{ confetti_rotate }}deg; --shawq-confetti-drift: {{ confetti_drift }}px; --shawq-confetti-color: var(--shawq-reward-confetti-{{ confetti_color_index }});">
+                      </span>
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
             {%- comment -%}TRUST BADGES{%- endcomment -%}
             {%- assign trust_badges_block = section.blocks | where: 'type', 'trust_badges' | first -%}
             
@@ -227,9 +308,30 @@
                   {%- assign style_addon_background = blank -%}
                 {%- endif -%}
 
-                <div class="shawq-style-addon v-stack gap-2{% if section.settings.style_addon_plain %} shawq-style-addon--plain{% endif %}">
+                {%- capture style_addon_style -%}
+                  --shawq-aov-border-width: {{ section.settings.style_addon_border_width }}px;
+                  --shawq-aov-border-opacity: {{ section.settings.style_addon_border_opacity }};
+                  --shawq-aov-border-color: {{ section.settings.style_addon_border_color.rgb }};
+                  --shawq-aov-border-radius: {{ section.settings.style_addon_border_radius }}px;
+                  --shawq-aov-border-padding: {{ section.settings.style_addon_border_padding }}px;
+                  --shawq-aov-border-style: {{ section.settings.style_addon_border_style }};
+                  --shawq-aov-anim-speed: {{ section.settings.style_addon_card_anim_speed }}s;
+                  --shawq-aov-anim-intensity: {{ section.settings.style_addon_card_anim_intensity }};
+                  --shawq-text-anim-speed: {{ section.settings.style_addon_text_anim_speed }}s;
+                {%- endcapture -%}
+                {%- assign style_addon_style = style_addon_style | strip_newlines | strip -%}
+
+                <div class="shawq-style-addon v-stack gap-2{% if section.settings.style_addon_plain %} shawq-style-addon--plain{% endif %}"
+                  data-aov-border="{{ section.settings.style_addon_border_enable }}"
+                  data-aov-animation="{{ section.settings.style_addon_card_animation }}"
+                  data-aov-text-animation="{{ section.settings.style_addon_text_animation }}"
+                  {% if style_addon_style != blank %}style="{{ style_addon_style }}"{% endif %}>
                   {%- if section.settings.style_addon_title != blank -%}
-                    <p class="h7">{{ section.settings.style_addon_title }}</p>
+                    <p class="h7">
+                      <span class="shawq-animated-text" data-anim="{{ section.settings.style_addon_text_animation }}">
+                        {{ section.settings.style_addon_title }}
+                      </span>
+                    </p>
                   {%- endif -%}
 
                   {%- if section.settings.style_addon_subtitle != blank -%}
@@ -299,7 +401,7 @@
             {%- endif -%}
 
             <div class="cart-drawer__checkout">
-              {%- form 'cart', cart -%}
+              {%- form 'cart', cart, id: 'cart-drawer-form' -%}
                 {%- if section.settings.show_cart_note or section.settings.show_shipping_estimator -%}
                   <div class="cart-drawer__footer-actions divide-x">
                     {%- if section.settings.show_cart_note -%}
@@ -390,7 +492,7 @@
 
                           if section.settings.show_checkout_button
                             assign button_content = 'cart.general.checkout' | t
-                            render 'button', content: button_content, type: 'submit', name: 'checkout', style: checkout_button_style
+                            render 'button', content: button_content, type: 'submit', name: 'checkout', form: 'cart-drawer-form', style: checkout_button_style
                           endif
                         -%}
                       </div>
@@ -737,6 +839,182 @@
     },
     {
       "type": "header",
+      "content": "Shawq — Cart reward"
+    },
+    {
+      "type": "checkbox",
+      "id": "reward_enable",
+      "label": "Enable reward unlock",
+      "default": true
+    },
+    {
+      "type": "product",
+      "id": "reward_product",
+      "label": "Reward product"
+    },
+    {
+      "type": "range",
+      "id": "reward_threshold",
+      "label": "Unlock threshold",
+      "min": 50,
+      "max": 1000,
+      "step": 10,
+      "unit": "USD",
+      "default": 250
+    },
+    {
+      "type": "checkbox",
+      "id": "reward_remove_below_threshold",
+      "label": "Remove reward if cart drops below threshold",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "reward_message",
+      "label": "Reward message",
+      "default": "CONGRATULATIONS! YOU HAVE UNLOCKED THE EXCLUSIVE PALESTINE ART-FRAME"
+    },
+    {
+      "type": "color",
+      "id": "reward_message_color",
+      "label": "Reward message color",
+      "default": "#ff2f7d"
+    },
+    {
+      "type": "select",
+      "id": "reward_message_weight",
+      "label": "Reward message weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Theme default"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "select",
+      "id": "reward_message_size",
+      "label": "Reward message size",
+      "options": [
+        {
+          "value": "text-sm",
+          "label": "Small"
+        },
+        {
+          "value": "text-base",
+          "label": "Medium"
+        },
+        {
+          "value": "text-lg",
+          "label": "Large"
+        }
+      ],
+      "default": "text-sm"
+    },
+    {
+      "type": "select",
+      "id": "reward_message_animation",
+      "label": "Reward message animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "shine",
+          "label": "Shine"
+        },
+        {
+          "value": "glow",
+          "label": "Glow"
+        },
+        {
+          "value": "underline",
+          "label": "Underline sweep"
+        }
+      ],
+      "default": "shine"
+    },
+    {
+      "type": "range",
+      "id": "reward_message_anim_speed",
+      "label": "Reward message animation speed",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Reward confetti"
+    },
+    {
+      "type": "checkbox",
+      "id": "reward_confetti_enable",
+      "label": "Show confetti burst",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "reward_confetti_count",
+      "label": "Confetti density",
+      "min": 8,
+      "max": 30,
+      "step": 2,
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "reward_confetti_speed",
+      "label": "Confetti speed",
+      "min": 1,
+      "max": 5,
+      "step": 0.5,
+      "unit": "s",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "reward_confetti_color_1",
+      "label": "Confetti color 1",
+      "default": "#ff2f7d"
+    },
+    {
+      "type": "color",
+      "id": "reward_confetti_color_2",
+      "label": "Confetti color 2",
+      "default": "#ffd166"
+    },
+    {
+      "type": "color",
+      "id": "reward_confetti_color_3",
+      "label": "Confetti color 3",
+      "default": "#7bdff2"
+    },
+    {
+      "type": "header",
       "content": "Shawq — AOV add-on"
     },
     {
@@ -755,6 +1033,162 @@
       "id": "style_addon_subtitle",
       "label": "Subheading",
       "default": "Add a keffiyeh — completes the outfit in one tap."
+    },
+    {
+      "type": "header",
+      "content": "Add-on border"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_addon_border_enable",
+      "label": "Enable add-on border",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "style_addon_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "style_addon_border_opacity",
+      "label": "Border opacity",
+      "min": 0.05,
+      "max": 0.5,
+      "step": 0.05,
+      "default": 0.1
+    },
+    {
+      "type": "range",
+      "id": "style_addon_border_width",
+      "label": "Border thickness",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "select",
+      "id": "style_addon_border_style",
+      "label": "Border style",
+      "options": [
+        {
+          "value": "solid",
+          "label": "Solid"
+        },
+        {
+          "value": "dashed",
+          "label": "Dashed"
+        },
+        {
+          "value": "dotted",
+          "label": "Dotted"
+        }
+      ],
+      "default": "solid"
+    },
+    {
+      "type": "range",
+      "id": "style_addon_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "style_addon_border_padding",
+      "label": "Border padding",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Add-on animation"
+    },
+    {
+      "type": "select",
+      "id": "style_addon_card_animation",
+      "label": "Card animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "shimmer",
+          "label": "Shimmer"
+        },
+        {
+          "value": "glow",
+          "label": "Glow"
+        },
+        {
+          "value": "float",
+          "label": "Float"
+        }
+      ],
+      "default": "shimmer"
+    },
+    {
+      "type": "range",
+      "id": "style_addon_card_anim_speed",
+      "label": "Card animation speed",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "unit": "s",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "style_addon_card_anim_intensity",
+      "label": "Card animation intensity",
+      "min": 0.1,
+      "max": 1.0,
+      "step": 0.1,
+      "default": 0.4
+    },
+    {
+      "type": "select",
+      "id": "style_addon_text_animation",
+      "label": "Title text animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "shine",
+          "label": "Shine"
+        },
+        {
+          "value": "glow",
+          "label": "Glow"
+        },
+        {
+          "value": "underline",
+          "label": "Underline sweep"
+        }
+      ],
+      "default": "shine"
+    },
+    {
+      "type": "range",
+      "id": "style_addon_text_anim_speed",
+      "label": "Title animation speed",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "unit": "s",
+      "default": 6
     },
     {
       "type": "checkbox",

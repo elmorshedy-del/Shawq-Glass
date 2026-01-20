@@ -277,6 +277,102 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
   font-weight: var(--shawq-cart-drawer-notice-weight, var(--text-font-medium-weight));
 }
 
+.cart-drawer__reward {
+  position: relative;
+  text-align: center;
+  padding-block: 0.5rem;
+}
+
+.cart-drawer__reward-message {
+  color: rgb(var(--shawq-reward-text-color, var(--text-color)));
+  font-weight: var(--shawq-reward-text-weight, var(--text-font-medium-weight));
+  letter-spacing: 0.02em;
+}
+
+.cart-drawer__reward-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cart-drawer__reward-confetti .shawq-confetti {
+  position: absolute;
+  left: var(--shawq-confetti-x);
+  bottom: -8px;
+  width: var(--shawq-confetti-size);
+  height: calc(var(--shawq-confetti-size) * 0.6);
+  background: var(--shawq-confetti-color);
+  border-radius: 2px;
+  transform: translateX(-50%) rotate(var(--shawq-confetti-rotate));
+  animation: shawq-confetti-pop var(--shawq-reward-confetti-speed, 2s) ease-out infinite;
+  animation-delay: var(--shawq-confetti-delay);
+  opacity: 0;
+}
+
+.shawq-style-addon {
+  position: relative;
+  border-radius: var(--shawq-aov-border-radius, var(--shawq-radius-effective, 16px));
+}
+
+.shawq-style-addon[data-aov-border="true"] {
+  border: var(--shawq-aov-border-width, 1px) var(--shawq-aov-border-style, solid) rgb(var(--shawq-aov-border-color, 0 0 0) / var(--shawq-aov-border-opacity, 0.1));
+  padding: var(--shawq-aov-border-padding, 0.75rem);
+}
+
+.shawq-style-addon[data-aov-animation="shimmer"]::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.7) 50%, transparent 65%);
+  transform: translateX(-120%);
+  opacity: var(--shawq-aov-anim-intensity, 0.4);
+  animation: shawq-aov-shimmer var(--shawq-aov-anim-speed, 10s) linear infinite;
+  pointer-events: none;
+}
+
+.shawq-style-addon[data-aov-animation="shimmer"] {
+  overflow: hidden;
+}
+
+.shawq-style-addon[data-aov-animation="glow"] {
+  animation: shawq-aov-glow var(--shawq-aov-anim-speed, 10s) ease-in-out infinite;
+}
+
+.shawq-style-addon[data-aov-animation="float"] {
+  animation: shawq-aov-float calc(var(--shawq-aov-anim-speed, 10s) / 2) ease-in-out infinite;
+}
+
+.shawq-animated-text {
+  position: relative;
+  display: inline-block;
+}
+
+.shawq-animated-text[data-anim="shine"] {
+  background-image: linear-gradient(110deg, currentColor 0%, currentColor 40%, rgba(255,255,255,0.95) 50%, currentColor 60%, currentColor 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shawq-text-shine var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) linear infinite;
+}
+
+.shawq-animated-text[data-anim="glow"] {
+  animation: shawq-text-glow var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) ease-in-out infinite;
+}
+
+.shawq-animated-text[data-anim="underline"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.15em;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: shawq-text-underline var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) ease-in-out infinite;
+}
+
 cart-drawer.drawer--cart {
   color: rgb(var(--shawq-cart-drawer-text-color, var(--text-color)));
   font-weight: var(--shawq-cart-drawer-body-weight, inherit);
@@ -308,4 +404,86 @@ cart-drawer.drawer--cart .shopify-payment-button__button--unbranded {
   border-block-start: 1px solid rgb(var(--border-color));
   margin-block-start: 1rem;
   padding-block-start: 1rem;
+}
+
+@keyframes shawq-aov-shimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes shawq-aov-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+  }
+  50% {
+    box-shadow: 0 12px 30px rgba(0,0,0,calc(var(--shawq-aov-anim-intensity, 0.4) * 0.35));
+  }
+}
+
+@keyframes shawq-aov-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes shawq-text-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes shawq-text-glow {
+  0%, 100% {
+    text-shadow: 0 0 0 rgba(0,0,0,0);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(255,255,255,0.35);
+  }
+}
+
+@keyframes shawq-text-underline {
+  0%, 100% {
+    transform: scaleX(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes shawq-confetti-pop {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(-50% + var(--shawq-confetti-drift))) translateY(-180px) rotate(240deg);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shawq-style-addon[data-aov-animation="shimmer"]::before,
+  .shawq-style-addon[data-aov-animation="glow"],
+  .shawq-style-addon[data-aov-animation="float"],
+  .shawq-animated-text[data-anim="shine"],
+  .shawq-animated-text[data-anim="glow"],
+  .shawq-animated-text[data-anim="underline"]::after,
+  .cart-drawer__reward-confetti .shawq-confetti {
+    animation: none;
+  }
 }

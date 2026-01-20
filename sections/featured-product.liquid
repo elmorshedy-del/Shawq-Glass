@@ -8,6 +8,29 @@
       --product-grid: auto / minmax(0, {{ section.settings.product_media_size | divided_by: 100.0 }}fr) minmax(0, {{ 100.0 | minus: section.settings.product_media_size | divided_by: 100.0 }}fr);
     }
   }
+
+  {%- if section.settings.show_vertical_divider -%}
+  @media screen and (min-width: 1000px) {
+    #shopify-section-{{ section.id }} .product {
+      --shawq-product-divider-gap: 3rem;
+      --shawq-product-divider-width: {{ section.settings.vertical_divider_width | default: 1 }}px;
+      --shawq-product-divider-opacity: {{ section.settings.vertical_divider_opacity | default: 0.1 }};
+      --shawq-product-divider-color: {{ section.settings.vertical_divider_color.rgb }};
+      position: relative;
+    }
+
+    #shopify-section-{{ section.id }} .product::after {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      width: var(--shawq-product-divider-width);
+      background: rgb(var(--shawq-product-divider-color) / var(--shawq-product-divider-opacity));
+      left: calc((100% - var(--shawq-product-divider-gap)) * {{ section.settings.product_media_size | divided_by: 100.0 }} + (var(--shawq-product-divider-gap) / 2) - (var(--shawq-product-divider-width) / 2));
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+  {%- endif -%}
 </style>
 
 <div class="color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
@@ -217,6 +240,41 @@
       "step": 1,
       "unit": "%",
       "default": 50
+    },
+    {
+      "type": "header",
+      "content": "Layout accents"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vertical_divider",
+      "label": "Show vertical divider between media and content",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "vertical_divider_color",
+      "label": "Divider color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "vertical_divider_opacity",
+      "label": "Divider opacity",
+      "min": 0.05,
+      "max": 0.5,
+      "step": 0.05,
+      "default": 0.1
+    },
+    {
+      "type": "range",
+      "id": "vertical_divider_width",
+      "label": "Divider thickness",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
     },
     {
       "type": "text_alignment",

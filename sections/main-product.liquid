@@ -27,6 +27,8 @@
     #shopify-section-{{ section.id }} .product {
       --shawq-product-divider-gap: 3rem;
       --shawq-product-divider-width: {{ section.settings.vertical_divider_width | default: 1 }}px;
+      --shawq-product-divider-opacity: {{ section.settings.vertical_divider_opacity | default: 0.1 }};
+      --shawq-product-divider-color: {{ section.settings.vertical_divider_color.rgb }};
       position: relative;
     }
 
@@ -35,7 +37,7 @@
       position: absolute;
       inset-block: 0;
       width: var(--shawq-product-divider-width);
-      background: rgb(var(--border-color));
+      background: rgb(var(--shawq-product-divider-color) / var(--shawq-product-divider-opacity));
       left: calc((100% - var(--shawq-product-divider-gap)) * {{ section.settings.product_media_size | divided_by: 100.0 }} + (var(--shawq-product-divider-gap) / 2) - (var(--shawq-product-divider-width) / 2));
       pointer-events: none;
       z-index: 1;
@@ -148,7 +150,22 @@
       "type": "checkbox",
       "id": "show_vertical_divider",
       "label": "Show vertical divider between media and content",
-      "default": false
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "vertical_divider_color",
+      "label": "Divider color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "vertical_divider_opacity",
+      "label": "Divider opacity",
+      "min": 0.05,
+      "max": 0.5,
+      "step": 0.05,
+      "default": 0.1
     },
     {
       "type": "range",
