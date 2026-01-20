@@ -231,15 +231,15 @@
       "scheme-6": {
         "settings": {
           "text_color": "#000000",
-          "background": "#fa3fb5",
-          "background_gradient": "linear-gradient(28deg, rgba(229, 33, 33, 1), rgba(0, 0, 0, 1) 12%, rgba(255, 255, 255, 1) 50%, rgba(0, 122, 61, 1) 80%, rgba(0, 122, 61, 1) 100%)",
+          "background": "#ffffff",
+          "background_gradient": "linear-gradient(90deg,\n  rgba(206,17,38,0.35) 0%,\n  rgba(17,17,17,0.40) 35%,\n  rgba(255,255,255,0.55) 55%,\n  rgba(0,122,61,0.35) 100%\n)",
           "secondary_background": "#ffffff",
           "primary_button_background": "#ffffff",
           "primary_button_text_color": "#230f0f",
-          "subheading_background": "",
+          "subheading_background": "rgba(0,0,0,0)",
           "subheading_border_color": "#080912",
           "subheading_text_color": "#ffffff",
-          "heading_highlight_accent_color": "#ffffff",
+          "heading_highlight_accent_color": "rgba(0,0,0,0)",
           "heading_highlight_text_color": "#080912",
           "input_background": "#ffffff",
           "input_text_color": "#080912"
