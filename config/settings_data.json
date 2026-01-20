@@ -76,6 +76,7 @@
     "shawq_glass_bg": true,
     "shawq_glass_buttons": true,
     "shawq_glass_cards": true,
+    "shawq_heritage_theme": "museum",
     "shawq_cart_drawer_opacity": 0.7,
     "shawq_surface_opacity_desktop": 0.5,
     "shawq_surface_opacity_mobile": 0.5,
