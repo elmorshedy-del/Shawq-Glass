@@ -186,6 +186,19 @@
               {%- if settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
                 {%- assign use_heritage_theme = true -%}
               {%- endif -%}
+              {%- assign reward_message_animation = section.settings.reward_message_animation | default: 'shine' -%}
+              {%- assign reward_message_style = section.settings.reward_message_style | default: 'ribbon' -%}
+              {%- assign reward_message_size = section.settings.reward_message_size | default: 'text-sm' -%}
+              {%- assign reward_message_anim_speed = section.settings.reward_message_anim_speed | default: 6 -%}
+              {%- assign reward_message_accent_opacity = section.settings.reward_message_accent_opacity | default: 0.2 -%}
+              {%- assign reward_confetti_enable = section.settings.reward_confetti_enable -%}
+              {%- if reward_confetti_enable == blank -%}
+                {%- assign reward_confetti_enable = true -%}
+              {%- endif -%}
+              {%- assign reward_confetti_style = section.settings.reward_confetti_style | default: 'sprinkle' -%}
+              {%- assign reward_confetti_shape = section.settings.reward_confetti_shape | default: 'rect' -%}
+              {%- assign reward_confetti_speed = section.settings.reward_confetti_speed | default: 2 -%}
+              {%- assign reward_confetti_count = section.settings.reward_confetti_count | default: 18 -%}
               {%- capture reward_style -%}
                 {%- if use_heritage_theme -%}
                   --shawq-reward-text-color: var(--shawq-heritage-reward-text);
@@ -200,9 +213,9 @@
                   --shawq-reward-confetti-2: {{ section.settings.reward_confetti_color_2.rgb }};
                   --shawq-reward-confetti-3: {{ section.settings.reward_confetti_color_3.rgb }};
                 {%- endif -%}
-                --shawq-reward-accent-opacity: {{ section.settings.reward_message_accent_opacity }};
-                --shawq-reward-text-anim-speed: {{ section.settings.reward_message_anim_speed }}s;
-                --shawq-reward-confetti-speed: {{ section.settings.reward_confetti_speed }}s;
+                --shawq-reward-accent-opacity: {{ reward_message_accent_opacity }};
+                --shawq-reward-text-anim-speed: {{ reward_message_anim_speed }}s;
+                --shawq-reward-confetti-speed: {{ reward_confetti_speed }}s;
                 {%- if section.settings.reward_message_weight != blank -%}
                   --shawq-reward-text-weight: {{ section.settings.reward_message_weight }};
                 {%- endif -%}
@@ -218,23 +231,22 @@
                 data-gwp-remove="{{ section.settings.reward_remove_below_threshold }}"
                 data-gwp-in-cart="{{ reward_in_cart }}"
                 data-gwp-reward-key="{{ reward_line_item_key }}"
-                data-reward-style="{{ section.settings.reward_message_style }}"
-                data-confetti-style="{{ section.settings.reward_confetti_style }}"
-                data-confetti-shape="{{ section.settings.reward_confetti_shape }}"
+                data-reward-style="{{ reward_message_style }}"
+                data-confetti-style="{{ reward_confetti_style }}"
+                data-confetti-shape="{{ reward_confetti_shape }}"
                 {% if reward_style != blank %}style="{{ reward_style }}"{% endif %}
                 {% unless reward_unlocked %}hidden{% endunless %}>
                 {%- if section.settings.reward_message != blank -%}
-                  <p class="cart-drawer__reward-message {{ section.settings.reward_message_size }}">
-                    <span class="shawq-animated-text" data-anim="{{ section.settings.reward_message_animation }}" style="--shawq-text-anim-speed: var(--shawq-reward-text-anim-speed, 6s);">
+                  <p class="cart-drawer__reward-message {{ reward_message_size }}">
+                    <span class="shawq-animated-text" data-anim="{{ reward_message_animation }}" style="--shawq-text-anim-speed: var(--shawq-reward-text-anim-speed, 6s); --shawq-animated-text-color: var(--shawq-reward-text-color, var(--text-color)); --shawq-animated-text-highlight: var(--shawq-reward-accent-color, var(--text-color));">
                       {{- section.settings.reward_message -}}
                     </span>
                   </p>
                 {%- endif -%}
 
-                {%- if section.settings.reward_confetti_enable and reward_unlocked -%}
-                  {%- assign confetti_count = section.settings.reward_confetti_count | default: 18 -%}
+                {%- if reward_confetti_enable and reward_unlocked -%}
                   <div class="cart-drawer__reward-confetti" aria-hidden="true">
-                    {%- for i in (1..confetti_count) -%}
+                    {%- for i in (1..reward_confetti_count) -%}
                       {%- assign confetti_x = forloop.index0 | times: 7 | modulo: 100 -%}
                       {%- assign confetti_delay = forloop.index0 | times: 0.12 -%}
                       {%- assign confetti_size = 6 | plus: forloop.index0 | modulo: 4 -%}
@@ -345,6 +357,7 @@
                   {%- else -%}
                     --shawq-aov-border-color: {{ section.settings.style_addon_border_color.rgb }};
                   {%- endif -%}
+                  --shawq-aov-anim-highlight: var(--shawq-aov-border-color, var(--text-color));
                   --shawq-aov-border-radius: {{ section.settings.style_addon_border_radius }}px;
                   --shawq-aov-border-padding: {{ section.settings.style_addon_border_padding }}px;
                   --shawq-aov-border-style: {{ section.settings.style_addon_border_style }};
@@ -361,7 +374,7 @@
                   {% if style_addon_style != blank %}style="{{ style_addon_style }}"{% endif %}>
                   {%- if section.settings.style_addon_title != blank -%}
                     <p class="h7">
-                      <span class="shawq-animated-text" data-anim="{{ section.settings.style_addon_text_animation }}">
+                      <span class="shawq-animated-text" data-anim="{{ section.settings.style_addon_text_animation }}" style="--shawq-animated-text-color: var(--text-color); --shawq-animated-text-highlight: var(--shawq-aov-border-color, var(--text-color));">
                         {{ section.settings.style_addon_title }}
                       </span>
                     </p>
