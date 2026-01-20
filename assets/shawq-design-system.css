@@ -284,9 +284,58 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
 }
 
 .cart-drawer__reward-message {
+  position: relative;
+  display: inline-block;
   color: rgb(var(--shawq-reward-text-color, var(--text-color)));
   font-weight: var(--shawq-reward-text-weight, var(--text-font-medium-weight));
   letter-spacing: 0.02em;
+}
+
+.cart-drawer__reward[data-reward-style="ribbon"] .cart-drawer__reward-message {
+  padding: 0.2rem 0.6rem;
+}
+
+.cart-drawer__reward[data-reward-style="ribbon"] .cart-drawer__reward-message::before {
+  content: "";
+  position: absolute;
+  inset: 50% -0.4rem auto -0.4rem;
+  height: 1.2em;
+  background: rgb(var(--shawq-reward-accent-color, var(--text-color)) / var(--shawq-reward-accent-opacity, 0.25));
+  transform: translateY(-50%) skew(-8deg);
+  z-index: -1;
+  border-radius: 999px;
+}
+
+.cart-drawer__reward[data-reward-style="badge"] .cart-drawer__reward-message {
+  padding: 0.2rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgb(var(--shawq-reward-accent-color, var(--text-color)) / 0.35);
+  background: rgb(var(--shawq-reward-accent-color, var(--text-color)) / 0.12);
+}
+
+.cart-drawer__reward[data-reward-style="spotlight"] .cart-drawer__reward-message {
+  padding: 0.2rem 0.4rem;
+  overflow: hidden;
+}
+
+.cart-drawer__reward[data-reward-style="spotlight"] .cart-drawer__reward-message::after {
+  content: "";
+  position: absolute;
+  inset: -0.4rem -1rem;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.7) 50%, transparent 70%);
+  opacity: var(--shawq-reward-accent-opacity, 0.25);
+  transform: translateX(-120%);
+  animation: shawq-reward-spotlight var(--shawq-reward-text-anim-speed, 6s) linear infinite;
+  z-index: -1;
+}
+
+.cart-drawer__reward[data-reward-style="stamp"] .cart-drawer__reward-message {
+  padding: 0.25rem 0.6rem;
+  border: 1px dashed rgb(var(--shawq-reward-accent-color, var(--text-color)) / 0.5);
+  border-radius: 0.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transform: rotate(-1deg);
 }
 
 .cart-drawer__reward-confetti {
@@ -308,6 +357,28 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
   animation: shawq-confetti-pop var(--shawq-reward-confetti-speed, 2s) ease-out infinite;
   animation-delay: var(--shawq-confetti-delay);
   opacity: 0;
+}
+
+.cart-drawer__reward[data-confetti-shape="round"] .shawq-confetti {
+  border-radius: 999px;
+}
+
+.cart-drawer__reward[data-confetti-shape="sliver"] .shawq-confetti {
+  height: 2px;
+  width: calc(var(--shawq-confetti-size) * 1.6);
+  border-radius: 1px;
+}
+
+.cart-drawer__reward[data-confetti-style="burst"] .shawq-confetti {
+  animation-name: shawq-confetti-burst;
+}
+
+.cart-drawer__reward[data-confetti-style="stream"] .shawq-confetti {
+  animation-name: shawq-confetti-stream;
+}
+
+.cart-drawer__reward[data-confetti-style="orbit"] .shawq-confetti {
+  animation-name: shawq-confetti-orbit;
 }
 
 .shawq-style-addon {
@@ -358,6 +429,18 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
 
 .shawq-animated-text[data-anim="glow"] {
   animation: shawq-text-glow var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) ease-in-out infinite;
+}
+
+.shawq-animated-text[data-anim="pulse"] {
+  animation: shawq-text-pulse var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) ease-in-out infinite;
+}
+
+.shawq-animated-text[data-anim="flare"] {
+  animation: shawq-text-flare var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) ease-in-out infinite;
+}
+
+.shawq-animated-text[data-anim="stamp"] {
+  animation: shawq-text-stamp calc(var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) * 0.8) ease-in-out infinite;
 }
 
 .shawq-animated-text[data-anim="underline"]::after {
@@ -462,6 +545,47 @@ cart-drawer.drawer--cart .shopify-payment-button__button--unbranded {
   }
 }
 
+@keyframes shawq-text-pulse {
+  0%, 100% {
+    transform: scale(1);
+    letter-spacing: 0.02em;
+  }
+  50% {
+    transform: scale(1.05);
+    letter-spacing: 0.08em;
+  }
+}
+
+@keyframes shawq-text-flare {
+  0%, 100% {
+    text-shadow: 0 0 0 rgba(0,0,0,0);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(var(--shawq-reward-accent-color, var(--text-color)) / 0.45);
+  }
+}
+
+@keyframes shawq-text-stamp {
+  0%, 100% {
+    transform: rotate(-1deg) scale(1);
+  }
+  40% {
+    transform: rotate(-1deg) scale(1.06);
+  }
+  60% {
+    transform: rotate(-1deg) scale(0.98);
+  }
+}
+
+@keyframes shawq-reward-spotlight {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
 @keyframes shawq-confetti-pop {
   0% {
     transform: translateX(-50%) translateY(0) rotate(0deg);
@@ -476,13 +600,59 @@ cart-drawer.drawer--cart .shopify-payment-button__button--unbranded {
   }
 }
 
+@keyframes shawq-confetti-burst {
+  0% {
+    transform: translateX(-50%) translateY(0) scale(0.8);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(-50% + var(--shawq-confetti-drift) * 2)) translateY(-200px) scale(1.1) rotate(560deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shawq-confetti-stream {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(-50% + var(--shawq-confetti-drift))) translateY(-260px) rotate(420deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shawq-confetti-orbit {
+  0% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(-50% + var(--shawq-confetti-drift))) translateY(-160px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .shawq-style-addon[data-aov-animation="shimmer"]::before,
   .shawq-style-addon[data-aov-animation="glow"],
   .shawq-style-addon[data-aov-animation="float"],
   .shawq-animated-text[data-anim="shine"],
   .shawq-animated-text[data-anim="glow"],
+  .shawq-animated-text[data-anim="pulse"],
+  .shawq-animated-text[data-anim="flare"],
+  .shawq-animated-text[data-anim="stamp"],
   .shawq-animated-text[data-anim="underline"]::after,
+  .cart-drawer__reward[data-reward-style="spotlight"] .cart-drawer__reward-message::after,
   .cart-drawer__reward-confetti .shawq-confetti {
     animation: none;
   }
