@@ -1454,6 +1454,38 @@
       },
       {
         "type": "header",
+        "content": "Heritage themes"
+      },
+      {
+        "type": "select",
+        "id": "shawq_heritage_theme",
+        "label": "Heritage theme preset",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+          {
+            "value": "tatreez",
+            "label": "Tatreez Atelier"
+          },
+          {
+            "value": "keffiyeh",
+            "label": "Keffiyeh Modern"
+          },
+          {
+            "value": "olive",
+            "label": "Olive Stone"
+          },
+          {
+            "value": "museum",
+            "label": "Museum Gallery"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "header",
         "content": "Cart drawer"
       },
       {

@@ -174,15 +174,24 @@
             -%}
 
             {%- if reward_enabled -%}
+              {%- assign use_heritage_theme = settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
               {%- capture reward_style -%}
-                --shawq-reward-text-color: {{ section.settings.reward_message_color.rgb }};
-                --shawq-reward-accent-color: {{ section.settings.reward_message_accent_color.rgb }};
+                {%- if use_heritage_theme -%}
+                  --shawq-reward-text-color: var(--shawq-heritage-reward-text);
+                  --shawq-reward-accent-color: var(--shawq-heritage-reward-accent);
+                  --shawq-reward-confetti-1: var(--shawq-heritage-confetti-1);
+                  --shawq-reward-confetti-2: var(--shawq-heritage-confetti-2);
+                  --shawq-reward-confetti-3: var(--shawq-heritage-confetti-3);
+                {%- else -%}
+                  --shawq-reward-text-color: {{ section.settings.reward_message_color.rgb }};
+                  --shawq-reward-accent-color: {{ section.settings.reward_message_accent_color.rgb }};
+                  --shawq-reward-confetti-1: {{ section.settings.reward_confetti_color_1.rgb }};
+                  --shawq-reward-confetti-2: {{ section.settings.reward_confetti_color_2.rgb }};
+                  --shawq-reward-confetti-3: {{ section.settings.reward_confetti_color_3.rgb }};
+                {%- endif -%}
                 --shawq-reward-accent-opacity: {{ section.settings.reward_message_accent_opacity }};
                 --shawq-reward-text-anim-speed: {{ section.settings.reward_message_anim_speed }}s;
                 --shawq-reward-confetti-speed: {{ section.settings.reward_confetti_speed }}s;
-                --shawq-reward-confetti-1: {{ section.settings.reward_confetti_color_1.rgb }};
-                --shawq-reward-confetti-2: {{ section.settings.reward_confetti_color_2.rgb }};
-                --shawq-reward-confetti-3: {{ section.settings.reward_confetti_color_3.rgb }};
                 {%- if section.settings.reward_message_weight != blank -%}
                   --shawq-reward-text-weight: {{ section.settings.reward_message_weight }};
                 {%- endif -%}
@@ -313,10 +322,15 @@
                   {%- assign style_addon_background = blank -%}
                 {%- endif -%}
 
+                {%- assign use_heritage_theme = settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
                 {%- capture style_addon_style -%}
                   --shawq-aov-border-width: {{ section.settings.style_addon_border_width }}px;
                   --shawq-aov-border-opacity: {{ section.settings.style_addon_border_opacity }};
-                  --shawq-aov-border-color: {{ section.settings.style_addon_border_color.rgb }};
+                  {%- if use_heritage_theme -%}
+                    --shawq-aov-border-color: var(--shawq-heritage-aov-border);
+                  {%- else -%}
+                    --shawq-aov-border-color: {{ section.settings.style_addon_border_color.rgb }};
+                  {%- endif -%}
                   --shawq-aov-border-radius: {{ section.settings.style_addon_border_radius }}px;
                   --shawq-aov-border-padding: {{ section.settings.style_addon_border_padding }}px;
                   --shawq-aov-border-style: {{ section.settings.style_addon_border_style }};
