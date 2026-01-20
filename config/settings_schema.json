@@ -1547,6 +1547,44 @@
         "default": 2
       },
       {
+        "type": "select",
+        "id": "shawq_quantity_selector_style",
+        "label": "Quantity selector style",
+        "options": [
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "outline",
+            "label": "Outline"
+          }
+        ],
+        "default": "solid"
+      },
+      {
+        "type": "select",
+        "id": "shawq_checkout_button_style",
+        "label": "Checkout button style",
+        "options": [
+          {
+            "value": "solid",
+            "label": "Solid"
+          },
+          {
+            "value": "outline",
+            "label": "Outline"
+          }
+        ],
+        "default": "solid"
+      },
+      {
+        "type": "checkbox",
+        "id": "shawq_style_payment_buttons",
+        "label": "Style dynamic checkout buttons",
+        "default": true
+      },
+      {
         "type": "header",
         "content": "Spacing"
       },

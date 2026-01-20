@@ -17,7 +17,7 @@ Supported variables
                use a quantity of zero if nothing is in the cart yet.
 {%- endcomment -%}
 
-<quantity-selector class="quantity-selector {% if line_item != blank %}quantity-selector--line-item{% endif %}">
+<quantity-selector class="quantity-selector quantity-selector--style-{{ settings.shawq_quantity_selector_style | default: 'solid' }} {% if line_item != blank %}quantity-selector--line-item{% endif %}">
   {%- liquid
     assign max_quantity = ''
     assign variant = line_item.variant | default: variant

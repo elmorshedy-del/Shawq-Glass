@@ -131,6 +131,21 @@ Supported variables
                       --button-text-color: {{ payment_button_text_color.rgb }};
                     {%- endif -%}
 
+                    {%- if settings.shawq_style_payment_buttons -%}
+                      {%- if settings.shawq_checkout_button_style == 'outline' -%}
+                        background: none;
+                        color: rgb(var(--button-text-color, var(--button-text-primary)));
+                        border: 1px solid rgb(var(--button-text-color, var(--button-text-primary)));
+                        box-shadow: none;
+                      {%- else -%}
+                        background: rgb(var(--button-background, var(--button-background-primary)));
+                        color: rgb(var(--button-text-color, var(--button-text-primary)));
+                        border: 1px solid rgb(var(--button-border-color, 0 0 0 / 0));
+                      {%- endif -%}
+
+                      border-radius: var(--button-border-radius);
+                    {%- endif -%}
+
                     {%- unless product.selected_or_first_available_variant.available -%}
                       display: none;
                     {%- endunless -%}
