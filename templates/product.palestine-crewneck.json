@@ -25,7 +25,7 @@
           }
         },
         "shawq_desc_ghalabany_crewneck": {
-          "type": "shawq_description_override",
+          "type": "shawq_desc_override",
           "settings": {
             "product": "",
             "description": "<p>Longing becomes a banner here - the keffiyeh grid and the red map of Palestine sit embroidered across the back.</p><p>Heavyweight feel, tight stitching, and a structure that keeps its form all day.</p><p>Put it on and let the story speak.</p>"
