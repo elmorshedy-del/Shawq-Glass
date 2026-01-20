@@ -1,5 +1,46 @@
 {%- if request.page_type != 'cart' -%}
-  <cart-drawer id="cart-drawer" class="drawer drawer--cart color-scheme color-scheme--{{ section.settings.color_scheme.id }}" aria-label="{{ 'cart.general.title' | t | escape }}" handle-editor-events>
+  {%- capture cart_drawer_style -%}
+    {%- if section.settings.drawer_text_color != blank and section.settings.drawer_text_color != 'rgba(0,0,0,0)' -%}
+      --text-color: {{ section.settings.drawer_text_color.rgb }};
+      --shawq-cart-drawer-text-color: {{ section.settings.drawer_text_color.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_muted_text_color != blank and section.settings.drawer_muted_text_color != 'rgba(0,0,0,0)' -%}
+      --shawq-cart-drawer-muted-color: {{ section.settings.drawer_muted_text_color.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_heading_color != blank and section.settings.drawer_heading_color != 'rgba(0,0,0,0)' -%}
+      --shawq-cart-drawer-heading-color: {{ section.settings.drawer_heading_color.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_price_color != blank and section.settings.drawer_price_color != 'rgba(0,0,0,0)' -%}
+      --shawq-cart-drawer-price-color: {{ section.settings.drawer_price_color.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_button_background != blank and section.settings.drawer_button_background != 'rgba(0,0,0,0)' -%}
+      --button-background-primary: {{ section.settings.drawer_button_background.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_button_text_color != blank and section.settings.drawer_button_text_color != 'rgba(0,0,0,0)' -%}
+      --button-text-primary: {{ section.settings.drawer_button_text_color.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_heading_weight != blank -%}
+      --shawq-cart-drawer-heading-weight: {{ section.settings.drawer_heading_weight }};
+    {%- endif -%}
+    {%- if section.settings.drawer_body_weight != blank -%}
+      --shawq-cart-drawer-body-weight: {{ section.settings.drawer_body_weight }};
+    {%- endif -%}
+    {%- if section.settings.drawer_price_weight != blank -%}
+      --shawq-cart-drawer-price-weight: {{ section.settings.drawer_price_weight }};
+    {%- endif -%}
+    {%- if section.settings.drawer_button_weight != blank -%}
+      --shawq-cart-drawer-button-weight: {{ section.settings.drawer_button_weight }};
+    {%- endif -%}
+    {%- if section.settings.drawer_notice_color != blank and section.settings.drawer_notice_color != 'rgba(0,0,0,0)' -%}
+      --shawq-cart-drawer-notice-color: {{ section.settings.drawer_notice_color.rgb }};
+    {%- endif -%}
+    {%- if section.settings.drawer_notice_weight != blank -%}
+      --shawq-cart-drawer-notice-weight: {{ section.settings.drawer_notice_weight }};
+    {%- endif -%}
+  {%- endcapture -%}
+  {%- assign cart_drawer_style = cart_drawer_style | strip_newlines | strip -%}
+
+  <cart-drawer id="cart-drawer" class="drawer drawer--cart color-scheme color-scheme--{{ section.settings.color_scheme.id }}" aria-label="{{ 'cart.general.title' | t | escape }}" handle-editor-events{% if cart_drawer_style != blank %} style="{{ cart_drawer_style }}"{% endif %}>
     {%- comment -%}HEADER PART{%- endcomment -%}
     <div class="text-with-icon" slot="header">
       {%- render 'icon' with 'cart' -%}
@@ -97,10 +138,16 @@
           {%- endif -%}
 
           <div class="v-stack gap-4">
+            {%- if section.settings.drawer_notice_text != blank -%}
+              <div class="cart-drawer__notice text-sm">
+                {{- section.settings.drawer_notice_text -}}
+              </div>
+            {%- endif -%}
+
             {%- comment -%}TRUST BADGES{%- endcomment -%}
             {%- assign trust_badges_block = section.blocks | where: 'type', 'trust_badges' | first -%}
             
-            {%- if trust_badges_block != blank -%}
+            {%- if trust_badges_block != blank and section.settings.drawer_notice_text == blank -%}
               {%- assign rendered_item_count = 0 -%}
 
               {%- capture trust_badge_items -%}
@@ -175,16 +222,21 @@
               {%- endfor -%}
 
               {%- if style_addon_in_cart == false -%}
-                <div class=\"shawq-style-addon v-stack gap-2\">
+                {%- assign style_addon_background = section.settings.color_scheme.settings.secondary_background -%}
+                {%- if section.settings.style_addon_plain -%}
+                  {%- assign style_addon_background = blank -%}
+                {%- endif -%}
+
+                <div class="shawq-style-addon v-stack gap-2{% if section.settings.style_addon_plain %} shawq-style-addon--plain{% endif %}">
                   {%- if section.settings.style_addon_title != blank -%}
-                    <p class=\"h7\">{{ section.settings.style_addon_title }}</p>
+                    <p class="h7">{{ section.settings.style_addon_title }}</p>
                   {%- endif -%}
 
                   {%- if section.settings.style_addon_subtitle != blank -%}
-                    <p class=\"text-sm text-subdued\">{{ section.settings.style_addon_subtitle }}</p>
+                    <p class="text-sm text-subdued">{{ section.settings.style_addon_subtitle }}</p>
                   {%- endif -%}
 
-                  {%- render 'product-cross-sell', product: style_addon_product, layout: 'horizontal', show_quick_buy: true, background: section.settings.color_scheme.settings.secondary_background -%}
+                  {%- render 'product-cross-sell', product: style_addon_product, layout: 'horizontal', show_quick_buy: true, background: style_addon_background -%}
                 </div>
               {%- endif -%}
             {%- endif -%}
@@ -450,6 +502,241 @@
     },
     {
       "type": "header",
+      "content": "Shawq — Drawer notice"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "drawer_notice_text",
+      "label": "Notice text"
+    },
+    {
+      "type": "color",
+      "id": "drawer_notice_color",
+      "label": "Notice text color",
+      "default": "#ff2f7d"
+    },
+    {
+      "type": "select",
+      "id": "drawer_notice_weight",
+      "label": "Notice font weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Theme default"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Shawq — Drawer typography"
+    },
+    {
+      "type": "color",
+      "id": "drawer_text_color",
+      "label": "Text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "drawer_muted_text_color",
+      "label": "Muted text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "drawer_heading_color",
+      "label": "Heading color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "drawer_price_color",
+      "label": "Price color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "select",
+      "id": "drawer_body_weight",
+      "label": "Body font weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Theme default"
+        },
+        {
+          "value": "300",
+          "label": "300"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "drawer_heading_weight",
+      "label": "Heading font weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Theme default"
+        },
+        {
+          "value": "300",
+          "label": "300"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "select",
+      "id": "drawer_price_weight",
+      "label": "Price font weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Theme default"
+        },
+        {
+          "value": "300",
+          "label": "300"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
+      "content": "Shawq — Drawer buttons"
+    },
+    {
+      "type": "color",
+      "id": "drawer_button_background",
+      "label": "Button background",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "color",
+      "id": "drawer_button_text_color",
+      "label": "Button text color",
+      "default": "rgba(0,0,0,0)"
+    },
+    {
+      "type": "select",
+      "id": "drawer_button_weight",
+      "label": "Button font weight",
+      "options": [
+        {
+          "value": "",
+          "label": "Theme default"
+        },
+        {
+          "value": "300",
+          "label": "300"
+        },
+        {
+          "value": "400",
+          "label": "400"
+        },
+        {
+          "value": "500",
+          "label": "500"
+        },
+        {
+          "value": "600",
+          "label": "600"
+        },
+        {
+          "value": "700",
+          "label": "700"
+        },
+        {
+          "value": "800",
+          "label": "800"
+        }
+      ],
+      "default": ""
+    },
+    {
+      "type": "header",
       "content": "Shawq — AOV add-on"
     },
     {
@@ -468,6 +755,12 @@
       "id": "style_addon_subtitle",
       "label": "Subheading",
       "default": "Add a keffiyeh — completes the outfit in one tap."
+    },
+    {
+      "type": "checkbox",
+      "id": "style_addon_plain",
+      "label": "Remove add-on card background",
+      "default": false
     },
     {
       "type": "header",

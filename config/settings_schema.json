@@ -1453,6 +1453,25 @@
         "default": true
       },
       {
+        "type": "header",
+        "content": "Cart drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "shawq_cart_drawer_glass",
+        "label": "Apply glass to cart drawer",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "shawq_cart_drawer_opacity",
+        "label": "Cart drawer opacity",
+        "min": 0.4,
+        "max": 1.0,
+        "step": 0.1,
+        "default": 0.85
+      },
+      {
         "type": "range",
         "id": "shawq_surface_opacity_desktop",
         "label": "Surface opacity (desktop)",

@@ -31,10 +31,16 @@ Supported variables
   if context == 'main_product'
     assign is_main_product = true
   endif
+
+  assign use_custom_radius = use_custom_radius | default: false
+
+  if use_custom_radius and radius != blank
+    assign variant_picker_style = '--input-border-radius: ' | append: radius | append: 'px; --button-border-radius: ' | append: radius | append: 'px;'
+  endif
 -%}
 
 {%- unless product.has_only_default_variant -%}
-  <variant-picker class="variant-picker" section-id="{{ section.id }}" form-id="{{ form_id }}" handle="{{ product.handle }}" {% if is_main_product %}update-url{% endif %}>
+  <variant-picker class="variant-picker" section-id="{{ section.id }}" form-id="{{ form_id }}" handle="{{ product.handle }}" {% if is_main_product %}update-url{% endif %}{% if variant_picker_style != blank %} style="{{ variant_picker_style }}"{% endif %}>
     {%- comment -%}
     The variant data is outputted as a JSON, which allows the theme to emit an event with the data when the variant changes. This must not be removed.
     {%- endcomment -%}
