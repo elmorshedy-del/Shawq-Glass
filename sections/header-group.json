@@ -13,38 +13,6 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
-      "blocks": {
-        "message_Py6mEe": {
-          "type": "message",
-          "settings": {
-            "text": "<strong>Exceed 299$ Cart Value For A Very Exclusive Gift</strong>"
-          }
-        },
-        "message_AQYUJ8": {
-          "type": "message",
-          "settings": {
-            "text": "<strong>ALL ITEMS ARE READY TO SHIP</strong>"
-          }
-        },
-        "message_KfCkqd": {
-          "type": "message",
-          "settings": {
-            "text": "<strong>Free shipping Over 150$ WorldWide</strong>"
-          }
-        },
-        "message_VVnDmp": {
-          "type": "message",
-          "settings": {
-            "text": "<strong>Each Order donates 1 meal for G*za</strong>"
-          }
-        }
-      },
-      "block_order": [
-        "message_Py6mEe",
-        "message_AQYUJ8",
-        "message_KfCkqd",
-        "message_VVnDmp"
-      ],
       "settings": {
         "color_scheme": "scheme-6",
         "enable_sticky": false,
