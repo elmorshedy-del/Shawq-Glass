@@ -17,18 +17,11 @@
           "disabled": true,
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
         "shawq_desc_third_najm_ls": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>The Third Najm story in motion - doves and stars embroidered to keep the message permanent.</p><p>Long sleeves give it balance, the stitching gives it weight.</p><p>Wear it when you want quiet strength on your side.</p>"
+            "description": "<p>The Third Najm story in motion - doves and stars embroidered to keep the message permanent.Long sleeves give it balance, the stitching gives it weight.Wear it when you want quiet strength on your side.</p>"
           }
         },
         "title": {
@@ -45,6 +38,13 @@
           "type": "price",
           "settings": {
             "show_taxes_notice": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
           }
         },
         "shawq_value_line": {
@@ -120,7 +120,9 @@
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": ""
+            "payment_button_text_color": "",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "volume_pricing_AktEmK": {
@@ -182,11 +184,11 @@
       },
       "block_order": [
         "vendor",
-        "description",
         "shawq_desc_third_najm_ls",
         "title",
         "badges",
         "price",
+        "description",
         "shawq_value_line",
         "shawq_bundle",
         "offers_GyMgkN",
@@ -209,6 +211,10 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",

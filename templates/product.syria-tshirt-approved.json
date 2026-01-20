@@ -17,18 +17,11 @@
           "disabled": true,
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
         "shawq_desc_third_najm_tee": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Third Najm, distilled. Embroidered doves and stitched stars make this more than a tee.</p><p>Clean fit, durable seams, and a back graphic that does not disappear.</p><p>Make it your everyday reminder.</p>"
+            "description": "<p>Third Najm, distilled. Embroidered doves and stitched stars make this more than a tee.Clean fit, durable seams, and a back graphic that does not disappear.Make it your everyday reminder.</p>"
           }
         },
         "title": {
@@ -43,13 +36,6 @@
             "show_taxes_notice": false
           }
         },
-        "shawq_value_line": {
-          "type": "shawq_value_line",
-          "settings": {
-            "title": "Complete the look — naturally",
-            "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
-          }
-        },
         "shawq_bundle": {
           "type": "shawq_bundle",
           "settings": {
@@ -57,6 +43,35 @@
             "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
             "bundle_product": ""
           }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
+          "settings": {
+            "show_empty": false
+          }
+        },
+        "shawq_value_line": {
+          "type": "shawq_value_line",
+          "settings": {
+            "title": "Complete the look — naturally",
+            "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
         },
         "offers_6cdniN": {
           "type": "offers",
@@ -82,21 +97,6 @@
             "offer_3_text_color": "#000000"
           }
         },
-        "badges": {
-          "type": "badges",
-          "settings": {}
-        },
-        "rating": {
-          "type": "rating",
-          "disabled": true,
-          "settings": {
-            "show_empty": false
-          }
-        },
-        "payment_terms": {
-          "type": "payment_terms",
-          "settings": {}
-        },
         "separator": {
           "type": "separator",
           "settings": {}
@@ -118,7 +118,9 @@
             "swatch_selector_size": "sm",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "short-sleeve-size-chart"
+            "size_chart_page": "short-sleeve-size-chart",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "shawq_reassurance": {
@@ -136,11 +138,13 @@
             "show_gift_card_recipient": true,
             "show_quantity_selector": true,
             "add_quantity_selector_spacing": true,
-            "atc_button_style": "solid",
+            "atc_button_style": "outline",
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": ""
+            "payment_button_text_color": "",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "volume_pricing_AktEmK": {
@@ -202,16 +206,16 @@
       },
       "block_order": [
         "vendor",
-        "description",
         "shawq_desc_third_najm_tee",
         "title",
         "price",
-        "shawq_value_line",
         "shawq_bundle",
-        "offers_6cdniN",
         "badges",
+        "description",
         "rating",
+        "shawq_value_line",
         "payment_terms",
+        "offers_6cdniN",
         "separator",
         "text_MCCMR8",
         "variant_picker",
@@ -231,6 +235,10 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
