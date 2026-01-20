@@ -43,6 +43,107 @@ body.shawq-glass-bg footer {
   z-index: 1;
 }
 
+/* Heritage themes: subtle pattern + palette */
+body.shawq-heritage {
+  position: relative;
+}
+
+body.shawq-heritage::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--shawq-heritage-pattern-opacity, 0.06);
+  background-image: var(--shawq-heritage-pattern);
+  background-size: var(--shawq-heritage-pattern-size, 24px 24px);
+  mix-blend-mode: multiply;
+}
+
+body.shawq-heritage #MainContent,
+body.shawq-heritage header,
+body.shawq-heritage footer {
+  position: relative;
+  z-index: 1;
+}
+
+body.shawq-heritage--tatreez {
+  --shawq-heritage-ink: 16 16 16;
+  --shawq-heritage-cream: 247 242 234;
+  --shawq-heritage-olive: 85 107 47;
+  --shawq-heritage-red: 201 42 42;
+  --shawq-heritage-gold: 199 163 107;
+  --shawq-heritage-divider: var(--shawq-heritage-ink);
+  --shawq-heritage-reward-text: var(--shawq-heritage-red);
+  --shawq-heritage-reward-accent: var(--shawq-heritage-gold);
+  --shawq-heritage-confetti-1: var(--shawq-heritage-red);
+  --shawq-heritage-confetti-2: var(--shawq-heritage-olive);
+  --shawq-heritage-confetti-3: var(--shawq-heritage-gold);
+  --shawq-heritage-aov-border: var(--shawq-heritage-gold);
+  --shawq-heritage-pattern-opacity: 0.08;
+  --shawq-heritage-pattern-size: 20px 20px;
+  --shawq-heritage-pattern:
+    repeating-linear-gradient(45deg, rgb(var(--shawq-heritage-red) / 0.12) 0 1px, transparent 1px 10px),
+    repeating-linear-gradient(-45deg, rgb(var(--shawq-heritage-red) / 0.12) 0 1px, transparent 1px 10px);
+}
+
+body.shawq-heritage--keffiyeh {
+  --shawq-heritage-ink: 17 17 17;
+  --shawq-heritage-bone: 244 239 232;
+  --shawq-heritage-red: 227 25 55;
+  --shawq-heritage-green: 0 122 61;
+  --shawq-heritage-divider: var(--shawq-heritage-ink);
+  --shawq-heritage-reward-text: var(--shawq-heritage-red);
+  --shawq-heritage-reward-accent: var(--shawq-heritage-green);
+  --shawq-heritage-confetti-1: var(--shawq-heritage-red);
+  --shawq-heritage-confetti-2: var(--shawq-heritage-green);
+  --shawq-heritage-confetti-3: var(--shawq-heritage-ink);
+  --shawq-heritage-aov-border: var(--shawq-heritage-ink);
+  --shawq-heritage-pattern-opacity: 0.06;
+  --shawq-heritage-pattern-size: 16px 16px;
+  --shawq-heritage-pattern:
+    repeating-linear-gradient(45deg, rgb(var(--shawq-heritage-ink) / 0.08) 0 2px, transparent 2px 8px),
+    repeating-linear-gradient(-45deg, rgb(var(--shawq-heritage-ink) / 0.08) 0 2px, transparent 2px 8px);
+}
+
+body.shawq-heritage--olive {
+  --shawq-heritage-ink: 28 28 28;
+  --shawq-heritage-limestone: 248 244 238;
+  --shawq-heritage-olive: 92 107 58;
+  --shawq-heritage-clay: 185 104 77;
+  --shawq-heritage-copper: 181 106 58;
+  --shawq-heritage-divider: var(--shawq-heritage-ink);
+  --shawq-heritage-reward-text: var(--shawq-heritage-olive);
+  --shawq-heritage-reward-accent: var(--shawq-heritage-clay);
+  --shawq-heritage-confetti-1: var(--shawq-heritage-olive);
+  --shawq-heritage-confetti-2: var(--shawq-heritage-clay);
+  --shawq-heritage-confetti-3: var(--shawq-heritage-copper);
+  --shawq-heritage-aov-border: var(--shawq-heritage-olive);
+  --shawq-heritage-pattern-opacity: 0.08;
+  --shawq-heritage-pattern-size: 24px 24px;
+  --shawq-heritage-pattern:
+    radial-gradient(circle at 6px 6px, rgb(var(--shawq-heritage-olive) / 0.12) 0 1px, transparent 2px),
+    radial-gradient(circle at 16px 14px, rgb(var(--shawq-heritage-clay) / 0.1) 0 1px, transparent 2px);
+}
+
+body.shawq-heritage--museum {
+  --shawq-heritage-ink: 14 14 14;
+  --shawq-heritage-offwhite: 250 247 240;
+  --shawq-heritage-taupe: 183 169 154;
+  --shawq-heritage-gold: 194 164 104;
+  --shawq-heritage-divider: var(--shawq-heritage-taupe);
+  --shawq-heritage-reward-text: var(--shawq-heritage-gold);
+  --shawq-heritage-reward-accent: var(--shawq-heritage-taupe);
+  --shawq-heritage-confetti-1: var(--shawq-heritage-gold);
+  --shawq-heritage-confetti-2: var(--shawq-heritage-taupe);
+  --shawq-heritage-confetti-3: var(--shawq-heritage-ink);
+  --shawq-heritage-aov-border: var(--shawq-heritage-taupe);
+  --shawq-heritage-pattern-opacity: 0.04;
+  --shawq-heritage-pattern-size: 28px 28px;
+  --shawq-heritage-pattern:
+    repeating-linear-gradient(90deg, rgb(var(--shawq-heritage-taupe) / 0.12) 0 1px, transparent 1px 18px);
+}
+
 /* Glass surface helper */
 body.shawq-glass .shawq-glass-surface {
   border-radius: var(--shawq-radius-effective);

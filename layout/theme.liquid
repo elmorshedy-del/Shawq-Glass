@@ -78,7 +78,7 @@
     endif
   %}
 
-  <body class="{{ features_class }}{% if settings.shawq_glass_enable %} shawq-glass{% endif %}{% if settings.shawq_glass_bg %} shawq-glass-bg{% endif %}{% if settings.shawq_glass_buttons %} shawq-glass-buttons{% endif %}{% if settings.shawq_glass_cards %} shawq-glass-cards{% endif %}{% if settings.shawq_cart_drawer_glass %} shawq-cart-drawer-glass{% endif %}{% if settings.shawq_spacing_override %} shawq-spacing{% endif %}{% if settings.shawq_mobile_font_override %} shawq-mobile-fonts{% endif %}">
+  <body class="{{ features_class }}{% if settings.shawq_glass_enable %} shawq-glass{% endif %}{% if settings.shawq_glass_bg %} shawq-glass-bg{% endif %}{% if settings.shawq_glass_buttons %} shawq-glass-buttons{% endif %}{% if settings.shawq_glass_cards %} shawq-glass-cards{% endif %}{% if settings.shawq_cart_drawer_glass %} shawq-cart-drawer-glass{% endif %}{% if settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' %} shawq-heritage shawq-heritage--{{ settings.shawq_heritage_theme }}{% endif %}{% if settings.shawq_spacing_override %} shawq-spacing{% endif %}{% if settings.shawq_mobile_font_override %} shawq-mobile-fonts{% endif %}">
     {%- render 'shadow-dom-templates' -%}
 
     <loading-bar class="loading-bar" aria-hidden="true"></loading-bar>

@@ -24,11 +24,16 @@
 
   {%- if section.settings.show_vertical_divider -%}
   @media screen and (min-width: 1000px) {
+    {%- assign divider_color_value = section.settings.vertical_divider_color.rgb -%}
+    {%- if settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
+      {%- assign divider_color_value = 'var(--shawq-heritage-divider)' -%}
+    {%- endif -%}
+
     #shopify-section-{{ section.id }} .product {
       --shawq-product-divider-gap: 3rem;
       --shawq-product-divider-width: {{ section.settings.vertical_divider_width | default: 1 }}px;
       --shawq-product-divider-opacity: {{ section.settings.vertical_divider_opacity | default: 0.1 }};
-      --shawq-product-divider-color: {{ section.settings.vertical_divider_color.rgb }};
+      --shawq-product-divider-color: {{ divider_color_value }};
       position: relative;
     }
 
