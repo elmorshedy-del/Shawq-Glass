@@ -79,6 +79,13 @@
             "uppercase_title": true
           }
         },
+        "shawq_desc_third_najm_hoodie": {
+          "type": "shawq_description_override",
+          "settings": {
+            "product": "",
+            "description": "<p>Strength does not always shout - sometimes, it shines in silence.</p><p>This white hoodie carries the story of resilience, freedom, and return in clean embroidered detail.</p><p>Built over four months of dedicated craftsmanship and limited to 128 pieces, it is made to be worn for meaning, not just style.</p><p>Premium cotton, flawless structure, and a story stitched deeper than fabric.</p><p>For Syria. For memory. For you.</p>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -183,6 +190,7 @@
         "payment_terms",
         "separator",
         "description",
+        "shawq_desc_third_najm_hoodie",
         "variant_picker",
         "shawq_reassurance",
         "buy_buttons",

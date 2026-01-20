@@ -24,6 +24,13 @@
             "uppercase_title": true
           }
         },
+        "shawq_desc_denim": {
+          "type": "shawq_description_override",
+          "settings": {
+            "product": "",
+            "description": "<p>Memory should not fade - it should move with you. This stone-washed black denim carries the story where it belongs: on the back, built in cross-stitch embroidery with a laser-etched keffiyeh detail.</p><p>Clean silhouette, quiet power, and stitching that holds its shape and its meaning.</p><p>If you want a daily piece that carries a vow, this is it.</p>"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -209,6 +216,7 @@
       "block_order": [
         "vendor",
         "description_KancmD",
+        "shawq_desc_denim",
         "title",
         "inventory_dYxxDb",
         "badges",

@@ -24,6 +24,13 @@
             "uppercase_title": false
           }
         },
+        "shawq_desc_third_najm_tee": {
+          "type": "shawq_description_override",
+          "settings": {
+            "product": "",
+            "description": "<p>Third Najm, distilled. Embroidered doves and stitched stars make this more than a tee.</p><p>Clean fit, durable seams, and a back graphic that does not disappear.</p><p>Make it your everyday reminder.</p>"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -196,6 +203,7 @@
       "block_order": [
         "vendor",
         "description",
+        "shawq_desc_third_najm_tee",
         "title",
         "price",
         "shawq_value_line",
