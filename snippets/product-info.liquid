@@ -280,7 +280,9 @@ Supported variables
                   swatch_selector_size: block.settings.swatch_selector_size,
                   block_selector_style: block.settings.block_selector_style,
                   variant_image_options: block.settings.variant_image_options,
-                  size_chart_page: block.settings.size_chart_page 
+                  size_chart_page: block.settings.size_chart_page,
+                  use_custom_radius: block.settings.use_custom_radius,
+                  radius: block.settings.radius
                 -%}
             {%- endif -%}
 
@@ -427,7 +429,9 @@ Supported variables
                 atc_button_background: block.settings.atc_button_background,
                 atc_button_text_color: block.settings.atc_button_text_color,
                 payment_button_background: block.settings.payment_button_background,
-                payment_button_text_color: block.settings.payment_button_text_color
+                payment_button_text_color: block.settings.payment_button_text_color,
+                use_custom_radius: block.settings.use_custom_radius,
+                radius: block.settings.radius
             -%}
 
           {%- when 'volume_pricing' -%}

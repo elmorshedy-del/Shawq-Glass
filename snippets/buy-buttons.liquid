@@ -25,10 +25,15 @@ Supported variables
 {%- if product != blank -%}
   {%- liquid
     assign recipient_feature_active = false
+    assign use_custom_radius = use_custom_radius | default: false
 
     if product.gift_card? and show_gift_card_recipient
       assign recipient_feature_active = true
       assign show_payment_button = false
+    endif
+
+    if use_custom_radius and radius != blank
+      assign buy_buttons_style = '--button-border-radius: ' | append: radius | append: 'px;'
     endif
   -%}
 
@@ -82,7 +87,7 @@ Supported variables
         {%- endif -%}
 
         <div class="v-stack gap-2">
-          <buy-buttons class="buy-buttons {% if show_payment_button %}buy-buttons--has-dynamic{% endif %}" form="{{ form_id }}">
+          <buy-buttons class="buy-buttons {% if show_payment_button %}buy-buttons--has-dynamic{% endif %}" form="{{ form_id }}"{% if buy_buttons_style != blank %} style="{{ buy_buttons_style }}"{% endif %}>
             <div class="v-stack gap-2">
               {%- if product.available and show_quantity_selector -%}
                 {%- liquid
@@ -159,7 +164,7 @@ Supported variables
     {%- endform -%}
   </product-form>
 {%- else -%}
-  <buy-buttons class="buy-buttons" template="{{ product.template_suffix | escape }}" form="{{ form_id }}">
+  <buy-buttons class="buy-buttons" template="{{ product.template_suffix | escape }}" form="{{ form_id }}"{% if buy_buttons_style != blank %} style="{{ buy_buttons_style }}"{% endif %}>
     {%- assign button_content = 'product.general.add_to_cart_button' | t -%}
     {%- render 'button', content: button_content, type: 'submit', background: atc_button_background, text_color: atc_button_text_color, stretch: true -%}
   </buy-buttons>
