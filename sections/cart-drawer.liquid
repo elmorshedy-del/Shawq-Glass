@@ -176,6 +176,8 @@
             {%- if reward_enabled -%}
               {%- capture reward_style -%}
                 --shawq-reward-text-color: {{ section.settings.reward_message_color.rgb }};
+                --shawq-reward-accent-color: {{ section.settings.reward_message_accent_color.rgb }};
+                --shawq-reward-accent-opacity: {{ section.settings.reward_message_accent_opacity }};
                 --shawq-reward-text-anim-speed: {{ section.settings.reward_message_anim_speed }}s;
                 --shawq-reward-confetti-speed: {{ section.settings.reward_confetti_speed }}s;
                 --shawq-reward-confetti-1: {{ section.settings.reward_confetti_color_1.rgb }};
@@ -196,6 +198,9 @@
                 data-gwp-remove="{{ section.settings.reward_remove_below_threshold }}"
                 data-gwp-in-cart="{{ reward_in_cart }}"
                 data-gwp-reward-key="{{ reward_line_item_key }}"
+                data-reward-style="{{ section.settings.reward_message_style }}"
+                data-confetti-style="{{ section.settings.reward_confetti_style }}"
+                data-confetti-shape="{{ section.settings.reward_confetti_shape }}"
                 {% if reward_style != blank %}style="{{ reward_style }}"{% endif %}
                 {% unless reward_unlocked %}hidden{% endunless %}>
                 {%- if section.settings.reward_message != blank -%}
@@ -881,6 +886,21 @@
       "default": "#ff2f7d"
     },
     {
+      "type": "color",
+      "id": "reward_message_accent_color",
+      "label": "Reward accent color",
+      "default": "#ffd166"
+    },
+    {
+      "type": "range",
+      "id": "reward_message_accent_opacity",
+      "label": "Reward accent opacity",
+      "min": 0.1,
+      "max": 0.8,
+      "step": 0.1,
+      "default": 0.2
+    },
+    {
       "type": "select",
       "id": "reward_message_weight",
       "label": "Reward message weight",
@@ -952,6 +972,18 @@
         {
           "value": "underline",
           "label": "Underline sweep"
+        },
+        {
+          "value": "pulse",
+          "label": "Victory pulse"
+        },
+        {
+          "value": "flare",
+          "label": "Trophy flare"
+        },
+        {
+          "value": "stamp",
+          "label": "Stamp pop"
         }
       ],
       "default": "shine"
@@ -967,6 +999,34 @@
       "default": 6
     },
     {
+      "type": "select",
+      "id": "reward_message_style",
+      "label": "Reward message style",
+      "options": [
+        {
+          "value": "none",
+          "label": "Plain"
+        },
+        {
+          "value": "ribbon",
+          "label": "Ribbon"
+        },
+        {
+          "value": "badge",
+          "label": "Badge"
+        },
+        {
+          "value": "spotlight",
+          "label": "Spotlight"
+        },
+        {
+          "value": "stamp",
+          "label": "Stamped"
+        }
+      ],
+      "default": "ribbon"
+    },
+    {
       "type": "header",
       "content": "Reward confetti"
     },
@@ -975,6 +1035,50 @@
       "id": "reward_confetti_enable",
       "label": "Show confetti burst",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "reward_confetti_style",
+      "label": "Confetti motion",
+      "options": [
+        {
+          "value": "sprinkle",
+          "label": "Sprinkle burst"
+        },
+        {
+          "value": "burst",
+          "label": "Victory burst"
+        },
+        {
+          "value": "stream",
+          "label": "Celebration stream"
+        },
+        {
+          "value": "orbit",
+          "label": "Halo orbit"
+        }
+      ],
+      "default": "sprinkle"
+    },
+    {
+      "type": "select",
+      "id": "reward_confetti_shape",
+      "label": "Confetti shape",
+      "options": [
+        {
+          "value": "rect",
+          "label": "Ribbons"
+        },
+        {
+          "value": "round",
+          "label": "Dots"
+        },
+        {
+          "value": "sliver",
+          "label": "Slivers"
+        }
+      ],
+      "default": "rect"
     },
     {
       "type": "range",
@@ -1054,9 +1158,9 @@
       "type": "range",
       "id": "style_addon_border_opacity",
       "label": "Border opacity",
-      "min": 0.05,
+      "min": 0.1,
       "max": 0.5,
-      "step": 0.05,
+      "step": 0.1,
       "default": 0.1
     },
     {
@@ -1176,6 +1280,18 @@
         {
           "value": "underline",
           "label": "Underline sweep"
+        },
+        {
+          "value": "pulse",
+          "label": "Pulse"
+        },
+        {
+          "value": "flare",
+          "label": "Flare"
+        },
+        {
+          "value": "stamp",
+          "label": "Stamp pop"
         }
       ],
       "default": "shine"
