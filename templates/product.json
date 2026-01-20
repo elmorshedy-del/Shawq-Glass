@@ -47,14 +47,14 @@
           }
         },
         "shawq_desc_kuffiyah": {
-          "type": "shawq_description_override",
+          "type": "shawq_desc_override",
           "settings": {
             "product": "kuffiyah-1",
             "description": "<p>Not just an accessory - a signature. The woven pattern is precise and the edge stitching keeps its shape.</p><p>It finishes any fit and carries the story with you.</p><p>Once you have one, it becomes part of your uniform.</p>"
           }
         },
         "shawq_desc_keychain": {
-          "type": "shawq_description_override",
+          "type": "shawq_desc_override",
           "settings": {
             "product": "palestine-keychain",
             "description": "<p>A small piece with real weight. The Palestine pattern is engraved in metal and built to last.</p><p>On keys or on a bag, it keeps the story close.</p><p>Carry it daily - it says more than it needs to.</p>"

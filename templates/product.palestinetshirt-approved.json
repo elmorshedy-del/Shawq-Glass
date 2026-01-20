@@ -25,7 +25,7 @@
           }
         },
         "shawq_desc_ghalabany_tee": {
-          "type": "shawq_description_override",
+          "type": "shawq_desc_override",
           "settings": {
             "product": "",
             "description": "<p>Built simple on the front, unmistakable on the back. The keffiyeh grid and red map are stitched to stand out, not wear out.</p><p>Soft, easy, and made for repeat days.</p><p>If you want one shirt that says it all, this is it.</p>"

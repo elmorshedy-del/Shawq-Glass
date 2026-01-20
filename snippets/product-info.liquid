@@ -20,7 +20,7 @@ Supported variables
 {%- assign alignment = content_alignment | replace: 'left', 'start' | replace: 'right', 'end' | default: 'start' -%}
 {%- assign description_override = '' -%}
 {%- for override_block in section.blocks -%}
-  {%- if override_block.type == 'shawq_description_override' and override_block.settings.description != blank -%}
+  {%- if override_block.type == 'shawq_desc_override' and override_block.settings.description != blank -%}
     {%- if override_block.settings.product == blank -%}
       {%- assign description_override = override_block.settings.description -%}
       {%- break -%}
@@ -39,7 +39,7 @@ Supported variables
       assign filtered_blocks = '' | split: ''
 
       for block in section.blocks
-        if block.type != 'shawq_description_override'
+        if block.type != 'shawq_desc_override'
           if allow_blocks == blank or allow_blocks contains block.type
             assign block_as_arr = block | sort
             assign filtered_blocks = filtered_blocks | concat: block_as_arr
