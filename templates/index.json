@@ -339,49 +339,6 @@
       "name": "Announcement bar message",
       "settings": {}
     },
-    "scrolling_content_ynHGiT": {
-      "type": "scrolling-content",
-      "blocks": {
-        "text_9mazBM": {
-          "type": "text",
-          "settings": {
-            "text": "<strong>Very Few Are Left</strong>",
-            "icon_position": "before_text",
-            "highlight_effect": "default",
-            "highlight_accent_color": "",
-            "highlight_text_color": ""
-          }
-        },
-        "text_BJKtQF": {
-          "type": "text",
-          "settings": {
-            "text": "<em><strong>Secure yours now!</strong></em>",
-            "icon_position": "after_text",
-            "highlight_effect": "none",
-            "highlight_accent_color": "#030305",
-            "highlight_text_color": "#c2186a"
-          }
-        }
-      },
-      "block_order": [
-        "text_9mazBM",
-        "text_BJKtQF"
-      ],
-      "settings": {
-        "color_scheme": "scheme-6",
-        "scrolling_speed": 0.3,
-        "scroll_direction": "start-to-end",
-        "section_rotation": 0,
-        "pause_on_hover": true,
-        "text_font": "body",
-        "text_font_size_mobile": 2.5,
-        "text_font_size_desktop": 1.5,
-        "section_vertical_spacing_mobile": 10,
-        "section_vertical_spacing_desktop": 10,
-        "item_horizontal_spacing_mobile": 10,
-        "item_horizontal_spacing_desktop": 15
-      }
-    },
     "featured_collections_6bUQmh": {
       "type": "featured-collections",
       "blocks": {
@@ -919,7 +876,6 @@
     "slideshow_xa9ain",
     "image_with_text_overlay_DTaMy3",
     "blocks_xnQRMT",
-    "scrolling_content_ynHGiT",
     "featured_collections_6bUQmh",
     "featured_product_j9PJPz",
     "featured_product_Vxmz8z",
