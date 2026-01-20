@@ -150,7 +150,12 @@
               if reward_product == blank
                 assign reward_product = all_products['palestine-frame']
               endif
-              assign reward_enabled = section.settings.reward_enable and reward_product != blank
+
+              assign reward_enabled = false
+              if section.settings.reward_enable and reward_product != blank
+                assign reward_enabled = true
+              endif
+
               assign reward_threshold_cents = section.settings.reward_threshold | times: 100
               assign reward_line_item_key = ''
               assign reward_line_item_total = 0
@@ -170,11 +175,17 @@
               endif
 
               assign reward_subtotal = cart.items_subtotal_price | minus: reward_line_item_total
-              assign reward_unlocked = reward_enabled and reward_subtotal >= reward_threshold_cents
+              assign reward_unlocked = false
+              if reward_enabled and reward_subtotal >= reward_threshold_cents
+                assign reward_unlocked = true
+              endif
             -%}
 
             {%- if reward_enabled -%}
-              {%- assign use_heritage_theme = settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
+              {%- assign use_heritage_theme = false -%}
+              {%- if settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
+                {%- assign use_heritage_theme = true -%}
+              {%- endif -%}
               {%- capture reward_style -%}
                 {%- if use_heritage_theme -%}
                   --shawq-reward-text-color: var(--shawq-heritage-reward-text);
@@ -322,7 +333,10 @@
                   {%- assign style_addon_background = blank -%}
                 {%- endif -%}
 
-                {%- assign use_heritage_theme = settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
+                {%- assign use_heritage_theme = false -%}
+                {%- if settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
+                  {%- assign use_heritage_theme = true -%}
+                {%- endif -%}
                 {%- capture style_addon_style -%}
                   --shawq-aov-border-width: {{ section.settings.style_addon_border_width }}px;
                   --shawq-aov-border-opacity: {{ section.settings.style_addon_border_opacity }};
