@@ -14,12 +14,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "message_mNPFrz": {
-          "type": "message",
-          "settings": {
-            "text": "Announce something here"
-          }
-        },
         "message_Py6mEe": {
           "type": "message",
           "settings": {
@@ -28,7 +22,6 @@
         },
         "message_AQYUJ8": {
           "type": "message",
-          "disabled": true,
           "settings": {
             "text": "<strong>ALL ITEMS ARE READY TO SHIP</strong>"
           }
@@ -47,7 +40,6 @@
         }
       },
       "block_order": [
-        "message_mNPFrz",
         "message_Py6mEe",
         "message_AQYUJ8",
         "message_KfCkqd",
