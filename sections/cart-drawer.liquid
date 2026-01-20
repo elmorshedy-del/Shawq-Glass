@@ -225,7 +225,7 @@
                 {% unless reward_unlocked %}hidden{% endunless %}>
                 {%- if section.settings.reward_message != blank -%}
                   <p class="cart-drawer__reward-message {{ section.settings.reward_message_size }}">
-                    <span class="shawq-animated-text" data-anim="{{ section.settings.reward_message_animation }}" style="--shawq-text-anim-speed: var(--shawq-reward-text-anim-speed, 6s);">
+                    <span class="shawq-animated-text" data-anim="{{ section.settings.reward_message_animation }}" style="--shawq-text-anim-speed: var(--shawq-reward-text-anim-speed, 6s); --shawq-animated-text-color: var(--shawq-reward-text-color, var(--text-color)); --shawq-animated-text-highlight: var(--shawq-reward-accent-color, var(--text-color));">
                       {{- section.settings.reward_message -}}
                     </span>
                   </p>
@@ -345,6 +345,7 @@
                   {%- else -%}
                     --shawq-aov-border-color: {{ section.settings.style_addon_border_color.rgb }};
                   {%- endif -%}
+                  --shawq-aov-anim-highlight: var(--shawq-aov-border-color, var(--text-color));
                   --shawq-aov-border-radius: {{ section.settings.style_addon_border_radius }}px;
                   --shawq-aov-border-padding: {{ section.settings.style_addon_border_padding }}px;
                   --shawq-aov-border-style: {{ section.settings.style_addon_border_style }};
@@ -361,7 +362,7 @@
                   {% if style_addon_style != blank %}style="{{ style_addon_style }}"{% endif %}>
                   {%- if section.settings.style_addon_title != blank -%}
                     <p class="h7">
-                      <span class="shawq-animated-text" data-anim="{{ section.settings.style_addon_text_animation }}">
+                      <span class="shawq-animated-text" data-anim="{{ section.settings.style_addon_text_animation }}" style="--shawq-animated-text-color: var(--text-color); --shawq-animated-text-highlight: var(--shawq-aov-border-color, var(--text-color));">
                         {{ section.settings.style_addon_title }}
                       </span>
                     </p>

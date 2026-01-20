@@ -36,6 +36,20 @@
     }
   }
   {%- endif -%}
+
+  {%- if section.settings.show_featured_border -%}
+    {%- assign featured_border_color_value = section.settings.featured_border_color.rgb -%}
+    {%- if settings.shawq_heritage_theme != blank and settings.shawq_heritage_theme != 'none' -%}
+      {%- assign featured_border_color_value = 'var(--shawq-heritage-divider)' -%}
+    {%- endif -%}
+
+    #shopify-section-{{ section.id }} .product {
+      --shawq-featured-border-width: {{ section.settings.featured_border_width | default: 1 }}px;
+      --shawq-featured-border-opacity: {{ section.settings.featured_border_opacity | default: 0.1 }};
+      --shawq-featured-border-color: {{ featured_border_color_value }};
+      box-shadow: inset 0 0 0 var(--shawq-featured-border-width) rgb(var(--shawq-featured-border-color) / var(--shawq-featured-border-opacity));
+    }
+  {%- endif -%}
 </style>
 
 <div class="color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
@@ -275,6 +289,37 @@
       "type": "range",
       "id": "vertical_divider_width",
       "label": "Divider thickness",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_border",
+      "label": "Show featured product border",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "featured_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "featured_border_opacity",
+      "label": "Border opacity",
+      "min": 0.1,
+      "max": 0.5,
+      "step": 0.1,
+      "default": 0.1
+    },
+    {
+      "type": "range",
+      "id": "featured_border_width",
+      "label": "Border thickness",
       "min": 1,
       "max": 4,
       "step": 1,

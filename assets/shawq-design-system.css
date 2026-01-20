@@ -46,6 +46,8 @@ body.shawq-glass-bg footer {
 /* Heritage themes: subtle pattern + palette */
 body.shawq-heritage {
   position: relative;
+  --page-background: var(--shawq-heritage-background, 250 247 240);
+  --shawq-heritage-background-gradient: linear-gradient(160deg, rgb(var(--shawq-heritage-background, 250 247 240)) 0%, rgb(var(--shawq-heritage-background, 250 247 240)) 70%, rgb(var(--shawq-heritage-accent, 201 42 42) / 0.08) 100%);
 }
 
 body.shawq-heritage::after {
@@ -67,12 +69,35 @@ body.shawq-heritage footer {
   z-index: 1;
 }
 
+body.shawq-heritage .color-scheme {
+  --background: var(--shawq-heritage-background, 250 247 240);
+  --background-secondary: var(--shawq-heritage-secondary, var(--shawq-heritage-background, 250 247 240));
+  --background-gradient: var(--shawq-heritage-background-gradient, none);
+  --text-color: var(--shawq-heritage-ink, 17 17 17);
+  --border-color: var(--shawq-heritage-divider, var(--shawq-heritage-ink, 17 17 17)) / 0.18;
+  --accent: var(--shawq-heritage-accent, 201 42 42);
+  --heading-highlight-accent-color: var(--shawq-heritage-accent, 201 42 42);
+  --heading-highlight-text-color: var(--shawq-heritage-ink, 17 17 17);
+  --button-background-primary: var(--shawq-heritage-accent, 201 42 42);
+  --button-text-primary: var(--shawq-heritage-button-text, 255 255 255);
+  --input-background: var(--shawq-heritage-background, 250 247 240);
+  --input-text-color: var(--shawq-heritage-ink, 17 17 17);
+  --subheading-background: var(--shawq-heritage-accent, 201 42 42) / 0.08;
+  --subheading-border: 1px solid rgb(var(--shawq-heritage-accent, 201 42 42) / 0.3);
+  --subheading-text-color: var(--shawq-heritage-ink, 17 17 17);
+  --subheading-has-padding: 1;
+}
+
 body.shawq-heritage--tatreez {
   --shawq-heritage-ink: 16 16 16;
   --shawq-heritage-cream: 247 242 234;
   --shawq-heritage-olive: 85 107 47;
   --shawq-heritage-red: 201 42 42;
   --shawq-heritage-gold: 199 163 107;
+  --shawq-heritage-background: var(--shawq-heritage-cream);
+  --shawq-heritage-secondary: 242 236 227;
+  --shawq-heritage-accent: var(--shawq-heritage-red);
+  --shawq-heritage-button-text: 255 255 255;
   --shawq-heritage-divider: var(--shawq-heritage-ink);
   --shawq-heritage-reward-text: var(--shawq-heritage-red);
   --shawq-heritage-reward-accent: var(--shawq-heritage-gold);
@@ -92,6 +117,10 @@ body.shawq-heritage--keffiyeh {
   --shawq-heritage-bone: 244 239 232;
   --shawq-heritage-red: 227 25 55;
   --shawq-heritage-green: 0 122 61;
+  --shawq-heritage-background: var(--shawq-heritage-bone);
+  --shawq-heritage-secondary: 237 232 224;
+  --shawq-heritage-accent: var(--shawq-heritage-green);
+  --shawq-heritage-button-text: 255 255 255;
   --shawq-heritage-divider: var(--shawq-heritage-ink);
   --shawq-heritage-reward-text: var(--shawq-heritage-red);
   --shawq-heritage-reward-accent: var(--shawq-heritage-green);
@@ -112,6 +141,10 @@ body.shawq-heritage--olive {
   --shawq-heritage-olive: 92 107 58;
   --shawq-heritage-clay: 185 104 77;
   --shawq-heritage-copper: 181 106 58;
+  --shawq-heritage-background: var(--shawq-heritage-limestone);
+  --shawq-heritage-secondary: 240 234 226;
+  --shawq-heritage-accent: var(--shawq-heritage-clay);
+  --shawq-heritage-button-text: 255 255 255;
   --shawq-heritage-divider: var(--shawq-heritage-ink);
   --shawq-heritage-reward-text: var(--shawq-heritage-olive);
   --shawq-heritage-reward-accent: var(--shawq-heritage-clay);
@@ -131,6 +164,10 @@ body.shawq-heritage--museum {
   --shawq-heritage-offwhite: 250 247 240;
   --shawq-heritage-taupe: 183 169 154;
   --shawq-heritage-gold: 194 164 104;
+  --shawq-heritage-background: var(--shawq-heritage-offwhite);
+  --shawq-heritage-secondary: 243 238 231;
+  --shawq-heritage-accent: var(--shawq-heritage-gold);
+  --shawq-heritage-button-text: var(--shawq-heritage-ink);
   --shawq-heritage-divider: var(--shawq-heritage-taupe);
   --shawq-heritage-reward-text: var(--shawq-heritage-gold);
   --shawq-heritage-reward-accent: var(--shawq-heritage-taupe);
@@ -423,7 +460,7 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
   content: "";
   position: absolute;
   inset: -0.4rem -1rem;
-  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,0.7) 50%, transparent 70%);
+  background: linear-gradient(110deg, transparent 30%, rgb(var(--shawq-reward-accent-color, var(--text-color)) / 0.45) 50%, transparent 70%);
   opacity: var(--shawq-reward-accent-opacity, 0.25);
   transform: translateX(-120%);
   animation: shawq-reward-spotlight var(--shawq-reward-text-anim-speed, 6s) linear infinite;
@@ -496,7 +533,7 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
   content: "";
   position: absolute;
   inset: -1px;
-  background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.7) 50%, transparent 65%);
+  background: linear-gradient(110deg, transparent 35%, rgb(var(--shawq-aov-anim-highlight, 255 255 255) / 0.7) 50%, transparent 65%);
   transform: translateX(-120%);
   opacity: var(--shawq-aov-anim-intensity, 0.4);
   animation: shawq-aov-shimmer var(--shawq-aov-anim-speed, 10s) linear infinite;
@@ -518,13 +555,21 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
 .shawq-animated-text {
   position: relative;
   display: inline-block;
+  color: rgb(var(--shawq-animated-text-color, var(--text-color)));
 }
 
 .shawq-animated-text[data-anim="shine"] {
-  background-image: linear-gradient(110deg, currentColor 0%, currentColor 40%, rgba(255,255,255,0.95) 50%, currentColor 60%, currentColor 100%);
+  background-image: linear-gradient(110deg,
+    rgb(var(--shawq-animated-text-color, var(--text-color))) 0%,
+    rgb(var(--shawq-animated-text-color, var(--text-color))) 38%,
+    rgb(var(--shawq-animated-text-highlight, var(--text-color)) / 0.9) 50%,
+    rgb(var(--shawq-animated-text-color, var(--text-color))) 62%,
+    rgb(var(--shawq-animated-text-color, var(--text-color))) 100%);
   background-size: 200% 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  -webkit-text-fill-color: transparent;
   animation: shawq-text-shine var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) linear infinite;
 }
 
@@ -551,7 +596,7 @@ body.shawq-cart-drawer-glass cart-drawer::part(footer) {
   right: 0;
   bottom: -0.15em;
   height: 2px;
-  background: currentColor;
+  background: rgb(var(--shawq-animated-text-highlight, var(--text-color)) / 0.7);
   transform: scaleX(0);
   transform-origin: left;
   animation: shawq-text-underline var(--shawq-text-anim-speed, var(--shawq-aov-text-anim-speed, 6s)) ease-in-out infinite;
@@ -631,7 +676,7 @@ cart-drawer.drawer--cart .shopify-payment-button__button--unbranded {
     text-shadow: 0 0 0 rgba(0,0,0,0);
   }
   50% {
-    text-shadow: 0 0 18px rgba(255,255,255,0.35);
+    text-shadow: 0 0 18px rgb(var(--shawq-animated-text-highlight, var(--text-color)) / 0.45);
   }
 }
 
@@ -662,7 +707,7 @@ cart-drawer.drawer--cart .shopify-payment-button__button--unbranded {
     text-shadow: 0 0 0 rgba(0,0,0,0);
   }
   50% {
-    text-shadow: 0 0 18px rgba(var(--shawq-reward-accent-color, var(--text-color)) / 0.45);
+    text-shadow: 0 0 18px rgb(var(--shawq-animated-text-highlight, var(--text-color)) / 0.55);
   }
 }
 
