@@ -59,6 +59,7 @@
         },
         "shawq_value_line": {
           "type": "shawq_value_line",
+          "disabled": true,
           "settings": {
             "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
