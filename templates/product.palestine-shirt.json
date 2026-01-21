@@ -17,18 +17,11 @@
           "disabled": true,
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
         "shawq_desc_ghalabany_ls": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p><strong>For those far from land, but never far at heart.</strong></p><p>This piece is named 'Ghalabany Al-ShawQ' (Longing Has Conquered Me)\u2014a tribute to the deep, unyielding pull of home. The back features a monumental 98,000-stitch embroidery panel, layering the Keffiyeh grid and the Map in vivid 3D relief.</p><p>Crafted from heavyweight, structured cotton, it serves as a wearable anchor for your identity.</p><p>Wear it to silence the distance. Unfading, unyielding, and undeniably proud.</p>"
+            "description": "<p><strong>For those far from land, but never far at heart.</strong></p><p>This piece is named 'Ghalabany Al-ShawQ' (Longing Has Conquered Me)—a tribute to the deep, unyielding pull of home. The back features a monumental 98,000-stitch embroidery panel, layering the Keffiyeh grid and the Map in vivid 3D relief.</p><p>Crafted from heavyweight, structured cotton, it serves as a wearable anchor for your identity.</p><p>Wear it to silence the distance. Unfading, unyielding, and undeniably proud.</p>"
           }
         },
         "title": {
@@ -43,10 +36,17 @@
             "show_taxes_notice": false
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
         "shawq_value_line": {
           "type": "shawq_value_line",
           "settings": {
-            "title": "Complete the look \u2014 naturally",
+            "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
@@ -54,7 +54,7 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
+            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
             "bundle_product": "kuffiyah-1"
           }
         },
@@ -107,15 +107,17 @@
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "long-sleeve-t-shirt-sizechart"
+            "size_chart_page": "long-sleeve-t-shirt-sizechart",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
+            "item_1": "Fast shipping — typically 3–4 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery \u2014 built to last"
+            "item_3": "Premium embroidery — built to last"
           }
         },
         "buy_buttons": {
@@ -129,7 +131,9 @@
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": ""
+            "payment_button_text_color": "",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "offers_URKkWc": {
@@ -185,7 +189,7 @@
           "type": "accordion",
           "settings": {
             "title": "Design Techniques",
-            "content": "<p>-Back Design : 78,000 stitches<br/>-3D Puff Embroidery \u2060<br/>-Patch Embroidery\u2060<br/>-Cross Stitch Embroidery</p>",
+            "content": "<p>-Back Design : 78,000 stitches<br/>-3D Puff Embroidery ⁠<br/>-Patch Embroidery⁠<br/>-Cross Stitch Embroidery</p>",
             "uppercase_title": false,
             "icon": "none",
             "custom_icon": "shopify://shop_images/EMBROIDERY-01.png",
@@ -206,7 +210,7 @@
           "type": "accordion",
           "settings": {
             "title": "Shipping / Policy",
-            "content": "<p>\u00a0We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
+            "content": "<p> We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
             "uppercase_title": false,
             "icon": "picto-truck",
             "page": ""
@@ -215,10 +219,10 @@
       },
       "block_order": [
         "vendor",
-        "description",
         "shawq_desc_ghalabany_ls",
         "title",
         "price",
+        "description",
         "shawq_value_line",
         "shawq_bundle",
         "image_xiEddD",
@@ -245,6 +249,10 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
