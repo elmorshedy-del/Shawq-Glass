@@ -176,6 +176,14 @@
         "text_alignment": "center",
         "product": "ghalabany-al-shawq-غَلبَني-الشَوق-crewneck-unisex",
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
+        "show_featured_border": true,
+        "featured_border_color": "#000000",
+        "featured_border_opacity": 0.1,
+        "featured_border_width": 1,
         "content_alignment": "center",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "thumbnails_under",
@@ -521,6 +529,14 @@
         "text_alignment": "left",
         "product": "palestine-frame",
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
+        "show_featured_border": true,
+        "featured_border_color": "#000000",
+        "featured_border_opacity": 0.1,
+        "featured_border_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "thumbnails_under",
@@ -622,6 +638,14 @@
         "text_alignment": "left",
         "product": "kuffiyah-1",
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
+        "show_featured_border": true,
+        "featured_border_color": "#000000",
+        "featured_border_opacity": 0.1,
+        "featured_border_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "thumbnails_under",
@@ -635,6 +659,12 @@
     "featured_product_XWFdCx": {
       "type": "featured-product",
       "blocks": {
+        "liquid_wryPRj": {
+          "type": "liquid",
+          "settings": {
+            "liquid": ""
+          }
+        },
         "vendor_j3rVk3": {
           "type": "vendor",
           "disabled": true,
@@ -664,6 +694,13 @@
             "show_empty": false
           }
         },
+        "description_94zpaW": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
         "payment_terms_t4fY9y": {
           "type": "payment_terms",
           "settings": {}
@@ -672,13 +709,6 @@
           "type": "separator",
           "disabled": true,
           "settings": {}
-        },
-        "description_94zpaW": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
         },
         "variant_picker_iTNkkr": {
           "type": "variant_picker",
@@ -715,14 +745,15 @@
         }
       },
       "block_order": [
+        "liquid_wryPRj",
         "vendor_j3rVk3",
         "title_RCXxqy",
         "badges_ndkPjD",
         "price_enMwLA",
         "rating_jdLc7t",
+        "description_94zpaW",
         "payment_terms_t4fY9y",
         "separator_GhWj34",
-        "description_94zpaW",
         "variant_picker_iTNkkr",
         "buy_buttons_UCf7CX",
         "pickup_availability_bUJB7j"
@@ -739,6 +770,14 @@
         "text_alignment": "left",
         "product": "palestine-keychain",
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
+        "show_featured_border": true,
+        "featured_border_color": "#000000",
+        "featured_border_opacity": 0.1,
+        "featured_border_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "thumbnails_under",
