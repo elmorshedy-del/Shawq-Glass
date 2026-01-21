@@ -42,10 +42,18 @@
             "show_taxes_notice": false
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": true
+          }
+        },
         "shawq_value_line": {
           "type": "shawq_value_line",
+          "disabled": true,
           "settings": {
-            "title": "Complete the look \u2014 naturally",
+            "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
@@ -53,8 +61,8 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
-            "bundle_product": ""
+            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "bundle_product": "kuffiyah-1"
           }
         },
         "rating": {
@@ -72,18 +80,11 @@
           "type": "separator",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": true
-          }
-        },
         "shawq_desc_third_najm_hoodie": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p><strong>The dawn of freedom, stitched in gold.</strong></p><p>The Third Najm collection is a celebration of a Syria freed and a spirit unbound. Set against a pristine cream canvas, the golden doves are embroidered in flight\u2014symbolizing liberation\u2014while the stars represent a new horizon.</p><p>Cut from premium fleece-backed cotton for warmth and comfort, this piece is an embodiment of relief and triumph.</p><p>Wear it as a testament to the days we dreamed of. A symbol of liberty, worn close to the chest.</p>"
+            "description": "<p><strong>The dawn of freedom, stitched in gold.</strong></p><p>The Third Najm collection is a celebration of a Syria freed and a spirit unbound. Set against a pristine cream canvas, the golden doves are embroidered in flight—symbolizing liberation—while the stars represent a new horizon.</p><p>Cut from premium fleece-backed cotton for warmth and comfort, this piece is an embodiment of relief and triumph.</p><p>Wear it as a testament to the days we dreamed of. A symbol of liberty, worn close to the chest.</p>"
           }
         },
         "variant_picker": {
@@ -96,15 +97,17 @@
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "syria-hoodie-sizechart"
+            "size_chart_page": "syria-hoodie-sizechart",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
+            "item_1": "Fast shipping — typically 3–4 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery \u2014 built to last"
+            "item_3": "Premium embroidery — built to last"
           }
         },
         "buy_buttons": {
@@ -118,7 +121,9 @@
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": ""
+            "payment_button_text_color": "",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "volume_pricing_AktEmK": {
@@ -184,12 +189,12 @@
         "inventory_dYxxDb",
         "badges",
         "price",
+        "description",
         "shawq_value_line",
         "shawq_bundle",
         "rating",
         "payment_terms",
         "separator",
-        "description",
         "shawq_desc_third_najm_hoodie",
         "variant_picker",
         "shawq_reassurance",
@@ -208,6 +213,10 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
         "content_alignment": "center",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
@@ -225,7 +234,7 @@
         "color_scheme": "scheme-2",
         "product_list": [
           "third-najm-crewneck-unisex-black",
-          "ghalabany-al-shawq-\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-crewneck-unisex",
+          "ghalabany-al-shawq-غَلبَني-الشَوق-crewneck-unisex",
           "shawq-signature-black-sweatpants-unisex",
           "shawq-signature-grey-sweat-pants-unisex",
           "kuffiyah-1",
