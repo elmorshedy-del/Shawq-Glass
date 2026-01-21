@@ -36,14 +36,6 @@
             "show_taxes_notice": false
           }
         },
-        "shawq_bundle": {
-          "type": "shawq_bundle",
-          "settings": {
-            "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
-            "bundle_product": ""
-          }
-        },
         "badges": {
           "type": "badges",
           "settings": {}
@@ -64,6 +56,7 @@
         },
         "shawq_value_line": {
           "type": "shawq_value_line",
+          "disabled": true,
           "settings": {
             "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
@@ -95,6 +88,14 @@
             "offer_3_content": "",
             "offer_3_background": "#f9f9f9",
             "offer_3_text_color": "#000000"
+          }
+        },
+        "shawq_bundle": {
+          "type": "shawq_bundle",
+          "settings": {
+            "title": "Complete the look",
+            "subtitle": "Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.",
+            "bundle_product": "kuffiyah-1"
           }
         },
         "separator": {
@@ -209,13 +210,13 @@
         "shawq_desc_third_najm_tee",
         "title",
         "price",
-        "shawq_bundle",
         "badges",
         "description",
         "rating",
         "shawq_value_line",
         "payment_terms",
         "offers_6cdniN",
+        "shawq_bundle",
         "separator",
         "text_MCCMR8",
         "variant_picker",

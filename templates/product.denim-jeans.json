@@ -17,18 +17,11 @@
           "disabled": true,
           "settings": {}
         },
-        "description_KancmD": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": true
-          }
-        },
         "shawq_desc_denim": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Memory should not fade - it should move with you. This stone-washed black denim carries the story where it belongs: on the back, built in cross-stitch embroidery with a laser-etched keffiyeh detail.</p><p>Clean silhouette, quiet power, and stitching that holds its shape and its meaning.</p><p>If you want a daily piece that carries a vow, this is it.</p>"
+            "description": "<p>Memory should not fade - it should move with you. This stone-washed black denim carries the story where it belongs: on the back, built in cross-stitch embroidery with a laser-etched keffiyeh detail.Clean silhouette, quiet power, and stitching that holds its shape and its meaning.If you want a daily piece that carries a vow, this is it.</p>"
           }
         },
         "title": {
@@ -57,19 +50,18 @@
             "show_taxes_notice": false
           }
         },
+        "description_KancmD": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": true
+          }
+        },
         "shawq_value_line": {
           "type": "shawq_value_line",
           "settings": {
             "title": "Complete the look — naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
-          }
-        },
-        "shawq_bundle": {
-          "type": "shawq_bundle",
-          "settings": {
-            "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
-            "bundle_product": "ghalabany-al-shawq-ْغَلبَني-الشَوق-t-shirt"
           }
         },
         "image_Bk9wtX": {
@@ -87,6 +79,14 @@
           "disabled": true,
           "settings": {
             "show_empty": false
+          }
+        },
+        "shawq_bundle": {
+          "type": "shawq_bundle",
+          "settings": {
+            "title": "Complete the look",
+            "subtitle": "Completes the outfit and lifts the look.",
+            "bundle_product": "ghalabany-al-shawq-ْغَلبَني-الشَوق-t-shirt"
           }
         },
         "payment_terms": {
@@ -107,7 +107,9 @@
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "denim-jeans-size-chart"
+            "size_chart_page": "denim-jeans-size-chart",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "shawq_reassurance": {
@@ -129,7 +131,9 @@
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": ""
+            "payment_button_text_color": "",
+            "use_custom_radius": false,
+            "radius": 12
           }
         },
         "offers_kinyQN": {
@@ -215,16 +219,16 @@
       },
       "block_order": [
         "vendor",
-        "description_KancmD",
         "shawq_desc_denim",
         "title",
         "inventory_dYxxDb",
         "badges",
         "price",
+        "description_KancmD",
         "shawq_value_line",
-        "shawq_bundle",
         "image_Bk9wtX",
         "rating",
+        "shawq_bundle",
         "payment_terms",
         "separator",
         "variant_picker",
@@ -245,6 +249,10 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
+        "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
+        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
