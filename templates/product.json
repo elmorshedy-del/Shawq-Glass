@@ -38,7 +38,7 @@
           "disabled": true,
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
             "bundle_product": ""
           }
         },
@@ -64,14 +64,14 @@
           "type": "shawq_desc_override",
           "settings": {
             "product": "kuffiyah-1",
-            "description": "<p>Not just an accessory - a signature. The woven pattern is precise and the edge stitching keeps its shape.It finishes any fit and carries the story with you. Once you have one, it becomes part of your uniform.</p>"
+            "description": "<p><strong>The original thread. The unbreakable bond.</strong></p><p>This is the piece that started it all. More than an accessory, the Kuffiyah is the universal symbol of our resilience and our presence. Ours is authentically woven\u2014never printed\u2014offering the dense, tactile weight that signifies true quality. The pattern is structural, created by the interlocking of threads, not ink.</p><p>It is the essential anchor to the Shawq silhouette. Whether draped over the shoulders or wrapped for warmth, it ties every look back to the cause.</p><p>A timeless standard. Wear it loud.</p>"
           }
         },
         "shawq_desc_keychain": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "palestine-keychain",
-            "description": "<p>A small piece with real weight. The Palestine pattern is engraved in metal and built to last.On keys or on a bag, it keeps the story close.Carry it daily - it says more than it needs to.</p>"
+            "description": "<p><strong>A piece of the cause, carried daily.</strong></p><p>Cast in heavy-duty antique silver, this keychain is designed to be felt. It features deep-groove laser engraving that mimics the texture of the Keffiyeh grid, merging the symbol of resistance with the map of home.</p><p>It is solid, cool to the touch, and built to withstand the grind of everyday life without tarnishing.</p><p>A subtle, constant reminder that no matter where your keys open a door, your heart remains in one place.</p>"
           }
         },
         "variant_picker": {
@@ -92,9 +92,9 @@
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "payment_terms": {
