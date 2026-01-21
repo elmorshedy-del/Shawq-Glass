@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -17,11 +8,18 @@
           "disabled": true,
           "settings": {}
         },
+        "description_KancmD": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": true
+          }
+        },
         "shawq_desc_denim": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Memory should not fade - it should move with you. This stone-washed black denim carries the story where it belongs: on the back, built in cross-stitch embroidery with a laser-etched keffiyeh detail.Clean silhouette, quiet power, and stitching that holds its shape and its meaning.If you want a daily piece that carries a vow, this is it.</p>"
+            "description": "<p><strong>A vow woven into your daily uniform.</strong></p><p>We reimagined the universal staple\u2014the denim jean\u2014as a vessel for memory. Cut from 12oz charcoal stone-washed denim, these jeans are a tribute to the victims and the cause that fuels us. The left pocket features a 'ghost' laser-etched Keffiyeh, while the right erupts with vibrant cross-stitch embroidery.</p><p>Designed with a relaxed, stackable fit, this is a way to walk with purpose. To wear this is to say: <em>We remember every name, and we uphold the cause.</em></p><p>Subtle enough for the streets, powerful enough to honor the story.</p>"
           }
         },
         "title": {
@@ -50,19 +48,19 @@
             "show_taxes_notice": false
           }
         },
-        "description_KancmD": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": true
-          }
-        },
         "shawq_value_line": {
           "type": "shawq_value_line",
-          "disabled": true,
           "settings": {
-            "title": "Complete the look — naturally",
+            "title": "Complete the look \u2014 naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
+          }
+        },
+        "shawq_bundle": {
+          "type": "shawq_bundle",
+          "settings": {
+            "title": "Complete the look",
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
+            "bundle_product": "ghalabany-al-shawq-\u0652\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-t-shirt"
           }
         },
         "image_Bk9wtX": {
@@ -80,14 +78,6 @@
           "disabled": true,
           "settings": {
             "show_empty": false
-          }
-        },
-        "shawq_bundle": {
-          "type": "shawq_bundle",
-          "settings": {
-            "title": "Complete the look",
-            "subtitle": "Completes the outfit and lifts the look.",
-            "bundle_product": "ghalabany-al-shawq-ْغَلبَني-الشَوق-t-shirt"
           }
         },
         "payment_terms": {
@@ -108,17 +98,15 @@
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "denim-jeans-size-chart",
-            "use_custom_radius": false,
-            "radius": 12
+            "size_chart_page": "denim-jeans-size-chart"
           }
         },
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "buy_buttons": {
@@ -127,14 +115,12 @@
             "show_payment_button": true,
             "show_gift_card_recipient": true,
             "show_quantity_selector": true,
-            "add_quantity_selector_spacing": false,
-            "atc_button_style": "outline",
+            "add_quantity_selector_spacing": true,
+            "atc_button_style": "solid",
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": "",
-            "use_custom_radius": false,
-            "radius": 12
+            "payment_button_text_color": ""
           }
         },
         "offers_kinyQN": {
@@ -211,7 +197,7 @@
           "type": "accordion",
           "settings": {
             "title": "Shipping",
-            "content": "<p> We Ship Worldwide.</p><ul><li><strong>PRE-ORDER ITEM.</strong></li><li><strong>EXPECT SHIPPING ON THE LAST WEEK OF JANUARY/2026.</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
+            "content": "<p>\u00a0We Ship Worldwide.</p><ul><li><strong>PRE-ORDER ITEM.</strong></li><li><strong>EXPECT SHIPPING ON THE LAST WEEK OF JANUARY/2026.</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
             "uppercase_title": false,
             "icon": "picto-truck",
             "page": ""
@@ -220,16 +206,16 @@
       },
       "block_order": [
         "vendor",
+        "description_KancmD",
         "shawq_desc_denim",
         "title",
         "inventory_dYxxDb",
         "badges",
         "price",
-        "description_KancmD",
         "shawq_value_line",
+        "shawq_bundle",
         "image_Bk9wtX",
         "rating",
-        "shawq_bundle",
         "payment_terms",
         "separator",
         "variant_picker",
@@ -250,10 +236,6 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
-        "show_vertical_divider": true,
-        "vertical_divider_color": "#000000",
-        "vertical_divider_opacity": 0.1,
-        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
@@ -312,8 +294,8 @@
       "settings": {
         "color_scheme": "scheme-2",
         "product_list": [
-          "ghalabany-al-shawq-ْغَلبَني-الشَوق-t-shirt",
-          "ghalabany-al-shawq-ْغَلبَني-الشَوق-long-sleeve-shirt",
+          "ghalabany-al-shawq-\u0652\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-t-shirt",
+          "ghalabany-al-shawq-\u0652\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-long-sleeve-shirt",
           "kuffiyah-1",
           "palestine-keychain"
         ],
@@ -431,10 +413,7 @@
         "autoplay": true,
         "pause_auto_rotate_on_hover": false,
         "cycle_speed": 6,
-        "background": "#000000",
-        "shawq_custom_height_enable": false,
-        "shawq_custom_height_mobile": 520,
-        "shawq_custom_height_desktop": 640
+        "background": "#000000"
       }
     }
   },

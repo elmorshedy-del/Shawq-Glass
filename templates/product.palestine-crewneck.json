@@ -17,11 +17,18 @@
           "disabled": true,
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
         "shawq_desc_ghalabany_crewneck": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Longing becomes a banner here - the keffiyeh grid and the red map of Palestine sit embroidered across the back.Heavyweight feel, tight stitching, and a structure that keeps its form all day. Put it on and let the story speak.</p>"
+            "description": "<p><strong>Warmth from home, for the cold abroad.</strong></p><p>When the weather turns, this heavyweight crewneck stands as your armor. It features our most dense embroidery shield\u2014gold calligraphy and red tatreez rising in 3D puff texture against the black fleece-backed cotton.</p><p>Engineered for the chill of the diaspora, it offers a premium, structured fit that keeps you warm in every sense of the word.</p><p>A garment that speaks volumes without you saying a word. Wrap yourself in the resistance.</p>"
           }
         },
         "title": {
@@ -40,28 +47,20 @@
             "progress_bar_max_value": 50
           }
         },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
         "price": {
           "type": "price",
           "settings": {
             "show_taxes_notice": false
           }
         },
-        "badges": {
-          "type": "badges",
-          "settings": {}
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
         "shawq_value_line": {
           "type": "shawq_value_line",
-          "disabled": true,
           "settings": {
-            "title": "Complete the look — naturally",
+            "title": "Complete the look \u2014 naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
@@ -69,7 +68,7 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.",
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
             "bundle_product": "kuffiyah-1"
           }
         },
@@ -108,17 +107,15 @@
             "swatch_selector_size": "lg",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "palestine-crewneck",
-            "use_custom_radius": false,
-            "radius": 12
+            "size_chart_page": "palestine-crewneck"
           }
         },
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "buy_buttons": {
@@ -128,13 +125,11 @@
             "show_gift_card_recipient": true,
             "show_quantity_selector": true,
             "add_quantity_selector_spacing": true,
-            "atc_button_style": "outline",
+            "atc_button_style": "solid",
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": "",
-            "use_custom_radius": true,
-            "radius": 16
+            "payment_button_text_color": ""
           }
         },
         "volume_pricing_AktEmK": {
@@ -166,7 +161,7 @@
           "type": "accordion",
           "settings": {
             "title": "Design Techniques",
-            "content": "<p>-Back Design : 98,000 stitches<br/>-3D Puff Embroidery ⁠<br/>-Patch Embroidery⁠<br/>-Cross Stitch Embroidery</p>",
+            "content": "<p>-Back Design : 98,000 stitches<br/>-3D Puff Embroidery \u2060<br/>-Patch Embroidery\u2060<br/>-Cross Stitch Embroidery</p>",
             "uppercase_title": false,
             "icon": "none",
             "custom_icon": "shopify://shop_images/EMBROIDERY-01.png",
@@ -196,12 +191,12 @@
       },
       "block_order": [
         "vendor",
+        "description",
         "shawq_desc_ghalabany_crewneck",
         "title",
         "inventory_dYxxDb",
-        "price",
         "badges",
-        "description",
+        "price",
         "shawq_value_line",
         "shawq_bundle",
         "image_QDVAzH",
@@ -225,10 +220,6 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
-        "show_vertical_divider": false,
-        "vertical_divider_color": "#000000",
-        "vertical_divider_opacity": 0.1,
-        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",

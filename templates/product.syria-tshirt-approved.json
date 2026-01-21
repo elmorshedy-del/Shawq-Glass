@@ -17,11 +17,18 @@
           "disabled": true,
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false,
+            "uppercase_title": false
+          }
+        },
         "shawq_desc_third_najm_tee": {
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Third Najm, distilled. Embroidered doves and stitched stars make this more than a tee.Clean fit, durable seams, and a back graphic that does not disappear.Make it your everyday reminder.</p>"
+            "description": "<p><strong>The dawn of freedom, stitched in gold.</strong></p><p>The Third Najm collection is a celebration of a Syria freed and a spirit unbound. Set against a pristine cream canvas, the golden doves are embroidered in flight\u2014symbolizing liberation\u2014while the stars represent a new horizon.</p><p>Cut from premium, soft-touch jersey with a fluid drape, this piece is an embodiment of relief and triumph.</p><p>Wear it as a testament to the days we dreamed of. A symbol of liberty, worn close to the chest.</p>"
           }
         },
         "title": {
@@ -36,35 +43,20 @@
             "show_taxes_notice": false
           }
         },
-        "badges": {
-          "type": "badges",
-          "settings": {}
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "collapse_content": false,
-            "uppercase_title": false
-          }
-        },
-        "rating": {
-          "type": "rating",
-          "disabled": true,
-          "settings": {
-            "show_empty": false
-          }
-        },
         "shawq_value_line": {
           "type": "shawq_value_line",
-          "disabled": true,
           "settings": {
-            "title": "Complete the look — naturally",
+            "title": "Complete the look \u2014 naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
-        "payment_terms": {
-          "type": "payment_terms",
-          "settings": {}
+        "shawq_bundle": {
+          "type": "shawq_bundle",
+          "settings": {
+            "title": "Complete the look",
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
+            "bundle_product": ""
+          }
         },
         "offers_6cdniN": {
           "type": "offers",
@@ -90,13 +82,20 @@
             "offer_3_text_color": "#000000"
           }
         },
-        "shawq_bundle": {
-          "type": "shawq_bundle",
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "disabled": true,
           "settings": {
-            "title": "Complete the look",
-            "subtitle": "Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.",
-            "bundle_product": "kuffiyah-1"
+            "show_empty": false
           }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
         },
         "separator": {
           "type": "separator",
@@ -119,17 +118,15 @@
             "swatch_selector_size": "sm",
             "block_selector_style": "fill",
             "variant_image_options": "",
-            "size_chart_page": "short-sleeve-size-chart",
-            "use_custom_radius": false,
-            "radius": 12
+            "size_chart_page": "short-sleeve-size-chart"
           }
         },
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "buy_buttons": {
@@ -139,13 +136,11 @@
             "show_gift_card_recipient": true,
             "show_quantity_selector": true,
             "add_quantity_selector_spacing": true,
-            "atc_button_style": "outline",
+            "atc_button_style": "solid",
             "atc_button_background": "",
             "atc_button_text_color": "",
             "payment_button_background": "",
-            "payment_button_text_color": "",
-            "use_custom_radius": false,
-            "radius": 12
+            "payment_button_text_color": ""
           }
         },
         "volume_pricing_AktEmK": {
@@ -198,7 +193,7 @@
           "type": "accordion",
           "settings": {
             "title": "Shipping / Policy",
-            "content": "<p> We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
+            "content": "<p>\u00a0We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
             "uppercase_title": false,
             "icon": "picto-truck",
             "page": ""
@@ -207,16 +202,16 @@
       },
       "block_order": [
         "vendor",
+        "description",
         "shawq_desc_third_najm_tee",
         "title",
         "price",
-        "badges",
-        "description",
-        "rating",
         "shawq_value_line",
-        "payment_terms",
-        "offers_6cdniN",
         "shawq_bundle",
+        "offers_6cdniN",
+        "badges",
+        "rating",
+        "payment_terms",
         "separator",
         "text_MCCMR8",
         "variant_picker",
@@ -236,10 +231,6 @@
         "add_top_spacing": true,
         "show_sticky_add_to_cart": true,
         "product_media_size": 50,
-        "show_vertical_divider": true,
-        "vertical_divider_color": "#000000",
-        "vertical_divider_opacity": 0.1,
-        "vertical_divider_width": 1,
         "content_alignment": "left",
         "desktop_media_layout": "carousel",
         "desktop_carousel_controls": "lines",
