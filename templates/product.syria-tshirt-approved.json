@@ -28,7 +28,7 @@
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Third Najm, distilled. Embroidered doves and stitched stars make this more than a tee.</p><p>Clean fit, durable seams, and a back graphic that does not disappear.</p><p>Make it your everyday reminder.</p>"
+            "description": "<p><strong>The dawn of freedom, stitched in gold.</strong></p><p>The Third Najm collection is a celebration of a Syria freed and a spirit unbound. Set against a pristine cream canvas, the golden doves are embroidered in flight\u2014symbolizing liberation\u2014while the stars represent a new horizon.</p><p>Cut from premium, soft-touch jersey with a fluid drape, this piece is an embodiment of relief and triumph.</p><p>Wear it as a testament to the days we dreamed of. A symbol of liberty, worn close to the chest.</p>"
           }
         },
         "title": {
@@ -46,7 +46,7 @@
         "shawq_value_line": {
           "type": "shawq_value_line",
           "settings": {
-            "title": "Complete the look — naturally",
+            "title": "Complete the look \u2014 naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
@@ -54,7 +54,7 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
             "bundle_product": ""
           }
         },
@@ -124,9 +124,9 @@
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "buy_buttons": {
@@ -193,7 +193,7 @@
           "type": "accordion",
           "settings": {
             "title": "Shipping / Policy",
-            "content": "<p> We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
+            "content": "<p>\u00a0We Ship Worldwide.</p><ul><li><strong>READY TO SHIP ITEM.</strong></li><li><strong>SHOULD REACH YOU WITHIN 3-5 DAYS</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
             "uppercase_title": false,
             "icon": "picto-truck",
             "page": ""

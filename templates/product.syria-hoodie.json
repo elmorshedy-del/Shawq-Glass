@@ -45,7 +45,7 @@
         "shawq_value_line": {
           "type": "shawq_value_line",
           "settings": {
-            "title": "Complete the look — naturally",
+            "title": "Complete the look \u2014 naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
@@ -53,7 +53,7 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
             "bundle_product": ""
           }
         },
@@ -83,7 +83,7 @@
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Strength does not always shout - sometimes, it shines in silence.</p><p>This white hoodie carries the story of resilience, freedom, and return in clean embroidered detail.</p><p>Built over four months of dedicated craftsmanship and limited to 128 pieces, it is made to be worn for meaning, not just style.</p><p>Premium cotton, flawless structure, and a story stitched deeper than fabric.</p><p>For Syria. For memory. For you.</p>"
+            "description": "<p><strong>The dawn of freedom, stitched in gold.</strong></p><p>The Third Najm collection is a celebration of a Syria freed and a spirit unbound. Set against a pristine cream canvas, the golden doves are embroidered in flight\u2014symbolizing liberation\u2014while the stars represent a new horizon.</p><p>Cut from premium fleece-backed cotton for warmth and comfort, this piece is an embodiment of relief and triumph.</p><p>Wear it as a testament to the days we dreamed of. A symbol of liberty, worn close to the chest.</p>"
           }
         },
         "variant_picker": {
@@ -102,9 +102,9 @@
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "buy_buttons": {
@@ -225,7 +225,7 @@
         "color_scheme": "scheme-2",
         "product_list": [
           "third-najm-crewneck-unisex-black",
-          "ghalabany-al-shawq-غَلبَني-الشَوق-crewneck-unisex",
+          "ghalabany-al-shawq-\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-crewneck-unisex",
           "shawq-signature-black-sweatpants-unisex",
           "shawq-signature-grey-sweat-pants-unisex",
           "kuffiyah-1",

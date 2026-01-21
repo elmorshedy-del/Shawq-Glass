@@ -19,7 +19,7 @@
           "type": "shawq_desc_override",
           "settings": {
             "product": "",
-            "description": "<p>Memory should not fade - it should move with you. This stone-washed black denim carries the story where it belongs: on the back, built in cross-stitch embroidery with a laser-etched keffiyeh detail.</p><p>Clean silhouette, quiet power, and stitching that holds its shape and its meaning.</p><p>If you want a daily piece that carries a vow, this is it.</p>"
+            "description": "<p><strong>A vow woven into your daily uniform.</strong></p><p>We reimagined the universal staple\u2014the denim jean\u2014as a vessel for memory. Cut from 12oz charcoal stone-washed denim, these jeans are a tribute to the victims and the cause that fuels us. The left pocket features a 'ghost' laser-etched Keffiyeh, while the right erupts with vibrant cross-stitch embroidery.</p><p>Designed with a relaxed, stackable fit, this is a way to walk with purpose. To wear this is to say: <em>We remember every name, and we uphold the cause.</em></p><p>Subtle enough for the streets, powerful enough to honor the story.</p>"
           }
         },
         "title": {
@@ -51,7 +51,7 @@
         "shawq_value_line": {
           "type": "shawq_value_line",
           "settings": {
-            "title": "Complete the look — naturally",
+            "title": "Complete the look \u2014 naturally",
             "content": "<p>Pair it with a keffiyeh for the full Shawq silhouette. Clean, intentional, and true to the story.</p>"
           }
         },
@@ -59,8 +59,8 @@
           "type": "shawq_bundle",
           "settings": {
             "title": "Complete the look",
-            "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
-            "bundle_product": "ghalabany-al-shawq-ْغَلبَني-الشَوق-t-shirt"
+            "subtitle": "Add a matching keffiyeh \u2014 completes the outfit and lifts the look.",
+            "bundle_product": "ghalabany-al-shawq-\u0652\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-t-shirt"
           }
         },
         "image_Bk9wtX": {
@@ -104,9 +104,9 @@
         "shawq_reassurance": {
           "type": "shawq_reassurance",
           "settings": {
-            "item_1": "Fast shipping — typically 3–4 days",
+            "item_1": "Fast shipping \u2014 typically 3\u20134 days",
             "item_2": "Easy returns & exchanges",
-            "item_3": "Premium embroidery — built to last"
+            "item_3": "Premium embroidery \u2014 built to last"
           }
         },
         "buy_buttons": {
@@ -197,7 +197,7 @@
           "type": "accordion",
           "settings": {
             "title": "Shipping",
-            "content": "<p> We Ship Worldwide.</p><ul><li><strong>PRE-ORDER ITEM.</strong></li><li><strong>EXPECT SHIPPING ON THE LAST WEEK OF JANUARY/2026.</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
+            "content": "<p>\u00a0We Ship Worldwide.</p><ul><li><strong>PRE-ORDER ITEM.</strong></li><li><strong>EXPECT SHIPPING ON THE LAST WEEK OF JANUARY/2026.</strong></li></ul><p>Important Notes:</p><ul><li>Limited Drop Items are Non-Refundable, Neither exchangable.<br/>For any damages, contact us at hello@shawq.co</li><li>IT'S CUSTOMER'S RESPONSIBILITY TO PAY IMPORT TAXES</li><li>REGULATIONS FOR IMPORT DUTIES AND TAXES MAY VARY AND WE ARE UNABLE TO CONTROL NOR PREDICT THEIR AMOUNT</li><li>IF YOU REFUSE A SHIPMENT FROM US, YOU ARE RESPONSIBLE FOR THE ORIGINAL SHIPPING CHARGES AND THE COURIER COST OF RETURN</li></ul>",
             "uppercase_title": false,
             "icon": "picto-truck",
             "page": ""
@@ -294,8 +294,8 @@
       "settings": {
         "color_scheme": "scheme-2",
         "product_list": [
-          "ghalabany-al-shawq-ْغَلبَني-الشَوق-t-shirt",
-          "ghalabany-al-shawq-ْغَلبَني-الشَوق-long-sleeve-shirt",
+          "ghalabany-al-shawq-\u0652\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-t-shirt",
+          "ghalabany-al-shawq-\u0652\u063a\u064e\u0644\u0628\u064e\u0646\u064a-\u0627\u0644\u0634\u064e\u0648\u0642-long-sleeve-shirt",
           "kuffiyah-1",
           "palestine-keychain"
         ],
