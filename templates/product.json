@@ -35,6 +35,7 @@
         },
         "shawq_bundle": {
           "type": "shawq_bundle",
+          "disabled": true,
           "settings": {
             "title": "Complete the look",
             "subtitle": "Add a matching keffiyeh — completes the outfit and lifts the look.",
@@ -47,10 +48,6 @@
           "settings": {
             "show_empty": false
           }
-        },
-        "payment_terms": {
-          "type": "payment_terms",
-          "settings": {}
         },
         "separator": {
           "type": "separator",
@@ -67,7 +64,7 @@
           "type": "shawq_desc_override",
           "settings": {
             "product": "kuffiyah-1",
-            "description": "<p>Not just an accessory - a signature. The woven pattern is precise and the edge stitching keeps its shape.</p><p>It finishes any fit and carries the story with you.</p><p>Once you have one, it becomes part of your uniform.</p>"
+            "description": "<p>Not just an accessory - a signature. The woven pattern is precise and the edge stitching keeps its shape.It finishes any fit and carries the story with you. Once you have one, it becomes part of your uniform.</p>"
           }
         },
         "shawq_desc_keychain": {
@@ -99,6 +96,10 @@
             "item_2": "Easy returns & exchanges",
             "item_3": "Premium embroidery — built to last"
           }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -135,13 +136,13 @@
         "price",
         "shawq_bundle",
         "rating",
-        "payment_terms",
         "separator",
         "description",
         "shawq_desc_kuffiyah",
         "shawq_desc_keychain",
         "variant_picker",
         "shawq_reassurance",
+        "payment_terms",
         "buy_buttons",
         "accordion_WaQJRe"
       ],
@@ -153,6 +154,8 @@
         "show_sticky_add_to_cart": true,
         "product_media_size": 49,
         "show_vertical_divider": true,
+        "vertical_divider_color": "#000000",
+        "vertical_divider_opacity": 0.1,
         "vertical_divider_width": 1,
         "content_alignment": "center",
         "desktop_media_layout": "carousel",
