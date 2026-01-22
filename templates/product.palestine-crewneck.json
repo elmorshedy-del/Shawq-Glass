@@ -105,7 +105,7 @@
             "selector_style": "block",
             "swatch_selector_style": "swatch",
             "swatch_selector_size": "lg",
-            "block_selector_style": "fill",
+            "block_selector_style": "outline",
             "variant_image_options": "",
             "size_chart_page": "palestine-crewneck",
             "use_custom_radius": false,
