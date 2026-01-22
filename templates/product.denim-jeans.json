@@ -146,7 +146,7 @@
             "offer_1_icon_width": 48,
             "offer_1_subheading": "<span style=\"text-decoration:underline\"><strong>use OFF5 FOR 5% Off Your First Order</strong></span>",
             "offer_1_content": "",
-            "offer_1_background": "#000000",
+            "offer_1_background": "rgba(0,0,0,0)",
             "offer_1_text_color": "#dc1684",
             "offer_2_icon_width": 16,
             "offer_2_subheading": "",
