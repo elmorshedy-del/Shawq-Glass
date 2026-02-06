@@ -19,7 +19,7 @@
       "parent": "@default"
     },
     "europe": {
-      "parent": "eu"
+      "parent": "@default"
     }
   }
 }
