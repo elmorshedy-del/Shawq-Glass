@@ -17,9 +17,6 @@
     },
     "uk": {
       "parent": "@default"
-    },
-    "europe": {
-      "parent": "@default"
     }
   }
 }
